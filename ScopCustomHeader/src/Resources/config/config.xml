@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Comment Configuration</title>
+        <title lang="de-DE">Kommentar Einstellungen</title>
+
+        <input-field>
+            <name>iconLeft</name>
+            <copyable>true</copyable>
+            <label>Icon for the text in the left corner</label>
+            <label lang="de-DE">Icon fur text auf die linke Seite </label>
+            <placeholder>Please insert the name of the icon (watch Help-text for more info)</placeholder>
+            <placeholder lang="de-DE">Geben Sie die Name des Icons ein (Hilfe-text anschauen für mehr Information)</placeholder>
+            <helpText>showpare path to icons is : shopware/storefront/Resources/app/storefront/dist/assets/icon/default/address.svg</helpText>
+            <helpText lang="de-DE">showpare pfad zum icons ist : shopware/storefront/Resources/app/storefront/dist/assets/icon/default/address.svg</helpText>
+        </input-field> <!-- Icon Input Left-->
+        <input-field>
+            <name>left</name>
+            <copyable>true</copyable>
+            <label>Text Left</label>
+            <label lang="de-DE">Text Left</label>
+            <placeholder>Text Left</placeholder>
+            <placeholder lang="de-DE">Text Links</placeholder>
+            <helpText>This text will be displayed in the left corner</helpText>
+            <helpText lang="de-DE">This text will be displayed in the left corner</helpText>
+        </input-field> <!-- Text Input Left-->
+
+        <input-field>
+            <name>iconMiddle</name>
+            <copyable>true</copyable>
+            <label>Icon for the text in the left corner</label>
+            <label lang="de-DE">Icon fur text auf die linke Seite </label>
+            <placeholder>Please insert the name of the icon (watch Help-text for more info)</placeholder>
+            <placeholder lang="de-DE">Geben Sie die Name des Icons ein (Hilfe-text anschauen für mehr Information)</placeholder>
+            <helpText>showpare path to icons is : shopware/storefront/Resources/app/storefront/dist/assets/icon/default/address.svg</helpText>
+            <helpText lang="de-DE">showpare pfad zum icons ist : shopware/storefront/Resources/app/storefront/dist/assets/icon/default/address.svg</helpText>
+        </input-field> <!-- Icon Input Left-->
+        <input-field>
+            <name>middle</name>
+            <copyable>true</copyable>
+            <label>Text Middle</label>
+            <label lang="de-DE">Text Middle</label>
+            <placeholder>Text Middle</placeholder>
+            <placeholder lang="de-DE">Text in die mitte</placeholder>
+            <helpText>This text will be displayed in the middle</helpText>
+            <helpText lang="de-DE">This text will be displayed in the middle</helpText>
+        </input-field> <!-- Text Input Middle-->
+
+        <input-field>
+            <name>iconRight</name>
+            <copyable>true</copyable>
+            <label>Icon for the text in the left corner</label>
+            <label lang="de-DE">Icon fur text auf die linke Seite </label>
+            <placeholder>Please insert the name of the icon (watch Help-text for more info)</placeholder>
+            <placeholder lang="de-DE">Geben Sie die Name des Icons ein (Hilfe-text anschauen für mehr Information)</placeholder>
+            <helpText>showpare path to icons is : shopware/storefront/Resources/app/storefront/dist/assets/icon/default/address.svg</helpText>
+            <helpText lang="de-DE">showpare pfad zum icons ist : shopware/storefront/Resources/app/storefront/dist/assets/icon/default/address.svg</helpText>
+        </input-field> <!-- Icon Input Left-->
+        <input-field>
+            <name>right</name>
+            <copyable>true</copyable>
+            <label>Text Right</label>
+            <label lang="de-DE">Text Right</label>
+            <placeholder>Text Right</placeholder>
+            <placeholder lang="de-DE">Text Rechts</placeholder>
+            <helpText>This text will be displayed in the Right corner</helpText>
+            <helpText lang="de-DE">This text will be displayed in the Right corner</helpText>
+        </input-field> <!-- Text Input Right-->
+
+        <input-field>
+            <name>background</name>
+            <copyable>true</copyable>
+            <label>Background Color</label>
+            <label lang="de-DE">Hintergrund Farbe</label>
+            <placeholder>Input has to be a color  #FFFFF</placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte die Farbe ein z.B #FFFFFF</placeholder>
+            <helpText>This color will be the background of the header</helpText>
+            <helpText lang="de-DE">Diese Farbe wird als Hintergrundfarbe verwendet</helpText>
+        </input-field> <!-- Background Color-->
+
+        <input-field type="int">
+            <name>textFontSize</name>
+            <copyable>true</copyable>
+            <label>Text Font Size (only number)</label>
+            <label lang="de-DE">Schriftgrosse (nur Zahlzeichen)</label>
+            <placeholder>Font size in px</placeholder>
+            <placeholder lang="de-DE">Font Size</placeholder>
+            <helpText>Font Size insert</helpText>
+            <helpText lang="de-DE">Font Size insert</helpText>
+        </input-field> <!-- Font Size-->
+
+        <input-field>
+            <name>height</name>
+            <copyable>true</copyable>
+            <label>Bar Size</label>
+            <label lang="de-DE">wie Gross</label>
+            <placeholder>Height bar in px</placeholder>
+            <placeholder lang="de-DE">Hohe in px eingeben</placeholder>
+            <helpText>height in px insert</helpText>
+            <helpText lang="de-DE">Die hohe in px eingeben</helpText>
+        </input-field> <!-- Bar Height-->
+
+        <input-field type="bool"> <!-- Display mobile -->
+            <name>mobileBreakpointDisplay</name>
+            <label>Display on Mobile</label>
+        </input-field> <!--Display on Mobile-->
+
+
+    </card>
+</config>
