@@ -1,0 +1,46 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_header %}
+{#    {{ dump(config_params) }}#}
+
+    {% set config_params = page.header.extensions['ScopCH']  %}
+
+    <div class="custom-header-wrapper {% if config_params.mobileBreakpointDisplay%}hide{% endif %} " style="background-color:{{config_params.background }}; min-height:{{ config_params.height ~ 'px' }};">
+        <div class="container">
+
+            {% if pack is not defined %}
+                {% set pack = 'default' %}
+            {% endif %}
+
+            <div class="custom-header " style="font-size: {{ config_params.textFontSize ~ 'px' }};">
+
+                {#    LEFT TEXT #}
+                <div class="element">
+            <span class="icon icon-{{ config_params.iconLeft }}">
+            {{ source('@Storefront/../app/storefront/dist/assets/icon/'~ pack ~'/'~ config_params.iconLeft ~'.svg') }}
+            </span>
+                    <span> {{  config_params.left }}    </span>
+                </div>
+
+                {#    Middle TEXT #}
+                <div class="element">
+            <span class="icon icon-{{ config_params.iconLeft }}">
+            {{ source('@Storefront/../app/storefront/dist/assets/icon/'~ pack ~'/'~ config_params.iconMiddle ~'.svg') }}
+            </span>
+                    <span> {{  config_params.left }}    </span>
+                </div>
+
+                {#    Right TEXT #}
+                <div class="element">
+            <span class="icon icon-{{ config_params.iconLeft }}">
+            {{ source('@Storefront/../app/storefront/dist/assets/icon/'~ pack ~'/'~ config_params.iconRight ~'.svg') }}
+            </span>
+                    <span> {{  config_params.left }}    </span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    {{ parent() }}
+{% endblock %}

@@ -1,14 +1,17 @@
 //@import 'abstract/variables.scss';
-.custom-header{
-    &.show{
-        visibility: visible;
+.custom-header-wrapper{
+    @media(max-width: 768px){
+        &.hide{
+            display: none;
+        }
     }
-    @media (min-width: 768px) {
-        display: flex;
+
+    .custom-header{
+        width:100%;
+        justify-content: space-between;
+        @media (min-width: 768px) {
+            display: flex;
+        }
     }
-    visibility: hidden;
-    overflow: hidden;
-    width:100%;
-    justify-content: space-between;
 
 }

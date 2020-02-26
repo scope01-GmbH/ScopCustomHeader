@@ -103,7 +103,8 @@
 
         <input-field type="bool"> <!-- Display mobile -->
             <name>mobileBreakpointDisplay</name>
-            <label>Display on Mobile</label>
+            <label>Hide on Mobile</label>
+            <label lang="de-DE">Auf Handy die  Info-leiste verstecken</label>
         </input-field> <!--Display on Mobile-->
 
 
