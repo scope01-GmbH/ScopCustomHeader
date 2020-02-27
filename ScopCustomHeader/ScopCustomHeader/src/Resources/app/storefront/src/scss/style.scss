@@ -1,0 +1,21 @@
+//@import 'abstract/variables.scss';
+.custom-header-wrapper{
+    @media(max-width: 768px){
+        &.hide{
+            display: none;
+        }
+    }
+
+    .custom-header{
+        width:100%;
+        justify-content: space-between;
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    }
+    .scop-info-content{
+        word-wrap: break-word;
+        word-break: break-all;
+        text-align-last: left;
+    }
+}
