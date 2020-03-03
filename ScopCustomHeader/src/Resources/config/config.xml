@@ -10,10 +10,10 @@
             <copyable>true</copyable>
             <label>Bar Size</label>
             <label lang="de-DE">wie Gross</label>
-            <placeholder>Height bar in px</placeholder>
-            <placeholder lang="de-DE">Hohe in px eingeben</placeholder>
-            <helpText>height in px insert</helpText>
-            <helpText lang="de-DE">Die hohe in px eingeben</helpText>
+            <placeholder>Height number + px Example: 10px</placeholder>
+            <placeholder lang="de-DE">Hohe Zahl + px Example: 10px</placeholder>
+            <helpText>Exmaple Height: 10px</helpText>
+            <helpText lang="de-DE">Hohe Beispiel: 10px</helpText>
         </input-field> <!-- Bar Height-->
         <input-field>
             <name>background</name>
@@ -26,7 +26,7 @@
             <helpText lang="de-DE">Diese Farbe wird als Hintergrundfarbe verwendet</helpText>
         </input-field> <!-- Background Color-->
 
-        <input-field type="int">
+        <input-field >
             <name>textFontSize</name>
             <copyable>true</copyable>
             <label>Text Font Size ( number + px)</label>
@@ -218,6 +218,17 @@
     <card>
         <title>Mobile Version</title>
         <title lang="de-DE">Mobile Version</title>
+
+        <input-field >
+            <name>textFontSizeMobile</name>
+            <copyable>true</copyable>
+            <label>Text Font Size ( number + px)</label>
+            <label lang="de-DE">Schriftgrosse (nur Zahlzeichen)</label>
+            <placeholder>Please insert number + "px" . Example : 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein, z.B 10px</placeholder>
+            <helpText>Font Size insert</helpText>
+            <helpText lang="de-DE">Font Size insert</helpText>
+        </input-field> <!-- Font Size-->
 
         <input-field>
             <name>paddingTopMobile</name>

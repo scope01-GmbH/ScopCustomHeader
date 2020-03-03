@@ -36,6 +36,7 @@
         .custom-header-warpper .custom-header .element .scop-header-link{
             color: {{ config_params.textColor }};
             transition: .3s;
+            font-size: {{ config_params.textFontSize }};
         }
 
         /*Text Hover*/
@@ -52,6 +53,9 @@
                 padding-bottom: {{ config_params.paddingBottomMobile }};
                 padding-left: {{ config_params.paddingLeftMobile }};
             }
+            .custom-header-warpper .custom-header .element .scop-header-link{
+                font-size: {{ config_params.textFontSizeMobile }};
+            }
             .scop-text-left{
                 display: {% if config_params.displayTextLeft == false %}none {% else %} block {% endif %};
             }
@@ -67,6 +71,8 @@
 {% endblock %}
 
 {% block base_header %}
+    {% if config_params.left or config_params.middle or config_params.right %}
+
     <div class="custom-header-wrapper {% if config_params.mobileBreakpointDisplay %}hide{% endif %} " style="">
         <div class="container">
                         <!--WRAPPER-->
@@ -99,7 +105,7 @@
                                      </div>
                                 </span>
                                 <span>
-                                    <a class="scop-header-link " href="{{ config_params.textLinkMiddle }}" target="_blank"> {{  config_params.left }} </a>
+                                    <a class="scop-header-link " href="{{ config_params.textLinkMiddle }}" target="_blank"> {{  config_params.middle }} </a>
                                 </span>
                             </div>
 
@@ -113,11 +119,12 @@
                                     </div>
                                 </span>
                                 <span>
-                                    <a class="scop-header-link " href="{{ config_params.textLinkRight }}" target="_blank"> {{  config_params.left }} </a>
+                                    <a class="scop-header-link " href="{{ config_params.textLinkRight }}" target="_blank"> {{  config_params.right }} </a>
                                 </span>
                             </div>
                         </div>
         </div>
     </div>
+    {% endif %}
     {{ parent() }}
 {% endblock %}
