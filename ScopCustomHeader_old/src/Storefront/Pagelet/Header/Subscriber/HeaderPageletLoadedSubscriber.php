@@ -6,6 +6,7 @@ use Shopware\Core\Framework\Struct\ArrayEntity;
 use Shopware\Storefront\Pagelet\Header\HeaderPageletLoadedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
+use Symfony\Component\HttpFoundation\Response;
 
 class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
 {
@@ -40,7 +41,9 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
     public function HeaderPageletLoadedEvent(HeaderPageletLoadedEvent $event): void
     {
         $pluginConfig = $this->systemConfigService->get('ScopCustomHeader.config');
+//var_dump($exampleConfig);die();
         $page = $event->getPagelet();
+
         $page->addExtension('ScopCH', new ArrayEntity($pluginConfig));
     }
 

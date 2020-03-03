@@ -36,53 +36,58 @@
             }
         }
     </style>
-{{ parent() }}
+    {{ parent() }}
 {% endblock %}
 
-
 {% block base_header %}
+    {{ dump(config_params)}}
 
-    {% set textsPosition= ['Left', 'Middle', 'Right'] %}
     <div class="custom-header-wrapper {% if config_params.mobileBreakpointDisplay %}hide{% endif %} " style="background-color:{{ config_params.background }}; min-height:{{ config_params.height ~ 'px' }};">
         <div class="container">
 
             {% if pack is not defined %}
                 {% set pack = 'default' %}
             {% endif %}
-                        <!--WRAPPER-->
-                        <div class="custom-header " style="font-size: {{ config_params.textFontSize ~ 'px' }};">
+            <!--WRAPPER-->
+            <div class="custom-header " style="font-size: {{ config_params.textFontSize ~ 'px' }};">
 
-                                <!--LEFT TEXT-->
-                            <div class="element scop-text-left">
+                <!--LEFT TEXT-->
+                <div class="element scop-text-left">
                                 <span class="icon icon-{{ config_params.iconLeft }}">
-                                    {{ source('@Storefront/../app/storefront/dist/assets/icon/'~ pack ~'/'~ config_params.iconLeft ~'.svg') }}
+{#                                    {% if config_params.iconLeft != null %}#}
+                                    {#                                        {{ source('@Storefront/../app/storefront/dist/assets/icon/'~ pack ~'/'~ config_params.iconLeft ~'.svg') }}#}
+                                    {#                                    {% endif %}#}
                                 </span>
-                                <span>
+                    <span>
                                     <a class="scop-header-link " href="{{ config_params.textLinkLeft }}" target="_blank"> {{  config_params.left }} </a>
                                 </span>
-                            </div>
+                </div>
 
-                            {#    Middle TEXT #}
-                            <div class="element scop-text-middle" style="">
+                {#    Middle TEXT #}
+                <div class="element scop-text-middle" style="">
                                 <span class="icon icon-{{ config_params.iconLeft }}">
-                                    {{ source('@Storefront/../app/storefront/dist/assets/icon/'~ pack ~'/'~ config_params.iconMiddle ~'.svg') }}
+                                    {% if config_params.iconMiddle != null %}
+                                        {{  source('@Storefront/../app/storefront/dist/assets/icon/'~ pack ~'/'~ config_params.iconMiddle ~'.svg') }}
+                                    {% endif %}
                                 </span>
-                                <span>
+                    <span>
                                     <a class="scop-header-link " href="{{ config_params.textLinkMiddle }}" target="_blank"> {{  config_params.left }} </a>
                                 </span>
-                            </div>
+                </div>
 
-                            {#    Right TEXT #}
-                            <div class="element scop-text-right" style="">
+                {#    Right TEXT #}
+                <div class="element scop-text-right" style="">
                                 <span class="icon icon-{{ config_params.iconLeft }}">
-                                    {{ source('@Storefront/../app/storefront/dist/assets/icon/'~ pack ~'/'~ config_params.iconRight ~'.svg') }}
+                                    {% if config_params.iconRight != null %}
+                                        {{ source('@Storefront/../app/storefront/dist/assets/icon/'~ pack ~'/'~ config_params.iconRight ~'.svg') }}
+                                    {% endif %}
                                 </span>
-                                <span>
+                    <span>
                                     <a class="scop-header-link " href="{{ config_params.textLinkRight }}" target="_blank"> {{  config_params.left }} </a>
                                 </span>
-                            </div>
+                </div>
 
-                        </div>
+            </div>
 
         </div>
     </div>

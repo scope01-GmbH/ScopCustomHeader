@@ -12,4 +12,5 @@ use Swag\PayPal\Util\Lifecycle\InstallUninstall;
 class ScopCustomHeader  extends Plugin
 {
 
+
 }
