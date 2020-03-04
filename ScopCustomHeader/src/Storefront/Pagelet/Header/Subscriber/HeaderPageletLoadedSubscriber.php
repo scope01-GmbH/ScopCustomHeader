@@ -36,7 +36,7 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
     /**
      * @var EntityRepositoryInterface
      */
-    private $mediaRepo;
+    private $mediaRepository;
 
     /**
      * @var LoggingService
@@ -48,12 +48,12 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
      *
      * @param SystemConfigService $systemConfigService
      */
-    public function __construct(SystemConfigService $systemConfigService, MediaService  $mediaService, FileLoader $fileLoader, EntityRepositoryInterface $mediaRepo, LoggerInterface $loggerInterface)
+    public function __construct(SystemConfigService $systemConfigService, MediaService  $mediaService, FileLoader $fileLoader, EntityRepositoryInterface $mediaRepository, LoggerInterface $loggerInterface)
     {
         $this->systemConfigService = $systemConfigService;
         $this->mediaService = $mediaService;
         $this->fileLoader = $fileLoader;
-        $this->mediaRepo = $mediaRepo;
+        $this->mediaRepository = $mediaRepository;
         $this->loggingService = $loggerInterface;
     }
 
@@ -140,7 +140,7 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
     {
         $criteria = new Criteria([$mediaId]);
         $criteria->addAssociation('mediaFolder');
-        return $this->mediaRepo
+        return $this->mediaRepository
             ->search($criteria, $context)
             ->get($mediaId);
     }
