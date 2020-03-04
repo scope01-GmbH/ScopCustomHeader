@@ -28,10 +28,6 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
      */
     private $mediaService;
 
-    /**
-     * @var FileLoader
-     */
-    private $fileLoader;
 
     /**
      * @var EntityRepositoryInterface
@@ -48,11 +44,10 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
      *
      * @param SystemConfigService $systemConfigService
      */
-    public function __construct(SystemConfigService $systemConfigService, MediaService  $mediaService, FileLoader $fileLoader, EntityRepositoryInterface $mediaRepository, LoggerInterface $loggerInterface)
+    public function __construct(SystemConfigService $systemConfigService, MediaService  $mediaService, EntityRepositoryInterface $mediaRepository, LoggerInterface $loggerInterface)
     {
         $this->systemConfigService = $systemConfigService;
         $this->mediaService = $mediaService;
-        $this->fileLoader = $fileLoader;
         $this->mediaRepository = $mediaRepository;
         $this->loggingService = $loggerInterface;
     }
