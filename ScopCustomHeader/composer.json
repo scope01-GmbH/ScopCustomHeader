@@ -6,18 +6,21 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Scope01"
+            "name": "Scope01",
+            "homepage": "https://scope01.com/"
         }
     ],
     "extra": {
         "shopware-plugin-class": "Scop\\ScopCustomHeader\\ScopCustomHeader",
+        "plugin-icon": "src/Resources/config/Scope01Logo.png",
+        "copyright": "(c) by Scope01 GmbH",
         "label": {
-            "de-DE": "Header",
-            "en-GB": "Custom Header"
+            "de-DE": "Info Leiste",
+            "en-GB": "Info Panel"
         },
         "description": {
-            "de-DE": "Custom Header",
-            "en-GB": "Custom Header"
+            "de-DE": "Info Leiste",
+            "en-GB": "Info Panel"
         }
     },
     "autoload": {

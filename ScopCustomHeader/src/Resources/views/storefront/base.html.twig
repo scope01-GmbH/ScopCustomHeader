@@ -8,6 +8,7 @@
             background-color:{{ config_params.background }};
             min-height:{{ config_params.height }};
         }
+
         .custom-header{
             font-size: {{ config_params.textFontSize}};
         }
@@ -15,6 +16,7 @@
         /*IMG BOX*/
         .custom-header .img-wrap{
             transform:translateY(17%);
+            overflow: hidden;
         }
 
         /*IMG (Icon Before text)*/
@@ -41,7 +43,7 @@
 
         /*Text Hover*/
         a.scop-header-link:hover{
-            color: {{ config_params.hover }} !important;
+            color: {{ config_params.hover }} ;
             text-decoration: none;
         }
 
@@ -73,7 +75,7 @@
 {% block base_header %}
     {% if config_params.left or config_params.middle or config_params.right %}
 
-    <div class="custom-header-wrapper {% if config_params.mobileBreakpointDisplay %}hide{% endif %} " style="">
+    <div class="custom-header-wrapper {% if config_params.mobileBreakpointDisplay %}hide{% endif %} " >
         <div class="container">
                         <!--WRAPPER-->
                         <div class="custom-header " style="">
@@ -82,7 +84,7 @@
                             <div class="element scop-text-left">
                                 <span class="icon icon-{{ config_params.iconLeft }}">
                                     {% if config_params.iconLeft != null %}
-                                        <div class="img-wrap" style="overflow: hidden;">
+                                        <div class="img-wrap" >
                                             {% if config_params.imgArray[0] != null %}
                                                 <img src="{{ config_params.imgArray[0] }}" alt="ICON" class="sch-icon">
                                             {% endif %}
@@ -95,7 +97,7 @@
                             </div>
 
                             {#    Middle TEXT #}
-                            <div class="element scop-text-middle" style="">
+                            <div class="element scop-text-middle" >
                                 <span class="icon icon-{{ config_params.iconLeft }}">
 
                                      <div class="img-wrap" style="overflow: hidden;">

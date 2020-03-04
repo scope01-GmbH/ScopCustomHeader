@@ -12,5 +12,11 @@ use Swag\PayPal\Util\Lifecycle\InstallUninstall;
 class ScopCustomHeader  extends Plugin
 {
 
+    public function uninstall(UninstallContext $uninstallContext): void
+    {
+        if ($uninstallContext->keepUserData()) {
+            return;
+        }
+    }
 
 }

@@ -8,33 +8,33 @@
         <input-field>
             <name>height</name>
             <copyable>true</copyable>
-            <label>Bar Size</label>
-            <label lang="de-DE">wie Gross</label>
-            <placeholder>Height number + px Example: 10px</placeholder>
-            <placeholder lang="de-DE">Hohe Zahl + px Example: 10px</placeholder>
-            <helpText>Exmaple Height: 10px</helpText>
-            <helpText lang="de-DE">Hohe Beispiel: 10px</helpText>
+            <label>Panel size</label>
+            <label lang="de-DE">der Leiste Höhe</label>
+            <placeholder>Height number + px. Example: 10px</placeholder>
+            <placeholder lang="de-DE">der Höhe Zahl + px. Example: 10px</placeholder>
+            <helpText>Height input example : 10px</helpText>
+            <helpText lang="de-DE">die Höhe eintragen Beispiel: 10px</helpText>
         </input-field> <!-- Bar Height-->
         <input-field>
             <name>background</name>
             <copyable>true</copyable>
-            <label>Background Color</label>
-            <label lang="de-DE">Hintergrund Farbe</label>
-            <placeholder>Input has to be a color  in HEX format Example : #fffff</placeholder>
+            <label>Background color</label>
+            <label lang="de-DE">Hintergrundfarbe</label>
+            <placeholder>Input has to be a color  in HEX format. Example : #fffff</placeholder>
             <placeholder lang="de-DE">Geben Sie bitte die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
-            <helpText>This color will be the background of the header</helpText>
+            <helpText>This color will define the background-color of the panel</helpText>
             <helpText lang="de-DE">Diese Farbe wird als Hintergrundfarbe verwendet</helpText>
         </input-field> <!-- Background Color-->
 
-        <input-field >
+        <input-field>
             <name>textFontSize</name>
             <copyable>true</copyable>
-            <label>Text Font Size ( number + px)</label>
-            <label lang="de-DE">Schriftgrosse (nur Zahlzeichen)</label>
-            <placeholder>Please insert number + "px" . Example : 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein, z.B 10px</placeholder>
-            <helpText>Font Size insert</helpText>
-            <helpText lang="de-DE">Font Size insert</helpText>
+            <label>Text font-size  ( number + px)</label>
+            <label lang="de-DE">Schrift­grö­ße (Zahlzeichen + px)</label>
+            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
+            <helpText>This font-size will be used for USP1, USP2, USP3 </helpText>
+            <helpText lang="de-DE">Diese Schriftgröße wird für USP1, USP2 und USP3 verwendet.</helpText>
         </input-field> <!-- Font Size-->
         <input-field>
             <name>hover</name>
@@ -43,34 +43,34 @@
             <label lang="de-DE">Hover-Color</label>
             <placeholder>Input has to be a color  in HEX format Example : #fffff</placeholder>
             <placeholder lang="de-DE">Geben Sie bitte die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
-            <helpText>Please insert a color that will be shown on the hover over this text</helpText>
-            <helpText lang="de-DE">Bitte geben Sie eine Farbe ein. Diese Farbe wird das Text haben wann cursor über </helpText>
+            <helpText>Please insert a color that will have the text when the mouse is over it</helpText>
+            <helpText lang="de-DE">Bitte geben Sie eine Farbe ein. Diese Farbe wird der Text haben wann cursor über ihn ist.</helpText>
         </input-field> <!-- Hover Color-->
 
         <input-field type="bool">
             <name>mobileBreakpointDisplay</name>
             <label>Hide on Mobile</label>
-            <label lang="de-DE">Auf Handy die  Info-leiste verstecken</label>
+            <label lang="de-DE">Auf Handy die Info-leiste verstecken</label>
         </input-field> <!--Display on Mobile-->
 
         <input-field>
             <name>textColor</name>
             <copyable>true</copyable>
-            <label>Text-Color</label>
-            <label lang="de-DE">Text-Farbe</label>
-            <placeholder>Input has to be a color  in HEX format Example : #fffff</placeholder>
+            <label>Text-color</label>
+            <label lang="de-DE">Textfarbe</label>
+            <placeholder>Input has to be a color in HEX format. Example: #fffff</placeholder>
             <placeholder lang="de-DE">Geben Sie bitte die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
-            <helpText>Please insert the text color</helpText>
-            <helpText lang="de-DE">Bitte geben Sie eine Farbe ein.</helpText>
+            <helpText>The color for USP1, USP2, USP3 will be defined by this input</helpText>
+            <helpText lang="de-DE">USP1, USP2, USP3 wird die eingegebene Farbe haben.</helpText>
         </input-field>  <!--Text Color-->
 
         <input-field>
             <name>paddingTop</name>
             <copyable>true</copyable>
-            <label>Space Above the Text</label>
+            <label>Space above the text</label>
             <label lang="de-DE">Abstand von oben</label>
-            <placeholder>Please insert number + "px" . Example : 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein, z.B 10px</placeholder>
+            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
             <helpText>
                 This will be configurated for all of the elements
             </helpText>
@@ -81,38 +81,38 @@
         <input-field>
             <name>paddingRight</name>
             <copyable>true</copyable>
-            <label>Space on the right side of the Text</label>
+            <label>Space on the right side of the text</label>
             <label lang="de-DE">Abstand von rechts</label>
-            <placeholder>Please insert number + "px" . Example : 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein, z.B 10px</placeholder>
+            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
             <helpText>
                 This will be configurated for all of the elements
             </helpText>
             <helpText lang="de-DE">
-                Diese Configuration gilt fur alle Elemente.
+                Diese Configuration gilt für alle Elemente.
             </helpText>
         </input-field> <!--Padding Right -->
         <input-field>
             <name>paddingBottom</name>
             <copyable>true</copyable>
-            <label>Space under the Text</label>
+            <label>Space under the text</label>
             <label lang="de-DE">Abstand von unten</label>
-            <placeholder>Please insert number + "px" . Example : 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein, z.B 10px</placeholder>
+            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
             <helpText>
                 This will be configurated for all of the elements
             </helpText>
             <helpText lang="de-DE">
-                Diese Configuration gilt fur alle Elemente.
+                Diese Configuration gilt fur alle Elementen.
             </helpText>
         </input-field> <!--Padding Bottom -->
         <input-field>
             <name>paddingLeft</name>
             <copyable>true</copyable>
-            <label>Space on the left side of  Text</label>
+            <label>Space on the left side of text</label>
             <label lang="de-DE">Abstand von links</label>
             <placeholder>Please insert number + "px" . Example : 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein, z.B 10px</placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
             <helpText>
                 This will be configurated for all of the elements
             </helpText>
@@ -122,7 +122,7 @@
         </input-field> <!--Padding Left -->
 
 
-    </card> <!--General Bar configurations-->
+    </card> <!--General bar configurations-->
 
     <card>
         <title>USP1</title>
@@ -131,23 +131,23 @@
         <input-field>
             <name>left</name>
             <copyable>true</copyable>
-            <label>Text Left</label>
-            <label lang="de-DE">Text Left</label>
-            <placeholder>Text Left</placeholder>
-            <placeholder lang="de-DE">Text Links</placeholder>
+            <label>USP1 text</label>
+            <label lang="de-DE">USP1 text</label>
+            <placeholder>Text Example: We are the best!</placeholder>
+            <placeholder lang="de-DE">Text Beispiel: Wir sind die Beste</placeholder>
             <helpText>This text will be displayed in the left corner</helpText>
             <helpText lang="de-DE">This text will be displayed in the left corner</helpText>
         </input-field> <!-- Text Input Left-->
         <input-field>
             <name>textLinkLeft</name>
             <copyable>true</copyable>
-            <label>Text Link</label>
+            <label>Text link</label>
             <label lang="de-DE">Text Link</label>
-            <placeholder>Text Link Example: https://facebook.com</placeholder>
+            <placeholder>Text link example: https://facebook.com</placeholder>
             <placeholder lang="de-DE">Text Link Beispiel: https://facebook.com</placeholder>
-            <helpText>On click the user will be redirected on this Link</helpText>
-            <helpText lang="de-DE">Ein Link bitte eingeben wo der Kunde mit einem Click auf dem Text umgeleitet</helpText>
-        </input-field> <!-- Text Input Left-->
+            <helpText>On click the user will be redirected on this link</helpText>
+            <helpText lang="de-DE">Ein Link eingeben wo der Kunde mit einem Click auf dem Text umgeleitet wird.</helpText>
+        </input-field> <!-- Text Link Left-->
         <component name="sw-media-field">
             <name>iconLeft</name>
             <label>Upload media or choose one from the media manager</label>
@@ -161,30 +161,31 @@
         <input-field>
             <name>middle</name>
             <copyable>true</copyable>
-            <label>Text Middle</label>
-            <label lang="de-DE">Text Middle</label>
-            <placeholder>Text Middle</placeholder>
-            <placeholder lang="de-DE">Text in die mitte</placeholder>
+            <label>USP2 text</label>
+            <label lang="de-DE">USP2 text</label>
+            <placeholder>Text example: We are the best!</placeholder>
+            <placeholder lang="de-DE">Text Beispiel: Wir sind die Beste</placeholder>
             <helpText>This text will be displayed in the middle</helpText>
             <helpText lang="de-DE">This text will be displayed in the middle</helpText>
         </input-field> <!-- Text Input Middle-->
+
         <input-field>
             <name>textLinkMiddle</name>
             <copyable>true</copyable>
-            <label>Text Link</label>
+            <label>Text link</label>
             <label lang="de-DE">Text Link</label>
-            <placeholder>Text Link Example: https://facebook.com</placeholder>
+            <placeholder>Text link example: https://facebook.com</placeholder>
             <placeholder lang="de-DE">Text Link Beispiel: https://facebook.com</placeholder>
-            <helpText>On click the user will be redirected on this Link</helpText>
-            <helpText lang="de-DE">Ein Link bitte eingeben wo der Kunde mit einem Click auf dem Text umgeleitet</helpText>
-        </input-field> <!-- Link Input Middle-->
+            <helpText>On click the user will be redirected on this link</helpText>
+            <helpText lang="de-DE">Ein Link eingeben wo der Kunde mit einem Click auf dem Text umgeleitet wird.</helpText>
+        </input-field> <!-- Text Link Middle-->
 
         <component name="sw-media-field">
             <name>iconMiddle</name>
             <label>Upload media or choose one from the media manager</label>
         </component>
 
-    </card> <!--Text Middle-->
+    </card> <!--USP2-->
 
     <card>
         <title>USP3</title>
@@ -192,28 +193,29 @@
         <input-field>
             <name>right</name>
             <copyable>true</copyable>
-            <label>Text Right</label>
-            <label lang="de-DE">Text Right</label>
-            <placeholder>Text Right</placeholder>
-            <placeholder lang="de-DE">Text Rechts</placeholder>
-            <helpText>This text will be displayed in the Right corner</helpText>
-            <helpText lang="de-DE">This text will be displayed in the Right corner</helpText>
+            <label>USP3 text</label>
+            <label lang="de-DE">USP3 text</label>
+            <placeholder>Text Example: We are the best!</placeholder>
+            <placeholder lang="de-DE">Text Beispiel: Wir sind die Beste</placeholder>
+            <helpText>This text will be displayed in the right corner</helpText>
+            <helpText lang="de-DE">This text will be displayed in the right corner</helpText>
         </input-field> <!-- Text Input Right-->
+
         <input-field>
             <name>textLinkRight</name>
             <copyable>true</copyable>
-            <label>Text Link</label>
+            <label>Text link</label>
             <label lang="de-DE">Text Link</label>
-            <placeholder>Text Link Example: https://facebook.com</placeholder>
+            <placeholder>Text link example: https://facebook.com</placeholder>
             <placeholder lang="de-DE">Text Link Beispiel: https://facebook.com</placeholder>
-            <helpText>On click the user will be redirected on this Link</helpText>
-            <helpText lang="de-DE">Ein Link bitte eingeben wo der Kunde mit einem Click auf dem Text umgeleitet</helpText>
-        </input-field> <!-- Link Input Right-->
+            <helpText>On click the user will be redirected on this link</helpText>
+            <helpText lang="de-DE">Ein Link eingeben wo der Kunde mit einem Click auf dem Text umgeleitet wird.</helpText>
+        </input-field> <!-- Text Link Middle-->
         <component name="sw-media-field">
             <name>iconRight</name>
             <label>Upload media or choose one from the media manager</label>
         </component>
-    </card> <!--Text Right-->
+    </card> <!--USP3-->
 
     <card>
         <title>Mobile Version</title>
@@ -233,59 +235,59 @@
         <input-field>
             <name>paddingTopMobile</name>
             <copyable>true</copyable>
-            <label>Space Above the Text</label>
+            <label>Space above the text</label>
             <label lang="de-DE">Abstand von oben</label>
-            <placeholder>Please insert number + "px" . Example : 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein, z.B 10px</placeholder>
+            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
             <helpText>
-                This will be configurated for all of the elements in mobile version
+                This will be configurated for all of the elements
             </helpText>
             <helpText lang="de-DE">
-                Diese Configuration gilt fur alle Elemente in Mobile Version.
+                Diese Configuration gilt fur alle Elemente.
             </helpText>
-        </input-field> <!--Padding Top Mobile-->
+        </input-field> <!--Padding Top Mobile -->
         <input-field>
             <name>paddingRightMobile</name>
             <copyable>true</copyable>
-            <label>Space on the right side of the Text</label>
+            <label>Space on the right side of the text</label>
             <label lang="de-DE">Abstand von rechts</label>
-            <placeholder>Please insert number + "px" . Example : 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein, z.B 10px</placeholder>
+            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
             <helpText>
-                This will be configurated for all of the elements in mobile version
+                This will be configurated for all of the elements
             </helpText>
             <helpText lang="de-DE">
-                Diese Configuration gilt fur alle Elemente in Mobile Version.
+                Diese Configuration gilt für alle Elemente.
             </helpText>
-        </input-field> <!--Padding Right Mobile-->
+        </input-field> <!--Padding Right Mobile -->
         <input-field>
             <name>paddingBottomMobile</name>
             <copyable>true</copyable>
-            <label>Space under the Text</label>
+            <label>Space under the text</label>
             <label lang="de-DE">Abstand von unten</label>
-            <placeholder>Please insert number + "px" . Example : 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein, z.B 10px</placeholder>
+            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
             <helpText>
-                This will be configurated for all of the elements in mobile version
+                This will be configurated for all of the elements
             </helpText>
             <helpText lang="de-DE">
-                Diese Configuration gilt fur alle Elemente in Mobile Version.
+                Diese Configuration gilt fur alle Elementen.
             </helpText>
-        </input-field> <!--Padding Bottom Mobile-->
+        </input-field> <!--Padding Bottom Mobile -->
         <input-field>
             <name>paddingLeftMobile</name>
             <copyable>true</copyable>
-            <label>Space on the left side of  Text</label>
+            <label>Space on the left side of text</label>
             <label lang="de-DE">Abstand von links</label>
             <placeholder>Please insert number + "px" . Example : 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein, z.B 10px</placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
             <helpText>
-                This will be configurated for all of the elements in mobile version
+                This will be configurated for all of the elements
             </helpText>
             <helpText lang="de-DE">
-                Diese Configuration gilt fur alle Elemente in Mobile Version.
+                Diese Configuration gilt fur alle Elemente.
             </helpText>
-        </input-field> <!--Padding Left Mobile-->
+        </input-field> <!--Padding Left Mobile -->
 
         <input-field type="bool">
             <name>displayTextLeft</name>
