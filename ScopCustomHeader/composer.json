@@ -1,5 +1,5 @@
 {
-    "name": "swag/scop-custom-header",
+    "name": "Scop/scop-custom-header",
     "description": "Custom Header Shopware 6",
     "version": "v1.0.0",
     "type": "shopware-platform-plugin",
