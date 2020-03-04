@@ -1,6 +1,6 @@
 {
-    "name": "Scop/scop-custom-header",
-    "description": "Custom Header Shopware 6",
+    "name": "scop/scop-custom-header",
+    "description": "This plugin allows you to add a panel with 3 text information on the top of your website",
     "version": "v1.0.0",
     "type": "shopware-platform-plugin",
     "license": "MIT",
