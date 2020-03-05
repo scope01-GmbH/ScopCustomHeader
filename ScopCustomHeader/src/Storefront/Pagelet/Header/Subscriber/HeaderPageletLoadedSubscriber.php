@@ -20,7 +20,6 @@ use Shopware\Storefront\Pagelet\Header\HeaderPageletLoadedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Shopware\Core\Content\Media\MediaService;
-use Shopware\Core\Content\Media\File\FileLoader;
 
 class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
 {
