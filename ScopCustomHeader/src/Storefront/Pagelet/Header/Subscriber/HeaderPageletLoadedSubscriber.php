@@ -1,4 +1,11 @@
 <?php declare(strict_types=1);
+/**
+ * Implemented by scope01 GmbH team https://scope01.com
+ *
+ * @copyright scope01 GmbH https://scope01.com
+ * @license proprietär
+ * @link https://scope01.com
+ */
 
 namespace Scop\ScopCustomHeader\Storefront\Pagelet\Header\Subscriber;
 
@@ -71,7 +78,6 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
      */
     public function HeaderPageletLoadedEvent(HeaderPageletLoadedEvent $event): void
     {
-
         $context = $event->getContext();
 
         // Saving plugin configurations in pluginConfig variable
@@ -92,15 +98,13 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
 
 
         // finding each media path by mediaID
-        foreach($imgArray as $index => $img){
-            if($img != null && (string) trim($img) !== ''){
-
-                if($this->findMediaById($img, $context) instanceof MediaEntity){
+        foreach ($imgArray as $index => $img) {
+            if ($img != null && (string) trim($img) !== '') {
+                if ($this->findMediaById($img, $context) instanceof MediaEntity) {
                     $imgPath  = $this->findMediaById($img, $context)->getUrl();
 
                     // Writing in imgArray the media path instead of mediaID
                     $imgArray[$index] = $imgPath;
-
                 } else {
 
                     // Logging Error if media wasnt found by mediaID
