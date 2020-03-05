@@ -20,7 +20,7 @@ class ScopCustomHeader extends Plugin
 {
     public function uninstall(UninstallContext $uninstallContext): void
     {
-        parent::uninstall($context);
+        parent::uninstall($uninstallContext);
 
         if ($uninstallContext->keepUserData()) {
             return;
