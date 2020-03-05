@@ -19,8 +19,8 @@
             "en-GB": "Info Panel"
         },
         "description": {
-            "de-DE": "Info Leiste",
-            "en-GB": "Info Panel"
+            "de-DE": "Infoleiste Header",
+            "en-GB": "Info Panel Header"
         }
     },
     "autoload": {
