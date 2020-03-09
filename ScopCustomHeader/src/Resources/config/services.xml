@@ -7,7 +7,7 @@
     <services>
         <service id="Scop\ScopCustomHeader\Storefront\Pagelet\Header\Subscriber\HeaderPageletLoadedSubscriber">
             <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
-            <argument type="service" id="Shopware\Core\Content\Media\MediaService"/>
+            <argument type="service" id="media.repository"/>
             <argument type="service" id="monolog.logger"/>
             <tag name="kernel.event_subscriber"/>
         </service>
