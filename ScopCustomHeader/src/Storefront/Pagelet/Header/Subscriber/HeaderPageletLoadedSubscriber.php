@@ -19,7 +19,6 @@ use Shopware\Core\Framework\Struct\ArrayEntity;
 use Shopware\Storefront\Pagelet\Header\HeaderPageletLoadedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
-use Shopware\Core\Content\Media\MediaService;
 
 /**
  * Class HeaderPageletLoadedSubscriber
@@ -34,12 +33,6 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
     private $systemConfigService;
 
     /**
-     * @var MediaService
-     */
-    private $mediaService;
-
-
-    /**
      * @var EntityRepositoryInterface
      */
     private $mediaRepository;
@@ -47,23 +40,22 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
     /**
      * @var LoggingService
      */
-    private $loggingService;
+    private $loggerInterface;
 
     /**
      * HeaderPageletLoadedSubscriber constructor.
-     *
      * @param SystemConfigService $systemConfigService
+     * @param EntityRepositoryInterface $mediaRepository
+     * @param LoggerInterface $loggerInterface
      */
     public function __construct(
         SystemConfigService $systemConfigService,
-        MediaService $mediaService,
         EntityRepositoryInterface $mediaRepository,
         LoggerInterface $loggerInterface
     ) {
         $this->systemConfigService = $systemConfigService;
-        $this->mediaService = $mediaService;
         $this->mediaRepository = $mediaRepository;
-        $this->loggingService = $loggerInterface;
+        $this->loggerInterface = $loggerInterface;
     }
 
     /**
@@ -78,10 +70,7 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * Subscriber to HeaderLoading Event (It is dispatched when the header template is build)
-     *
      * @param HeaderPageletLoadedEvent $event
-     * @throws \Shopware\Core\Framework\DataAbstractionLayer\Exception\InconsistentCriteriaIdsException
      */
     public function HeaderPageletLoadedEvent(HeaderPageletLoadedEvent $event): void
     {
@@ -104,8 +93,7 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
             $mediaIdMiddle
         ];
 
-
-        //
+        // Looping through the array and replacing the id with image-path
         foreach ($imgArray as $index => $img) {
             if ($img != null && (string)trim($img) !== '') {
                 if ($this->findMediaById($img, $context) instanceof MediaEntity) {
@@ -120,8 +108,8 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
                     $logError = "MEDIA NOT FOUND ERROR -> " . "Failed to find Media Path for Media ID: " . $img . " in " . $logError . "/HeaderPageletLoadedSubscriber.php" . "\n";
                     $logInfo = "Check if selected image exists in Media";
 
-                    $this->loggingService->error($logError);
-                    $this->loggingService->info($logInfo);
+                    $this->loggerInterface->error($logError);
+                    $this->loggerInterface->info($logInfo);
                 }
             }
         }
@@ -135,14 +123,10 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
 
 
     /**
-     * The function find the media by ID
-     *
      * @param string $mediaId
      * @param Context $context
-     * @return MediaEntity
-     * @throws \Shopware\Core\Framework\DataAbstractionLayer\Exception\InconsistentCriteriaIdsException
+     * @return MediaEntity|null
      */
-
     private function findMediaById(string $mediaId, Context $context): ?MediaEntity
     {
         $criteria = new Criteria([$mediaId]);

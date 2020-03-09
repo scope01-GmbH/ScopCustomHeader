@@ -13,7 +13,7 @@
     ],
     "extra": {
         "shopware-plugin-class": "Scop\\ScopCustomHeader\\ScopCustomHeader",
-        "plugin-icon": "src/Resources/config/Scope01Logo.png",
+        "plugin-icon": "src/Resources/config/Logo.png",
         "copyright": "(c) scope01 GmbH",
         "label": {
             "de-DE": "Infoleiste Header",

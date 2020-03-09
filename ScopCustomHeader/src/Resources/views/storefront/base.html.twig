@@ -55,20 +55,20 @@
             }
         }
     </style>
-    {{ parent() }}
+{{ parent() }}
 {% endblock %}
 
 {% block base_header %}
     {% if config_params.left or config_params.middle or config_params.right %}
 
-        <div class="custom-header-wrapper {% if config_params.mobileBreakpointDisplay %}hide{% endif %} ">
+    <div class="custom-header-wrapper {% if config_params.mobileBreakpointDisplay %}hide{% endif %} ">
 
-            {# Wrapping the content of the header in container #}
+        {# Wrapping the content of the header in container #}
 
-            <div class="container">
-                <div class="custom-header ">
-                    <!--LEFT TEXT-->
-                    <div class="element scop-text-left">
+        <div class="container">
+            <div class="custom-header ">
+                <!--LEFT TEXT-->
+                <div class="element scop-text-left">
                                 <span class="icon">
                                     {% if config_params.iconLeft != null %}
                                         <div class="img-wrap" >
@@ -78,13 +78,13 @@
                                         </div>
                                     {% endif %}
                                 </span>
-                        <span>
+                    <span>
                                     <a class="scop-header-link " href="{{ config_params.textLinkLeft }}" target="_blank"> {{  config_params.left }} </a>
                                 </span>
-                    </div>
+                </div>
 
-                    {#    Middle TEXT #}
-                    <div class="element scop-text-middle">
+                {#    Middle TEXT #}
+                <div class="element scop-text-middle">
                                 <span class="icon">
                                      <div class="img-wrap">
                                          {% if config_params.imgArray[1] != null %}
@@ -92,13 +92,13 @@
                                          {% endif %}
                                      </div>
                                 </span>
-                        <span>
+                    <span>
                                     <a class="scop-header-link " href="{{ config_params.textLinkMiddle }}" target="_blank"> {{  config_params.middle }} </a>
                                 </span>
-                    </div>
+                </div>
 
-                    {#    Right TEXT #}
-                    <div class="element scop-text-right">
+                {#    Right TEXT #}
+                <div class="element scop-text-right">
                                 <span class="icon">
                                     <div class="img-wrap">
                                         {% if config_params.imgArray[2] != null %}
@@ -106,15 +106,15 @@
                                         {% endif %}
                                     </div>
                                 </span>
-                        <span>
+                    <span>
                                     <a class="scop-header-link " href="{{ config_params.textLinkRight }}" target="_blank"> {{  config_params.right }} </a>
                                 </span>
-                    </div>
-
                 </div>
-            </div>
 
+            </div>
         </div>
+
+    </div>
     {% endif %}
     {{ parent() }}
 {% endblock %}
