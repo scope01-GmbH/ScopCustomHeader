@@ -6,17 +6,18 @@
     "license": "proprietary",
     "authors": [
         {
-            "name": "Scope01",
+            "name": "scope01 GmbH",
+            "role": "Manufacturer",
             "homepage": "https://scope01.com/"
         }
     ],
     "extra": {
         "shopware-plugin-class": "Scop\\ScopCustomHeader\\ScopCustomHeader",
         "plugin-icon": "src/Resources/config/Scope01Logo.png",
-        "copyright": "(c) by Scope01 GmbH",
+        "copyright": "(c) scope01 GmbH",
         "label": {
-            "de-DE": "Info Leiste",
-            "en-GB": "Info Panel"
+            "de-DE": "Infoleiste Header",
+            "en-GB": "Info Panel Header"
         },
         "description": {
             "de-DE": "Infoleiste Header",

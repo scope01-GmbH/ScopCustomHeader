@@ -50,8 +50,12 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
      *
      * @param SystemConfigService $systemConfigService
      */
-    public function __construct(SystemConfigService $systemConfigService, MediaService  $mediaService, EntityRepositoryInterface $mediaRepository, LoggerInterface $loggerInterface)
-    {
+    public function __construct(
+        SystemConfigService $systemConfigService,
+        MediaService $mediaService,
+        EntityRepositoryInterface $mediaRepository,
+        LoggerInterface $loggerInterface
+    ) {
         $this->systemConfigService = $systemConfigService;
         $this->mediaService = $mediaService;
         $this->mediaRepository = $mediaRepository;
@@ -64,7 +68,7 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            // subscribing to HeaderPageLetLoadedEvent
+            // Subscribing to HeaderPageLetLoadedEvent
             HeaderPageletLoadedEvent::class => 'HeaderPageletLoadedEvent',
         ];
     }
@@ -89,6 +93,7 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
         $mediaIdRight = $this->systemConfigService->get('ScopCustomHeader.config.iconRight');
         $mediaIdMiddle = $this->systemConfigService->get('ScopCustomHeader.config.iconMiddle');
 
+        // inserts the iconID in an array to loop through
         $imgArray = [
             $mediaIdLeft,
             $mediaIdRight,
@@ -96,20 +101,20 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
         ];
 
 
-        // finding each media path by mediaID
+        // 
         foreach ($imgArray as $index => $img) {
-            if ($img != null && (string) trim($img) !== '') {
+            if ($img != null && (string)trim($img) !== '') {
                 if ($this->findMediaById($img, $context) instanceof MediaEntity) {
-                    $imgPath  = $this->findMediaById($img, $context)->getUrl();
+                    $imgPath = $this->findMediaById($img, $context)->getUrl();
 
                     // Writing in imgArray the media path instead of mediaID
                     $imgArray[$index] = $imgPath;
                 } else {
 
                     // Logging Error if media wasnt found by mediaID
-                    $logError =  new \DirectoryIterator(dirname(__DIR__));
-                    $logError = "MEDIA NOT FOUND ERROR -> " .  "Failed to find Media Path for Media ID: " . $img . " in " . $logError . "/HeaderPageletLoadedSubscriber.php" . "\n";
-                    $logInfo  = "Check if selected image exists in Media";
+                    $logError = new \DirectoryIterator(dirname(__DIR__));
+                    $logError = "MEDIA NOT FOUND ERROR -> " . "Failed to find Media Path for Media ID: " . $img . " in " . $logError . "/HeaderPageletLoadedSubscriber.php" . "\n";
+                    $logInfo = "Check if selected image exists in Media";
 
                     $this->loggingService->error($logError);
                     $this->loggingService->info($logInfo);

@@ -1,7 +1,8 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
-{#<!-- CUSTOM STYLES -->#}
+
 {% set config_params = page.header.extensions['ScopCH'] %}
 
+{# Custom styles #}
 {% block base_head %}
     <style>
         .custom-header-wrapper{
@@ -13,19 +14,6 @@
             font-size: {{ config_params.textFontSize}};
         }
 
-        /*IMG BOX*/
-        .custom-header .img-wrap{
-            transform:translateY(17%);
-            overflow: hidden;
-        }
-
-        /*IMG (Icon Before text)*/
-        .custom-header .img-wrap .sch-icon{
-            display: block;
-            width:100%;
-            height:100%;
-        }
-
         /*Elements Box*/
         .custom-header-wrapper .custom-header .element{
             padding-top: {{ config_params.paddingTop }};
@@ -34,20 +22,18 @@
             padding-left: {{ config_params.paddingLeft }};
         }
 
-        /* All Texts*/
-        .custom-header-warpper .custom-header .element .scop-header-link{
+        /* All Texts */
+        .custom-header-wrapper .custom-header .element .scop-header-link{
             color: {{ config_params.textColor }};
-            transition: .3s;
             font-size: {{ config_params.textFontSize }};
         }
 
-        /*Text Hover*/
+        /* Text Hover */
         a.scop-header-link:hover{
             color: {{ config_params.hover }} ;
-            text-decoration: none;
         }
 
-        /*Mobile version*/
+        /* Mobile version */
         @media screen and (max-width: 768px){
             .custom-header-wrapper .custom-header .element{
                 padding-top: {{ config_params.paddingTopMobile }};
@@ -82,7 +68,7 @@
 
                                 <!--LEFT TEXT-->
                             <div class="element scop-text-left">
-                                <span class="icon icon-{{ config_params.iconLeft }}">
+                                <span class="icon">
                                     {% if config_params.iconLeft != null %}
                                         <div class="img-wrap" >
                                             {% if config_params.imgArray[0] != null %}
@@ -98,9 +84,9 @@
 
                             {#    Middle TEXT #}
                             <div class="element scop-text-middle" >
-                                <span class="icon icon-{{ config_params.iconLeft }}">
+                                <span class="icon">
 
-                                     <div class="img-wrap" style="overflow: hidden;">
+                                     <div class="img-wrap">
                                          {% if config_params.imgArray[1] != null %}
                                              <img src="{{ config_params.imgArray[1] }}" alt="ICON" class="sch-icon">
                                          {% endif %}
@@ -113,8 +99,8 @@
 
                             {#    Right TEXT #}
                             <div class="element scop-text-right" style="">
-                                <span class="icon icon-{{ config_params.iconLeft }}">
-                                    <div class="img-wrap" style="overflow: hidden;">
+                                <span class="icon">
+                                    <div class="img-wrap">
                                         {% if config_params.imgArray[2] != null %}
                                             <img src="{{ config_params.imgArray[2] }}" alt="ICON" class="sch-icon">
                                         {% endif %}
