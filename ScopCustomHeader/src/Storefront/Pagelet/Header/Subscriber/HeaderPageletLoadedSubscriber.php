@@ -44,6 +44,7 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
 
     /**
      * HeaderPageletLoadedSubscriber constructor.
+     *
      * @param SystemConfigService $systemConfigService
      * @param EntityRepositoryInterface $mediaRepository
      * @param LoggerInterface $loggerInterface
