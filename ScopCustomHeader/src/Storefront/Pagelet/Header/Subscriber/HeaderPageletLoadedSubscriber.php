@@ -96,7 +96,7 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
 
         // Looping through the array and replacing the id with image-path
         foreach ($imgArray as $index => $img) {
-            if ($img != null && (string)trim($img) !== '') {
+            if ($img !== null && (string)trim($img) !== '') {
                 if ($this->findMediaById($img, $context) instanceof MediaEntity) {
                     $imgPath = $this->findMediaById($img, $context)->getUrl();
 
