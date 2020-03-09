@@ -1,9 +1,4 @@
 .custom-header-wrapper{
-    @media(max-width: 768px){
-        &.hide{
-            display: none;
-        }
-    }
 
     .custom-header{
         width:100%;
@@ -25,8 +20,8 @@
                 height:100%;
             }
         }
-
     }
+
     .scop-info-content{
         word-wrap: break-word;
         word-break: break-all;
@@ -35,7 +30,12 @@
 }
 
 @include media-breakpoint-up(md) {
-    .custom-header-wrapper .custom-header{
-        display: flex;
+    .custom-header-wrapper{
+        &.hide{
+            display: none;
+        }
+        .custom-header{
+            display: flex;
+        }
     }
 }
