@@ -21,6 +21,10 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Shopware\Core\Content\Media\MediaService;
 
+/**
+ * Class HeaderPageletLoadedSubscriber
+ * @package Scop\ScopCustomHeader\Storefront\Pagelet\Header\Subscriber
+ */
 class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
 {
 
@@ -101,7 +105,7 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
         ];
 
 
-        // 
+        //
         foreach ($imgArray as $index => $img) {
             if ($img != null && (string)trim($img) !== '') {
                 if ($this->findMediaById($img, $context) instanceof MediaEntity) {

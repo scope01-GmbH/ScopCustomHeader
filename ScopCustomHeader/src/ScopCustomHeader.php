@@ -13,6 +13,10 @@ namespace Scop\ScopCustomHeader;
 use Shopware\Core\Framework\Plugin;
 use Shopware\Core\Framework\Plugin\Context\UninstallContext;
 
+/**
+ * Class ScopCustomHeader
+ * @package Scop\ScopCustomHeader
+ */
 class ScopCustomHeader extends Plugin
 {
     /**
