@@ -126,7 +126,7 @@
 
     <card>
         <title>USP1</title>
-        <title lang="de-DE">Linke Text Konfiguration</title>
+        <title lang="de-DE">USP1</title>
 
         <input-field>
             <name>left</name>
