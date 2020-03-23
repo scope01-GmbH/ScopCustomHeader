@@ -8,22 +8,22 @@
         <input-field>
             <name>height</name>
             <copyable>true</copyable>
-            <label>Panel size</label>
-            <label lang="de-DE">der Leiste Höhe</label>
-            <placeholder>Height number + px. Example: 10px</placeholder>
-            <placeholder lang="de-DE">der Höhe Zahl + px. Example: 10px</placeholder>
-            <helpText>Height input example : 10px</helpText>
-            <helpText lang="de-DE">die Höhe eintragen Beispiel: 10px</helpText>
+            <label>Height of the bar in px</label>
+            <label lang="de-DE">Höhe der Leiste in px</label>
+            <placeholder>Enter the height in the following format. Example: 10px</placeholder>
+            <placeholder lang="de-DE">Geben Sie die Höhe im folgenden Format ein. Beispiel: 10px</placeholder>
+            <helpText>Enter the height in the following format: 10px</helpText>
+            <helpText lang="de-DE">Geben Sie die Höhe im folgenden Format ein: 10px</helpText>
         </input-field> <!-- Bar Height-->
         <input-field>
             <name>background</name>
             <copyable>true</copyable>
             <label>Background color</label>
             <label lang="de-DE">Hintergrundfarbe</label>
-            <placeholder>Input has to be a color  in HEX format. Example : #fffff</placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
-            <helpText>This color will define the background-color of the panel</helpText>
-            <helpText lang="de-DE">Diese Farbe wird als Hintergrundfarbe verwendet</helpText>
+            <placeholder>Enter the color in HEX format. Example: #fffff</placeholder>
+            <placeholder lang="de-DE">Geben Sie die Farbe im HEX Format ein. Beispiel: #fffff </placeholder>
+            <helpText>This color will define the background-color of the panel.</helpText>
+            <helpText lang="de-DE">Diese Farbe wird als Hintergrundfarbe verwendet.</helpText>
         </input-field> <!-- Background Color-->
 
         <input-field>
@@ -31,8 +31,8 @@
             <copyable>true</copyable>
             <label>Text font-size  ( number + px)</label>
             <label lang="de-DE">Schrift­grö­ße (Zahlzeichen + px)</label>
-            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein Nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
+            <placeholder>Please insert the character size + "px". Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Schriftgröße + "px" ein. Beispiel: 10px</placeholder>
             <helpText>This font-size will be used for USP1, USP2, USP3 </helpText>
             <helpText lang="de-DE">Diese Schriftgröße wird für USP1, USP2 und USP3 verwendet.</helpText>
         </input-field> <!-- Font Size-->
@@ -41,16 +41,16 @@
             <copyable>true</copyable>
             <label>Hover-Color</label>
             <label lang="de-DE">Hover-Color</label>
-            <placeholder>Input has to be a color  in HEX format Example : #fffff</placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
-            <helpText>Please insert a color that will have the text when the mouse is over it</helpText>
-            <helpText lang="de-DE">Bitte geben Sie eine Farbe ein. Diese Farbe wird der Text haben wann cursor über ihn ist.</helpText>
+            <placeholder>Enter the color in HEX format. Example: #fffff</placeholder>
+            <placeholder lang="de-DE">Geben Sie  die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
+            <helpText>Please enter a color. This color is used for the hover over the text.</helpText>
+            <helpText lang="de-DE">Bitte geben Sie eine Farbe ein. Diese Farbe wird für den Hover über den Text verwendet.</helpText>
         </input-field> <!-- Hover Color-->
 
         <input-field type="bool">
             <name>mobileBreakpointDisplay</name>
-            <label>Hide on Mobile</label>
-            <label lang="de-DE">Auf Handy die Info-leiste verstecken</label>
+            <label>Hide the info bar in the mobile version.</label>
+            <label lang="de-DE">In der mobilen Version die Info-leiste verstecken.</label>
         </input-field> <!--Display on Mobile-->
 
         <input-field>
@@ -58,10 +58,10 @@
             <copyable>true</copyable>
             <label>Text-color</label>
             <label lang="de-DE">Textfarbe</label>
-            <placeholder>Input has to be a color in HEX format. Example: #fffff</placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
-            <helpText>The color for USP1, USP2, USP3 will be defined by this input</helpText>
-            <helpText lang="de-DE">USP1, USP2, USP3 wird die eingegebene Farbe haben.</helpText>
+            <placeholder>Enter the color in HEX format. Example: #fffff</placeholder>
+            <placeholder lang="de-DE">Geben Sie  die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
+            <helpText>Here you define the text color for USP1, USP2, USP3.</helpText>
+            <helpText lang="de-DE">Hier definieren Sie die Textfarbe für USP1, USP2, USP3.</helpText>
         </input-field>  <!--Text Color-->
 
         <input-field>
@@ -69,10 +69,10 @@
             <copyable>true</copyable>
             <label>Space above the text</label>
             <label lang="de-DE">Abstand von oben</label>
-            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
+            <placeholder>Please insert number + "px". Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand in px ein. Beispiel: 10px</placeholder>
             <helpText>
-                This will be configurated for all of the elements
+                This will be configurated for all of the elements.
             </helpText>
             <helpText lang="de-DE">
                 Diese Configuration gilt fur alle Elemente.
@@ -83,10 +83,10 @@
             <copyable>true</copyable>
             <label>Space on the right side of the text</label>
             <label lang="de-DE">Abstand von rechts</label>
-            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
+            <placeholder>Please insert number + "px". Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand in px ein. Beispiel: 10px</placeholder>
             <helpText>
-                This will be configurated for all of the elements
+                This will be configurated for all of the elements.
             </helpText>
             <helpText lang="de-DE">
                 Diese Configuration gilt für alle Elemente.
@@ -98,9 +98,9 @@
             <label>Space under the text</label>
             <label lang="de-DE">Abstand von unten</label>
             <placeholder>Please insert number + "px" . Example: 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand in px ein. Beispiel: 10px</placeholder>
             <helpText>
-                This will be configurated for all of the elements
+                This will be configurated for all of the elements.
             </helpText>
             <helpText lang="de-DE">
                 Diese Configuration gilt fur alle Elementen.
@@ -112,9 +112,9 @@
             <label>Space on the left side of text</label>
             <label lang="de-DE">Abstand von links</label>
             <placeholder>Please insert number + "px" . Example : 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand in px ein. Beispiel: 10px.</placeholder>
             <helpText>
-                This will be configurated for all of the elements
+                This will be configurated for all of the elements.
             </helpText>
             <helpText lang="de-DE">
                 Diese Configuration gilt fur alle Elemente.
@@ -132,21 +132,21 @@
             <name>left</name>
             <copyable>true</copyable>
             <label>USP1 text</label>
-            <label lang="de-DE">USP1 text</label>
+            <label lang="de-DE">USP1 Text</label>
             <placeholder>Text Example: We are the best!</placeholder>
-            <placeholder lang="de-DE">Text Beispiel: Wir sind die Beste</placeholder>
-            <helpText>This text will be displayed in the left corner</helpText>
-            <helpText lang="de-DE">This text will be displayed in the left corner</helpText>
+            <placeholder lang="de-DE">Text Beispiel: Wir sind die Besten!</placeholder>
+            <helpText>This text will be displayed in the left corner.</helpText>
+            <helpText lang="de-DE">USP 1 wird links angezeigt.</helpText>
         </input-field> <!-- Text Input Left-->
         <input-field>
             <name>textLinkLeft</name>
             <copyable>true</copyable>
-            <label>Text link</label>
-            <label lang="de-DE">Text Link</label>
-            <placeholder>Text link example: https://facebook.com</placeholder>
-            <placeholder lang="de-DE">Text Link Beispiel: https://facebook.com</placeholder>
-            <helpText>On click the user will be redirected on this link</helpText>
-            <helpText lang="de-DE">Ein Link eingeben wo der Kunde mit einem Click auf dem Text umgeleitet wird.</helpText>
+            <label>USP1 link</label>
+            <label lang="de-DE">USP1 Link</label>
+            <placeholder>Link example: https://facebook.com</placeholder>
+            <placeholder lang="de-DE">Link Beispiel: https://facebook.com</placeholder>
+            <helpText>You can enter the link for the USP1.</helpText>
+            <helpText lang="de-DE">Hier kann die Verlinkung für USP1 eingegeben werden.</helpText>
         </input-field> <!-- Text Link Left-->
         <component name="sw-media-field">
             <name>iconLeft</name>
@@ -162,22 +162,22 @@
             <name>middle</name>
             <copyable>true</copyable>
             <label>USP2 text</label>
-            <label lang="de-DE">USP2 text</label>
+            <label lang="de-DE">USP2 Text</label>
             <placeholder>Text example: We are the best!</placeholder>
             <placeholder lang="de-DE">Text Beispiel: Wir sind die Beste</placeholder>
-            <helpText>This text will be displayed in the middle</helpText>
-            <helpText lang="de-DE">This text will be displayed in the middle</helpText>
+            <helpText>This text will be displayed in the middle.</helpText>
+            <helpText lang="de-DE">USP 2 wird mittig angezeigt.</helpText>
         </input-field> <!-- Text Input Middle-->
 
         <input-field>
             <name>textLinkMiddle</name>
             <copyable>true</copyable>
-            <label>Text link</label>
-            <label lang="de-DE">Text Link</label>
+            <label>USP2 Link</label>
+            <label lang="de-DE">USP2 Link</label>
             <placeholder>Text link example: https://facebook.com</placeholder>
-            <placeholder lang="de-DE">Text Link Beispiel: https://facebook.com</placeholder>
-            <helpText>On click the user will be redirected on this link</helpText>
-            <helpText lang="de-DE">Ein Link eingeben wo der Kunde mit einem Click auf dem Text umgeleitet wird.</helpText>
+            <placeholder lang="de-DE">Link Beispiel: https://facebook.com</placeholder>
+            <helpText>You can enter the link for the USP2.</helpText>
+            <helpText lang="de-DE">Hier kann die Verlinkung für USP2 eingegeben werden.</helpText>
         </input-field> <!-- Text Link Middle-->
 
         <component name="sw-media-field">
@@ -204,12 +204,12 @@
         <input-field>
             <name>textLinkRight</name>
             <copyable>true</copyable>
-            <label>Text link</label>
-            <label lang="de-DE">Text Link</label>
-            <placeholder>Text link example: https://facebook.com</placeholder>
-            <placeholder lang="de-DE">Text Link Beispiel: https://facebook.com</placeholder>
-            <helpText>On click the user will be redirected on this link</helpText>
-            <helpText lang="de-DE">Ein Link eingeben wo der Kunde mit einem Click auf dem Text umgeleitet wird.</helpText>
+            <label>USP3 link</label>
+            <label lang="de-DE">USP3 Link</label>
+            <placeholder>Link example: https://facebook.com</placeholder>
+            <placeholder lang="de-DE">Link Beispiel: https://facebook.com</placeholder>
+            <helpText>You can enter the link for the USP3.</helpText>
+            <helpText lang="de-DE">Hier kann die Verlinkung für USP3 eingegeben werden.</helpText>
         </input-field> <!-- Text Link Middle-->
         <component name="sw-media-field">
             <name>iconRight</name>
@@ -224,10 +224,10 @@
         <input-field >
             <name>textFontSizeMobile</name>
             <copyable>true</copyable>
-            <label>Text Font Size ( number + px)</label>
-            <label lang="de-DE">Schriftgrosse (nur Zahlzeichen)</label>
-            <placeholder>Please insert number + "px" . Example : 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein, z.B 10px</placeholder>
+            <label>Text Font Size</label>
+            <label lang="de-DE">Schriftgrosse</label>
+            <placeholder>Please insert number + "px". Example : 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte die Schriftgröße ein. Beispiel: 10px</placeholder>
             <helpText>Font Size insert</helpText>
             <helpText lang="de-DE">Font Size insert</helpText>
         </input-field> <!-- Font Size-->
@@ -237,10 +237,10 @@
             <copyable>true</copyable>
             <label>Space above the text</label>
             <label lang="de-DE">Abstand von oben</label>
-            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
+            <placeholder>Please insert number + "px". Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand in px ein. Beispiel: 10px</placeholder>
             <helpText>
-                This will be configurated for all of the elements
+                This will be configurated for all of the elements.
             </helpText>
             <helpText lang="de-DE">
                 Diese Configuration gilt fur alle Elemente.
@@ -251,10 +251,10 @@
             <copyable>true</copyable>
             <label>Space on the right side of the text</label>
             <label lang="de-DE">Abstand von rechts</label>
-            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
+            <placeholder>Please insert number + "px". Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand in px ein. Beispiel: 10px</placeholder>
             <helpText>
-                This will be configurated for all of the elements
+                This will be configurated for all of the elements.
             </helpText>
             <helpText lang="de-DE">
                 Diese Configuration gilt für alle Elemente.
@@ -265,13 +265,13 @@
             <copyable>true</copyable>
             <label>Space under the text</label>
             <label lang="de-DE">Abstand von unten</label>
-            <placeholder>Please insert number + "px" . Example: 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
+            <placeholder>Please insert number + "px". Example: 10px </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand in px ein. Beispiel: 10px</placeholder>
             <helpText>
-                This will be configurated for all of the elements
+                This will be configurated for all of the elements.
             </helpText>
             <helpText lang="de-DE">
-                Diese Configuration gilt fur alle Elementen.
+                Diese Configuration gilt fur alle Elemente.
             </helpText>
         </input-field> <!--Padding Bottom Mobile -->
         <input-field>
@@ -279,10 +279,10 @@
             <copyable>true</copyable>
             <label>Space on the left side of text</label>
             <label lang="de-DE">Abstand von links</label>
-            <placeholder>Please insert number + "px" . Example : 10px </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein nummer + "px" am Ende ein. Beispiel: 10px</placeholder>
+            <placeholder>Please insert number + "px". Example: 10px</placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand in px ein. Beispiel: 10px</placeholder>
             <helpText>
-                This will be configurated for all of the elements
+                This will be configurated for all of the elements.
             </helpText>
             <helpText lang="de-DE">
                 Diese Configuration gilt fur alle Elemente.
@@ -291,18 +291,18 @@
 
         <input-field type="bool">
             <name>displayTextLeft</name>
-            <label>Display USP1</label>
-            <label lang="de-DE">Anzeigen USP1</label>
+            <label>Display USP1?</label>
+            <label lang="de-DE">USP1 anzeigen?</label>
         </input-field>
         <input-field type="bool">
             <name>displayTextMiddle</name>
-            <label>Display USP2</label>
-            <label lang="de-DE">Anzeigen USP2</label>
+            <label>Display USP2?</label>
+            <label lang="de-DE">USP2 anzeigen?</label>
         </input-field>
         <input-field type="bool">
             <name>displayTextRight</name>
             <label>Display USP3</label>
-            <label lang="de-DE">Anzeigen USP3</label>
+            <label lang="de-DE">USP3 anzeigen?</label>
         </input-field>
 
     </card> <!--Bar mobile configurations-->
