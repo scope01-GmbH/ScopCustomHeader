@@ -5,6 +5,7 @@
 {# Custom styles #}
 {% block base_head %}
     <style>
+
         {% if config_params.background or config_params.height  %}
         .custom-header-wrapper{
         {% if config_params.background  %}
@@ -58,13 +59,20 @@
 
         /* Text Hover */
         {% if config_params.hover  %}
-        a.scop-header-link:hover{
-            color: {{ config_params.hover }} ;
+          a.scop-header-link:hover{
+            color: {{ config_params.hover }} !important;
         }
         {% endif %}
         /* Mobile version */
 
         @media screen and (max-width: 768px){
+
+        {% if config_params.mobileBreakpointDisplay %}
+            .custom-header-wrapper{
+                display: none;
+            }
+        {% endif %}
+
 
         {% if config_params.paddingTopMobile or config_params.paddingRightMobile or config_params.paddingBottomMobile or config_params.paddingLeftMobile %}
             .custom-header-wrapper .custom-header .element{
@@ -104,13 +112,13 @@
         }
     </style>
     {{ parent() }}
+
 {% endblock %}
 
 {% block base_header %}
     {% if config_params.left or config_params.middle or config_params.right %}
 
-        <div class="custom-header-wrapper {% if config_params.mobileBreakpointDisplay %}hide{% endif %} ">
-
+        <div class="custom-header-wrapper  ">
             {# Wrapping the content of the header in container #}
 
             <div class="container">

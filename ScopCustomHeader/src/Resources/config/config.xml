@@ -8,8 +8,8 @@
         <input-field type="int">
             <name>height</name>
             <copyable>true</copyable>
-            <label>Height of the bar </label>
-            <label lang="de-DE">Höhe der Leiste </label>
+            <label>Height of the bar (in px) </label>
+            <label lang="de-DE">Höhe der Leiste (in px) </label>
             <placeholder>Enter the height in the following format. Example: 10</placeholder>
             <placeholder lang="de-DE">Geben Sie die Höhe im folgenden Format ein. Beispiel: 10</placeholder>
             <helpText>Enter the height in the following format: 10</helpText>
@@ -29,10 +29,10 @@
         <input-field type="int">
             <name>textFontSize</name>
             <copyable>true</copyable>
-            <label>Text font-size</label>
-            <label lang="de-DE">Schrift­grö­ße (Zahlzeichen)</label>
+            <label>Font size (in px)</label>
+            <label lang="de-DE">Schrift­grö­ße (in px)</label>
             <placeholder>Please insert the character size . Example: 10 </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein Schriftgröße . Beispiel: 10</placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Schriftgröße. Beispiel: 10</placeholder>
             <helpText>This font-size will be used for USP1, USP2, USP3 </helpText>
             <helpText lang="de-DE">Diese Schriftgröße wird für USP1, USP2 und USP3 verwendet.</helpText>
         </input-field> <!-- Font Size-->
@@ -41,26 +41,20 @@
             <name>hover</name>
             <copyable>true</copyable>
             <label>Hover-Color</label>
-            <label lang="de-DE">Hover-Color</label>
+            <label lang="de-DE">Hover Farbe</label>
             <placeholder>Enter the color in HEX format. Example: #fffff</placeholder>
-            <placeholder lang="de-DE">Geben Sie  die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
+            <placeholder lang="de-DE">Geben Sie die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
             <helpText>Please enter a color. This color is used for the hover over the text.</helpText>
             <helpText lang="de-DE">Bitte geben Sie eine Farbe ein. Diese Farbe wird für den Hover über den Text verwendet.</helpText>
         </input-field> <!-- Hover Color-->
 
-        <input-field type="bool">
-            <name>mobileBreakpointDisplay</name>
-            <label>Hide the info bar in the mobile version.</label>
-            <label lang="de-DE">In der mobilen Version die Info-leiste verstecken.</label>
-        </input-field> <!--Display on Mobile-->
-
         <input-field>
             <name>textColor</name>
             <copyable>true</copyable>
-            <label>Text-color</label>
+            <label>Text color</label>
             <label lang="de-DE">Textfarbe</label>
-            <placeholder>Enter the color in HEX format. Example: #fffff</placeholder>
-            <placeholder lang="de-DE">Geben Sie  die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
+            <placeholder>Enter the color in HEX format. Example: #ffffff</placeholder>
+            <placeholder lang="de-DE">Geben Sie  die Farbe in HEX Format ein. Beispiel: #ffffff </placeholder>
             <helpText>Here you define the text color for USP1, USP2, USP3.</helpText>
             <helpText lang="de-DE">Hier definieren Sie die Textfarbe für USP1, USP2, USP3.</helpText>
         </input-field>  <!--Text Color-->
@@ -68,57 +62,57 @@
         <input-field type="int">
             <name>paddingTop</name>
             <copyable>true</copyable>
-            <label>Space above the text</label>
-            <label lang="de-DE">Abstand von oben</label>
+            <label>Space above the text (in px)</label>
+            <label lang="de-DE">Abstand von oben (in px)</label>
             <placeholder>Please insert number. Example: 10 </placeholder>
             <placeholder lang="de-DE">Geben Sie bitte ein Abstand. Beispiel: 10</placeholder>
             <helpText>
                 This will be configurated for all of the elements.
             </helpText>
             <helpText lang="de-DE">
-                Diese Configuration gilt fur alle Elemente.
+                Diese Konfiguration gilt fur alle Elemente.
             </helpText>
         </input-field> <!--Padding Top -->
         <input-field type="int">
             <name>paddingRight</name>
             <copyable>true</copyable>
-            <label>Space on the right side of the text</label>
-            <label lang="de-DE">Abstand von rechts</label>
+            <label>Space on the right side of the text (in px)</label>
+            <label lang="de-DE">Abstand von rechts (in px)</label>
             <placeholder>Please insert number. Example: 10 </placeholder>
             <placeholder lang="de-DE">Geben Sie bitte ein Abstand ein . Beispiel: 10</placeholder>
             <helpText>
                 This will be configurated for all of the elements.
             </helpText>
             <helpText lang="de-DE">
-                Diese Configuration gilt für alle Elemente.
+                Diese Konfiguration gilt für alle Elemente.
             </helpText>
         </input-field> <!--Padding Right -->
         <input-field type="int">
             <name>paddingBottom</name>
             <copyable>true</copyable>
-            <label>Space under the text</label>
-            <label lang="de-DE">Abstand von unten</label>
-            <placeholder>Please insert number. Example: 10 </placeholder>
+            <label>Space under the text (in px)</label>
+            <label lang="de-DE">Abstand von unten (in px)</label>
+            <placeholder>Please insert the distance. Example: 10 </placeholder>
             <placeholder lang="de-DE">Geben Sie bitte ein Abstand ein. Beispiel: 10</placeholder>
             <helpText>
                 This will be configurated for all of the elements.
             </helpText>
             <helpText lang="de-DE">
-                Diese Configuration gilt fur alle Elementen.
+                Diese Konfiguration gilt für alle Elementen.
             </helpText>
         </input-field> <!--Padding Bottom -->
         <input-field type="int">
             <name>paddingLeft</name>
             <copyable>true</copyable>
-            <label>Space on the left side of text</label>
-            <label lang="de-DE">Abstand von links</label>
-            <placeholder>Please insert number . Example : 10 </placeholder>
-            <placeholder lang="de-DE">Geben Sie bitte ein Abstand  ein. Beispiel: 10.</placeholder>
+            <label>Space on the left side of text (in px)</label>
+            <label lang="de-DE">Abstand von links (in px)</label>
+            <placeholder>Please insert the distance. Example : 10 </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand ein. Beispiel: 10.</placeholder>
             <helpText>
                 This will be configurated for all of the elements.
             </helpText>
             <helpText lang="de-DE">
-                Diese Configuration gilt fur alle Elemente.
+                Diese Konfiguration gilt für alle Elemente.
             </helpText>
         </input-field> <!--Padding Left -->
 
@@ -152,6 +146,7 @@
         <component name="sw-media-field">
             <name>iconLeft</name>
             <label>Upload media or choose one from the media manager</label>
+            <label lang="de-DE">Media hochladen</label>
         </component>
     </card> <!--USP1-->
 
@@ -184,6 +179,7 @@
         <component name="sw-media-field">
             <name>iconMiddle</name>
             <label>Upload media or choose one from the media manager</label>
+            <label lang="de-DE">Media hochladen</label>
         </component>
 
     </card> <!--USP2-->
@@ -215,12 +211,19 @@
         <component name="sw-media-field">
             <name>iconRight</name>
             <label>Upload media or choose one from the media manager</label>
+            <label lang="de-DE">Media hochladen</label>
         </component>
     </card> <!--USP3-->
 
     <card>
         <title>Mobile Version</title>
         <title lang="de-DE">Mobile Version</title>
+
+        <input-field type="bool">
+            <name>mobileBreakpointDisplay</name>
+            <label>Hide the info bar in the mobile version.</label>
+            <label lang="de-DE">In der mobilen Version die Info-leiste verstecken.</label>
+        </input-field> <!--Display on Mobile-->
 
         <input-field type="int">
             <name>textFontSizeMobile</name>
