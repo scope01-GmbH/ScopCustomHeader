@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>General</title>
+        <title lang="de-DE">Allgemein</title>
+
+        <input-field type="int">
+            <name>height</name>
+            <copyable>true</copyable>
+            <label>Height of the bar </label>
+            <label lang="de-DE">Höhe der Leiste </label>
+            <placeholder>Enter the height in the following format. Example: 10</placeholder>
+            <placeholder lang="de-DE">Geben Sie die Höhe im folgenden Format ein. Beispiel: 10</placeholder>
+            <helpText>Enter the height in the following format: 10</helpText>
+            <helpText lang="de-DE">Geben Sie die Höhe im folgenden Format ein: 10</helpText>
+        </input-field> <!-- Bar Height-->
+        <input-field>
+            <name>background</name>
+            <copyable>true</copyable>
+            <label>Background color</label>
+            <label lang="de-DE">Hintergrundfarbe</label>
+            <placeholder>Enter the color in HEX format. Example: #fffff</placeholder>
+            <placeholder lang="de-DE">Geben Sie die Farbe im HEX Format ein. Beispiel: #fffff </placeholder>
+            <helpText>This color will define the background-color of the panel.</helpText>
+            <helpText lang="de-DE">Diese Farbe wird als Hintergrundfarbe verwendet.</helpText>
+        </input-field> <!-- Background Color-->
+
+        <input-field type="int">
+            <name>textFontSize</name>
+            <copyable>true</copyable>
+            <label>Text font-size</label>
+            <label lang="de-DE">Schrift­grö­ße (Zahlzeichen)</label>
+            <placeholder>Please insert the character size . Example: 10 </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Schriftgröße . Beispiel: 10</placeholder>
+            <helpText>This font-size will be used for USP1, USP2, USP3 </helpText>
+            <helpText lang="de-DE">Diese Schriftgröße wird für USP1, USP2 und USP3 verwendet.</helpText>
+        </input-field> <!-- Font Size-->
+
+        <input-field>
+            <name>hover</name>
+            <copyable>true</copyable>
+            <label>Hover-Color</label>
+            <label lang="de-DE">Hover-Color</label>
+            <placeholder>Enter the color in HEX format. Example: #fffff</placeholder>
+            <placeholder lang="de-DE">Geben Sie  die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
+            <helpText>Please enter a color. This color is used for the hover over the text.</helpText>
+            <helpText lang="de-DE">Bitte geben Sie eine Farbe ein. Diese Farbe wird für den Hover über den Text verwendet.</helpText>
+        </input-field> <!-- Hover Color-->
+
+        <input-field type="bool">
+            <name>mobileBreakpointDisplay</name>
+            <label>Hide the info bar in the mobile version.</label>
+            <label lang="de-DE">In der mobilen Version die Info-leiste verstecken.</label>
+        </input-field> <!--Display on Mobile-->
+
+        <input-field>
+            <name>textColor</name>
+            <copyable>true</copyable>
+            <label>Text-color</label>
+            <label lang="de-DE">Textfarbe</label>
+            <placeholder>Enter the color in HEX format. Example: #fffff</placeholder>
+            <placeholder lang="de-DE">Geben Sie  die Farbe in HEX Format ein. Beispiel: #fffff </placeholder>
+            <helpText>Here you define the text color for USP1, USP2, USP3.</helpText>
+            <helpText lang="de-DE">Hier definieren Sie die Textfarbe für USP1, USP2, USP3.</helpText>
+        </input-field>  <!--Text Color-->
+
+        <input-field type="int">
+            <name>paddingTop</name>
+            <copyable>true</copyable>
+            <label>Space above the text</label>
+            <label lang="de-DE">Abstand von oben</label>
+            <placeholder>Please insert number. Example: 10 </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand. Beispiel: 10</placeholder>
+            <helpText>
+                This will be configurated for all of the elements.
+            </helpText>
+            <helpText lang="de-DE">
+                Diese Configuration gilt fur alle Elemente.
+            </helpText>
+        </input-field> <!--Padding Top -->
+        <input-field type="int">
+            <name>paddingRight</name>
+            <copyable>true</copyable>
+            <label>Space on the right side of the text</label>
+            <label lang="de-DE">Abstand von rechts</label>
+            <placeholder>Please insert number. Example: 10 </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand ein . Beispiel: 10</placeholder>
+            <helpText>
+                This will be configurated for all of the elements.
+            </helpText>
+            <helpText lang="de-DE">
+                Diese Configuration gilt für alle Elemente.
+            </helpText>
+        </input-field> <!--Padding Right -->
+        <input-field type="int">
+            <name>paddingBottom</name>
+            <copyable>true</copyable>
+            <label>Space under the text</label>
+            <label lang="de-DE">Abstand von unten</label>
+            <placeholder>Please insert number. Example: 10 </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand ein. Beispiel: 10</placeholder>
+            <helpText>
+                This will be configurated for all of the elements.
+            </helpText>
+            <helpText lang="de-DE">
+                Diese Configuration gilt fur alle Elementen.
+            </helpText>
+        </input-field> <!--Padding Bottom -->
+        <input-field type="int">
+            <name>paddingLeft</name>
+            <copyable>true</copyable>
+            <label>Space on the left side of text</label>
+            <label lang="de-DE">Abstand von links</label>
+            <placeholder>Please insert number . Example : 10 </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand  ein. Beispiel: 10.</placeholder>
+            <helpText>
+                This will be configurated for all of the elements.
+            </helpText>
+            <helpText lang="de-DE">
+                Diese Configuration gilt fur alle Elemente.
+            </helpText>
+        </input-field> <!--Padding Left -->
+
+
+    </card> <!--General bar configurations-->
+
+    <card>
+        <title>USP1</title>
+        <title lang="de-DE">USP1</title>
+
+        <input-field>
+            <name>left</name>
+            <copyable>true</copyable>
+            <label>USP1 text</label>
+            <label lang="de-DE">USP1 Text</label>
+            <placeholder>Text Example: We are the best!</placeholder>
+            <placeholder lang="de-DE">Text Beispiel: Wir sind die Besten!</placeholder>
+            <helpText>This text will be displayed in the left corner.</helpText>
+            <helpText lang="de-DE">USP 1 wird links angezeigt.</helpText>
+        </input-field> <!-- Text Input Left-->
+        <input-field>
+            <name>textLinkLeft</name>
+            <copyable>true</copyable>
+            <label>USP1 link</label>
+            <label lang="de-DE">USP1 Link</label>
+            <placeholder>Link example: https://facebook.com</placeholder>
+            <placeholder lang="de-DE">Link Beispiel: https://facebook.com</placeholder>
+            <helpText>You can enter the link for the USP1.</helpText>
+            <helpText lang="de-DE">Hier kann die Verlinkung für USP1 eingegeben werden.</helpText>
+        </input-field> <!-- Text Link Left-->
+        <component name="sw-media-field">
+            <name>iconLeft</name>
+            <label>Upload media or choose one from the media manager</label>
+        </component>
+    </card> <!--USP1-->
+
+    <card>
+        <title>USP2</title>
+        <title lang="de-DE">USP2</title>
+
+        <input-field>
+            <name>middle</name>
+            <copyable>true</copyable>
+            <label>USP2 text</label>
+            <label lang="de-DE">USP2 Text</label>
+            <placeholder>Text example: We are the best!</placeholder>
+            <placeholder lang="de-DE">Text Beispiel: Wir sind die Beste</placeholder>
+            <helpText>This text will be displayed in the middle.</helpText>
+            <helpText lang="de-DE">USP 2 wird mittig angezeigt.</helpText>
+        </input-field> <!-- Text Input Middle-->
+
+        <input-field>
+            <name>textLinkMiddle</name>
+            <copyable>true</copyable>
+            <label>USP2 Link</label>
+            <label lang="de-DE">USP2 Link</label>
+            <placeholder>Text link example: https://facebook.com</placeholder>
+            <placeholder lang="de-DE">Link Beispiel: https://facebook.com</placeholder>
+            <helpText>You can enter the link for the USP2.</helpText>
+            <helpText lang="de-DE">Hier kann die Verlinkung für USP2 eingegeben werden.</helpText>
+        </input-field> <!-- Text Link Middle-->
+
+        <component name="sw-media-field">
+            <name>iconMiddle</name>
+            <label>Upload media or choose one from the media manager</label>
+        </component>
+
+    </card> <!--USP2-->
+
+    <card>
+        <title>USP3</title>
+        <title lang="de-DE">USP3</title>
+        <input-field>
+            <name>right</name>
+            <copyable>true</copyable>
+            <label>USP3 text</label>
+            <label lang="de-DE">USP3 text</label>
+            <placeholder>Text Example: We are the best!</placeholder>
+            <placeholder lang="de-DE">Text Beispiel: Wir sind die Beste</placeholder>
+            <helpText>This text will be displayed in the right corner</helpText>
+            <helpText lang="de-DE">This text will be displayed in the right corner</helpText>
+        </input-field> <!-- Text Input Right-->
+
+        <input-field>
+            <name>textLinkRight</name>
+            <copyable>true</copyable>
+            <label>USP3 link</label>
+            <label lang="de-DE">USP3 Link</label>
+            <placeholder>Link example: https://facebook.com</placeholder>
+            <placeholder lang="de-DE">Link Beispiel: https://facebook.com</placeholder>
+            <helpText>You can enter the link for the USP3.</helpText>
+            <helpText lang="de-DE">Hier kann die Verlinkung für USP3 eingegeben werden.</helpText>
+        </input-field> <!-- Text Link Middle-->
+        <component name="sw-media-field">
+            <name>iconRight</name>
+            <label>Upload media or choose one from the media manager</label>
+        </component>
+    </card> <!--USP3-->
+
+    <card>
+        <title>Mobile Version</title>
+        <title lang="de-DE">Mobile Version</title>
+
+        <input-field type="int">
+            <name>textFontSizeMobile</name>
+            <copyable>true</copyable>
+            <label>Text Font Size</label>
+            <label lang="de-DE">Schriftgrosse</label>
+            <placeholder>Please insert number. Example : 10 </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte die Schriftgröße ein. Beispiel: 10</placeholder>
+            <helpText>Font Size insert</helpText>
+            <helpText lang="de-DE">Font Size insert</helpText>
+        </input-field> <!-- Font Size-->
+
+        <input-field type="int">
+            <name>paddingTopMobile</name>
+            <copyable>true</copyable>
+            <label>Space above the text</label>
+            <label lang="de-DE">Abstand von oben</label>
+            <placeholder>Please insert number. Example: 10 </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand ein. Beispiel: 10</placeholder>
+            <helpText>
+                This will be configurated for all of the elements.
+            </helpText>
+            <helpText lang="de-DE">
+                Diese Configuration gilt fur alle Elemente.
+            </helpText>
+        </input-field> <!--Padding Top Mobile -->
+
+        <input-field type="int">
+            <name>paddingRightMobile</name>
+            <copyable>true</copyable>
+            <label>Space on the right side of the text</label>
+            <label lang="de-DE">Abstand von rechts</label>
+            <placeholder>Please insert number. Example: 10 </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand ein. Beispiel: 10</placeholder>
+            <helpText>
+                This will be configurated for all of the elements.
+            </helpText>
+            <helpText lang="de-DE">
+                Diese Configuration gilt für alle Elemente.
+            </helpText>
+        </input-field> <!--Padding Right Mobile -->
+        <input-field type="int">
+            <name>paddingBottomMobile</name>
+            <copyable>true</copyable>
+            <label>Space under the text</label>
+            <label lang="de-DE">Abstand von unten</label>
+            <placeholder>Please insert number. Example: 10 </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand  ein. Beispiel: 10 </placeholder>
+            <helpText>
+                This will be configurated for all of the elements.
+            </helpText>
+            <helpText lang="de-DE">
+                Diese Configuration gilt fur alle Elemente.
+            </helpText>
+        </input-field> <!--Padding Bottom Mobile -->
+        <input-field type="int">
+            <name>paddingLeftMobile</name>
+            <copyable>true</copyable>
+            <label>Space on the left side of text</label>
+            <label lang="de-DE">Abstand von links</label>
+            <placeholder>Please insert number. Example: 10</placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte ein Abstand  ein. Beispiel: 10</placeholder>
+            <helpText>
+                This will be configurated for all of the elements.
+            </helpText>
+            <helpText lang="de-DE">
+                Diese Configuration gilt fur alle Elemente.
+            </helpText>
+        </input-field> <!--Padding Left Mobile -->
+
+        <input-field type="bool">
+            <name>displayTextLeft</name>
+            <label>Display USP1?</label>
+            <label lang="de-DE">USP1 anzeigen?</label>
+        </input-field>
+        <input-field type="bool">
+            <name>displayTextMiddle</name>
+            <label>Display USP2?</label>
+            <label lang="de-DE">USP2 anzeigen?</label>
+        </input-field>
+        <input-field type="bool">
+            <name>displayTextRight</name>
+            <label>Display USP3</label>
+            <label lang="de-DE">USP3 anzeigen?</label>
+        </input-field>
+
+    </card> <!--Bar mobile configurations-->
+</config>
