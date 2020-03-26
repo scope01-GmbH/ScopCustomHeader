@@ -5,45 +5,95 @@
 {# Custom styles #}
 {% block base_head %}
     <style>
-        .custom-header-wrapper{
-            background-color:{{ config_params.background }};
-            min-height:{{ config_params.height }};
-        }
+        {% if config_params.background or config_params.height  %}
+            .custom-header-wrapper{
+                {% if config_params.background  %}
+                    background-color:{{ config_params.background }};
+                {% endif %}
+                {% if config_params.height %}
+                    min-height:{{ config_params.height }};
+                {% endif %}
+            }
+        {% endif %}
 
-        .custom-header{
-            font-size: {{ config_params.textFontSize}};
-        }
+        {% if  config_params.textFontSize %}
+            .custom-header{
+                font-size: {{ config_params.textFontSize}};
+            }
+        {% endif %}
 
+        {% if config_params.paddingTop or config_params.paddingRight or config_params.paddingBottom or config_params.paddingLeft %}
         /*Elements Box*/
-        .custom-header-wrapper .custom-header .element{
-            padding-top: {{ config_params.paddingTop }};
-            padding-right: {{ config_params.paddingRight }};
-            padding-bottom: {{ config_params.paddingBottom }};
-            padding-left: {{ config_params.paddingLeft }};
-        }
+            .custom-header-wrapper .custom-header .element{
+                {% if  config_params.paddingTop %}
+                    padding-top: {{ config_params.paddingTop }};
+                {% endif  %}
 
+                {% if  config_params.paddingRight %}
+                    padding-right: {{ config_params.paddingRight }};
+                {% endif  %}
+
+                {% if  config_params.paddingBottom %}
+                    padding-bottom: {{ config_params.paddingBottom }};
+                {% endif  %}
+
+                {% if  config_params.paddingLeft %}
+                    padding-left: {{ config_params.paddingLeft }};
+                {% endif  %}
+            }
+        {% endif %}
+
+        {% if config_params.textColor or config_params.textFontSize %}
         /* All Texts */
-        .custom-header-wrapper .custom-header .element .scop-header-link{
-            color: {{ config_params.textColor }};
-            font-size: {{ config_params.textFontSize }};
-        }
+            .custom-header-wrapper .custom-header .element .scop-header-link{
+                {% if config_params.textColor %}
+                        color: {{ config_params.textColor }};
+                {% endif %}
+
+                {% if config_params.textFontSize  %}
+                        font-size: {{ config_params.textFontSize }};
+                {% endif %}
+            }
+        {% endif %}
+
+        {% if config_params.hover  %}
 
         /* Text Hover */
-        a.scop-header-link:hover{
-            color: {{ config_params.hover }} ;
-        }
-
-        /* Mobile version */
-        @media screen and (max-width: 768px){
-            .custom-header-wrapper .custom-header .element{
-                padding-top: {{ config_params.paddingTopMobile }};
-                padding-right: {{ config_params.paddingRightMobile }};
-                padding-bottom: {{ config_params.paddingBottomMobile }};
-                padding-left: {{ config_params.paddingLeftMobile }};
+            a.scop-header-link:hover{
+                color: {{ config_params.hover }} ;
             }
+        {% endif %}
+
+        @media screen and (max-width: 768px){
+
+        {% if config_params.paddingTopMobile or config_params.paddingRightMobile or config_params.paddingBottomMobile or config_params.paddingLeftMobile %}
+            /* Mobile version */
+
+            .custom-header-wrapper .custom-header .element{
+            {% if config_params.paddingTopMobile %}
+                    padding-top: {{ config_params.paddingTopMobile }};
+            {% endif %}
+
+            {% if config_params.paddingRightMobile %}
+                    padding-right: {{ config_params.paddingRightMobile }};
+            {% endif %}
+
+            {% if config_params.paddingBottomMobile %}
+                padding-bottom: {{ config_params.paddingBottomMobile }};
+            {% endif %}
+
+            {% if config_params.paddingLeftMobile %}
+                padding-left: {{ config_params.paddingLeftMobile }};
+            {% endif %}
+            }
+        {% endif %}
+
+        {% if config_params.textFontSizeMobile %}
             .custom-header-warpper .custom-header .element .scop-header-link{
                 font-size: {{ config_params.textFontSizeMobile }};
             }
+        {% endif %}
+
             .scop-text-left{
                 display: {% if config_params.displayTextLeft == false %}none {% else %} block {% endif %};
             }

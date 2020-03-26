@@ -1,5 +1,5 @@
 {
-    "name": "scop/custom_info_panel",
+    "name": "scop/custom_header",
     "description": "This plugin allows you to add a panel with 3 text information on the top of your website",
     "version": "v1.0.0",
     "type": "shopware-platform-plugin",
