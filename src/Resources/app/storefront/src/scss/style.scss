@@ -1,27 +1,28 @@
-.custom-header-wrapper{
-    .custom-header{
-        width:100%;
+.custom-header-wrapper {
+    .custom-header {
+        width: 100%;
         justify-content: space-between;
 
-        .scop-header-link{
+        .scop-header-link {
             transition: .3s;
             text-decoration: none;
         }
-         // IMG BOX
-        .img-wrap{
-            transform:translateY(17%);
+
+        // IMG BOX
+        .img-wrap {
+            transform: translateY(17%);
             overflow: hidden;
 
             // IMG (Icon Before text)
-            .sch-icon{
+            .sch-icon {
                 display: block;
-                width:100%;
-                height:100%;
+                width: 100%;
+                height: 100%;
             }
         }
     }
 
-    .scop-info-content{
+    .scop-info-content {
         word-wrap: break-word;
         word-break: break-all;
         text-align-last: left;
@@ -29,11 +30,12 @@
 }
 
 @include media-breakpoint-up(md) {
-    .custom-header-wrapper{
-        &.hide{
+    .custom-header-wrapper {
+        &.hide {
             display: none;
         }
-        .custom-header{
+
+        .custom-header {
             display: flex;
         }
     }
