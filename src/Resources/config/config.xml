@@ -232,8 +232,8 @@
             <label lang="de-DE">Schriftgrosse</label>
             <placeholder>Please insert the font size in px. Example : 10 </placeholder>
             <placeholder lang="de-DE">Geben Sie bitte die Schriftgröße in px ein. Beispiel: 10</placeholder>
-            <helpText>Font Size insert</helpText>
-            <helpText lang="de-DE">Font Size insert</helpText>
+            <helpText>Please insert the font size in px. Example : 10 </helpText>
+            <helpText lang="de-DE">Geben Sie bitte die Schriftgröße in px ein. Beispiel: 10</helpText>
         </input-field> <!-- Font Size-->
 
         <input-field type="int">
