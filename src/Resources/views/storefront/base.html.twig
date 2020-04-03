@@ -7,7 +7,7 @@
     <style>
 
         {% if config_params.background or config_params.height  %}
-        .custom-header-wrapper{
+        .custom-header-wrapper {
         {% if config_params.background  %}
             background-color:{{ config_params.background }};
         {% endif %}
@@ -19,14 +19,14 @@
         {% endif %}
 
         {% if  config_params.textFontSize %}
-        .custom-header{
+        .custom-header {
             font-size: {{ config_params.textFontSize ~ 'px'}};
         }
         {% endif %}
 
         /*Elements Box*/
         {% if config_params.paddingTop or config_params.paddingRight or config_params.paddingBottom or config_params.paddingLeft %}
-        .custom-header-wrapper .custom-header .element{
+        .custom-header-wrapper .custom-header .element {
         {% if  config_params.paddingTop %}
             padding-top: {{ config_params.paddingTop ~ 'px' }};
         {% endif  %}
@@ -47,7 +47,7 @@
 
         /* All Texts */
         {% if config_params.textColor or config_params.textFontSize %}
-        .custom-header-wrapper .custom-header .element .scop-header-link{
+        .custom-header-wrapper .custom-header .element .scop-header-link {
         {% if config_params.textColor %}
             color: {{ config_params.textColor }};
         {% endif %}
@@ -60,7 +60,7 @@
 
         /* Text Hover */
         {% if config_params.hover  %}
-        .custom-header-wrapper .custom-header .scop-header-link:hover{
+        .custom-header-wrapper .custom-header .scop-header-link:hover {
             color: {{ config_params.hover }};
         }
         {% endif %}
@@ -68,13 +68,13 @@
 
         @media screen and (max-width: 768px){
             {% if config_params.mobileBreakpointDisplay %}
-            .custom-header-wrapper{
+            .custom-header-wrapper {
                 display: none;
             }
             {% endif %}
 
             {% if config_params.paddingTopMobile or config_params.paddingRightMobile or config_params.paddingBottomMobile or config_params.paddingLeftMobile %}
-            .custom-header-wrapper .custom-header .element{
+            .custom-header-wrapper .custom-header .element {
             {% if config_params.paddingTopMobile %}
                 padding-top: {{ config_params.paddingTopMobile ~ 'px' }};
             {% endif %}
@@ -94,18 +94,18 @@
             {% endif %}
 
             {% if config_params.textFontSizeMobile %}
-             .custom-header-wrapper .custom-header .element .scop-header-link{
+             .custom-header-wrapper .custom-header .element .scop-header-link {
                  font-size: {{ config_params.textFontSizeMobile ~ 'px' }};
              }
             {% endif %}
 
-            .scop-text-left{
+            .scop-text-left {
                 display: {% if config_params.displayTextLeft == false %}none {% else %} block {% endif %};
             }
-            .scop-text-middle{
+            .scop-text-middle {
                 display: {% if config_params.displayTextMiddle == false %}none {% else %} block {% endif %};
             }
-            .scop-text-right{
+            .scop-text-right {
                 display: {% if config_params.displayTextRight == false %}none {% else %} block {% endif %};
             }
         }
