@@ -11,6 +11,7 @@
         {% if config_params.background  %}
             background-color:{{ config_params.background }};
         {% endif %}
+
         {% if config_params.height %}
             min-height:{{ config_params.height ~ 'px' }};
         {% endif %}
@@ -66,15 +67,13 @@
         /* Mobile version */
 
         @media screen and (max-width: 768px){
-
-        {% if config_params.mobileBreakpointDisplay %}
+            {% if config_params.mobileBreakpointDisplay %}
             .custom-header-wrapper{
                 display: none;
             }
-        {% endif %}
+            {% endif %}
 
-
-        {% if config_params.paddingTopMobile or config_params.paddingRightMobile or config_params.paddingBottomMobile or config_params.paddingLeftMobile %}
+            {% if config_params.paddingTopMobile or config_params.paddingRightMobile or config_params.paddingBottomMobile or config_params.paddingLeftMobile %}
             .custom-header-wrapper .custom-header .element{
             {% if config_params.paddingTopMobile %}
                 padding-top: {{ config_params.paddingTopMobile ~ 'px' }};
@@ -92,13 +91,13 @@
                 padding-left: {{ config_params.paddingLeftMobile ~ 'px' }};
             {% endif %}
             }
-        {% endif %}
+            {% endif %}
 
-        {% if config_params.textFontSizeMobile %}
-            .custom-header-wrapper .custom-header .element .scop-header-link{
-                font-size: {{ config_params.textFontSizeMobile ~ 'px' }};
-            }
-        {% endif %}
+            {% if config_params.textFontSizeMobile %}
+             .custom-header-wrapper .custom-header .element .scop-header-link{
+                 font-size: {{ config_params.textFontSizeMobile ~ 'px' }};
+             }
+            {% endif %}
 
             .scop-text-left{
                 display: {% if config_params.displayTextLeft == false %}none {% else %} block {% endif %};
@@ -120,59 +119,57 @@
 
         <div class="custom-header-wrapper  ">
             {# Wrapping the content of the header in container #}
-
             <div class="container">
                 <div class="custom-header ">
                     <!--LEFT TEXT-->
                     <div class="element scop-text-left">
-                                <span class="icon">
-                                    {% if config_params.iconLeft != null %}
-                                        <div class="img-wrap" >
-                                            {% if config_params.imgArray[0] != null %}
-                                                <img src="{{ config_params.imgArray[0] }}" alt="ICON" class="sch-icon">
-                                            {% endif %}
-                                        </div>
+                        <span class="icon">
+                            {% if config_params.iconLeft != null %}
+                                <div class="img-wrap" >
+                                    {% if config_params.imgArray[0] != null %}
+                                        <img src="{{ config_params.imgArray[0] }}" alt="ICON" class="sch-icon">
                                     {% endif %}
-                                </span>
+                                </div>
+                            {% endif %}
+                        </span>
 
-                                <span>
-                                    <a class="scop-header-link " href="{{ config_params.textLinkLeft }}" target="_blank"> {{  config_params.left }} </a>
-                                </span>
+                        <span>
+                            <a class="scop-header-link " href="{{ config_params.textLinkLeft }}" target="_blank"> {{  config_params.left }} </a>
+                        </span>
                     </div>
 
                     {#    Middle TEXT #}
                     <div class="element scop-text-middle">
-                                <span class="icon">
-                                     <div class="img-wrap">
-                                         {% if config_params.imgArray[1] != null %}
-                                             <img src="{{ config_params.imgArray[1] }}" alt="ICON" class="sch-icon">
-                                         {% endif %}
-                                     </div>
-                                </span>
+                        <span class="icon">
+                            <div class="img-wrap">
+                                {% if config_params.imgArray[1] != null %}
+                                    <img src="{{ config_params.imgArray[1] }}" alt="ICON" class="sch-icon">
+                                {% endif %}
+                            </div>
+                        </span>
 
-                                <span>
-                                    <a class="scop-header-link " href="{{ config_params.textLinkMiddle }}" target="_blank"> {{  config_params.middle }} </a>
-                                </span>
+                        <span>
+                            <a class="scop-header-link " href="{{ config_params.textLinkMiddle }}" target="_blank"> {{  config_params.middle }} </a>
+                        </span>
                     </div>
 
                     {#    Right TEXT #}
                     <div class="element scop-text-right">
-                                <span class="icon">
-                                    <div class="img-wrap">
-                                        {% if config_params.imgArray[2] != null %}
-                                            <img src="{{ config_params.imgArray[2] }}" alt="ICON" class="sch-icon">
-                                        {% endif %}
-                                    </div>
-                                </span>
+                        <span class="icon">
+                            <div class="img-wrap">
+                                {% if config_params.imgArray[2] != null %}
+                                    <img src="{{ config_params.imgArray[2] }}" alt="ICON" class="sch-icon">
+                                {% endif %}
+                            </div>
+                        </span>
 
-                                <span>
-                                    <a class="scop-header-link " href="{{ config_params.textLinkRight }}" target="_blank"> {{  config_params.right }} </a>
-                                </span>
+                        <span>
+                            <a class="scop-header-link " href="{{ config_params.textLinkRight }}" target="_blank"> {{  config_params.right }} </a>
+                        </span>
                     </div>
 
                 </div>
             </div>
-
         </div>
     {% endif %}
     {{ parent() }}
