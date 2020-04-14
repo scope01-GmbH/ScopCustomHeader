@@ -5,7 +5,7 @@
 {# Custom styles #}
 {% block base_head %}
     {% block scop_custom_header_style %}
-        <style>
+        <style type="text/css">
 
             {% if config_params.background or config_params.height  %}
             .custom-header-wrapper {
@@ -67,7 +67,7 @@
             {% endif %}
             /* Mobile version */
 
-            @media screen and (max-width: 768px){
+            @media screen and (max-width: 768px) {
                 {% if config_params.mobileBreakpointDisplay %}
                 .custom-header-wrapper {
                     display: none;
@@ -121,7 +121,7 @@
     {% if config_params.left or config_params.middle or config_params.right %}
 
         {% block custom_header_wrapper %}
-            <div class="custom-header-wrapper  ">
+            <div class="custom-header-wrapper">
             {# Wrapping the content of the header in container #}
             <div class="container">
                 {% block custom_header %}
@@ -135,7 +135,7 @@
                                         {% if config_params.iconLeft != null %}
                                             <div class="img-wrap" >
                                                 {% if config_params.imgArray[0] != null %}
-                                                    <img src="{{ config_params.imgArray[0] }}" alt="ICON" class="sch-icon">
+                                                    <img src="{{ config_params.imgArray[0] }}" alt="icon-1" class="sch-icon">
                                                 {% endif %}
                                             </div>
                                         {% endif %}
@@ -157,7 +157,7 @@
                                     <span class="icon">
                                         <div class="img-wrap">
                                             {% if config_params.imgArray[1] != null %}
-                                                <img src="{{ config_params.imgArray[1] }}" alt="ICON" class="sch-icon">
+                                                <img src="{{ config_params.imgArray[1] }}" alt="icon-2" class="sch-icon">
                                             {% endif %}
                                         </div>
                                     </span>
@@ -178,7 +178,7 @@
                                     <span class="icon">
                                         <div class="img-wrap">
                                             {% if config_params.imgArray[2] != null %}
-                                                <img src="{{ config_params.imgArray[2] }}" alt="ICON" class="sch-icon">
+                                                <img src="{{ config_params.imgArray[2] }}" alt="icon-3" class="sch-icon">
                                             {% endif %}
                                         </div>
                                     </span>
