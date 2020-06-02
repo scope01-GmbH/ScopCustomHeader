@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-        "shopware/core": "6.1.*"
+        "shopware/core": "6.*"
     },
     "extra": {
         "shopware-plugin-class": "Scop\\ScopCustomHeader\\ScopCustomHeader",
@@ -22,8 +22,8 @@
             "en-GB": "Info Panel Header"
         },
         "description": {
-            "de-DE": "Infoleiste Header",
-            "en-GB": "Info Panel Header"
+            "de-DE": "Dieses Plugin erlaubt es einen Header-Block zu erstellen, mit bis zu drei Individualisierbaren Bild-Icons und Link-Texten",
+            "en-GB": "This plugin allows you to add a header panel with up to three content blocks. Each providing an image icon and a customizable link and text"
         }
     },
     "autoload": {
