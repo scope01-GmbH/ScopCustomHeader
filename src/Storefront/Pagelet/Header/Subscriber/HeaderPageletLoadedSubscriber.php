@@ -90,8 +90,8 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
         // inserts the iconID in an array to loop through
         $imgArray = [
             $mediaIdLeft,
-            $mediaIdRight,
-            $mediaIdMiddle
+            $mediaIdMiddle,
+            $mediaIdRight
         ];
 
         // Looping through the array and replacing the id with image-path
