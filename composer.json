@@ -1,7 +1,7 @@
 {
     "name": "scop/custom_header",
     "description": "This plugin allows you to add a header panel with up to three content blocks. Each providing an image icon and a customizable link and text",
-    "version": "v1.1.0",
+    "version": "v1.2.0",
     "type": "shopware-platform-plugin",
     "license": "MIT",
     "authors": [
@@ -24,6 +24,14 @@
         "description": {
             "de-DE": "Dieses Plugin erlaubt es einen Header-Block zu erstellen, mit bis zu drei Individualisierbaren Bild-Icons und Link-Texten",
             "en-GB": "This plugin allows you to add a header panel with up to three content blocks. Each providing an image icon and a customizable link and text"
+        },
+        "manufacturerLink": {
+            "de-DE": "https://scope01.com/",
+            "en-GB": "https://scope01.com/"
+        },
+        "supportLink": {
+            "de-DE": "https://scope01.com/internetagentur-frankfurt/",
+            "en-GB": "https://scope01.com/internetagentur-frankfurt/"
         }
     },
     "autoload": {

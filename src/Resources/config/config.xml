@@ -10,6 +10,7 @@
             <copyable>true</copyable>
             <label>Height of the bar (in px) </label>
             <label lang="de-DE">Höhe der Leiste (in px) </label>
+            <defaultValue>10</defaultValue>
             <placeholder>Enter the height in the following format in px. Example: 10</placeholder>
             <placeholder lang="de-DE">Geben Sie die Höhe in px ein. Beispiel: 10</placeholder>
             <helpText>Enter the height in the following format in px: 10</helpText>
@@ -22,6 +23,7 @@
             <label lang="de-DE">Hintergrundfarbe</label>
             <placeholder>Enter the color in HEX format. Example: #ffffff</placeholder>
             <placeholder lang="de-DE">Geben Sie die Farbe im HEX Format ein. Beispiel: #ffffff </placeholder>
+            <defaultValue>#ffffff</defaultValue>
             <helpText>This color will define the background-color of the panel.</helpText>
             <helpText lang="de-DE">Diese Farbe wird als Hintergrundfarbe verwendet.</helpText>
         </input-field> <!-- Background Color-->
@@ -31,6 +33,7 @@
             <copyable>true</copyable>
             <label>Font size (in px)</label>
             <label lang="de-DE">Schrift­grö­ße (in px)</label>
+            <defaultValue>10</defaultValue>
             <placeholder>Please insert the font size in px. Example: 10 </placeholder>
             <placeholder lang="de-DE">Geben Sie bitte die Schriftgröße in px ein. Beispiel: 10</placeholder>
             <helpText>This font-size will be used for USP1, USP2, USP3 </helpText>
@@ -44,6 +47,7 @@
             <label lang="de-DE">Hover Farbe</label>
             <placeholder>Enter the color in HEX format. Example: #ffffff</placeholder>
             <placeholder lang="de-DE">Geben Sie die Farbe in HEX Format ein. Beispiel: #ffffff </placeholder>
+            <defaultValue>#14b79f</defaultValue>
             <helpText>Please enter a color. This color is used for the hover over the text.</helpText>
             <helpText lang="de-DE">Bitte geben Sie eine Farbe ein. Diese Farbe wird für den Hover über den Text verwendet.</helpText>
         </input-field> <!-- Hover Color-->
@@ -55,6 +59,7 @@
             <label lang="de-DE">Textfarbe</label>
             <placeholder>Enter the color in HEX format. Example: #ffffff</placeholder>
             <placeholder lang="de-DE">Geben Sie  die Farbe in HEX Format ein. Beispiel: #ffffff </placeholder>
+            <defaultValue>#000000</defaultValue>
             <helpText>Here you define the text color for USP1, USP2, USP3.</helpText>
             <helpText lang="de-DE">Hier definieren Sie die Textfarbe für USP1, USP2, USP3.</helpText>
         </input-field>  <!--Text Color-->
@@ -64,6 +69,7 @@
             <copyable>true</copyable>
             <label>Space above the text (in px)</label>
             <label lang="de-DE">Abstand von oben (in px)</label>
+            <defaultValue>10</defaultValue>
             <placeholder>Please insert the distance in px. Example: 10 </placeholder>
             <placeholder lang="de-DE">Geben Sie bitte einen Abstand in px ein. Beispiel: 10</placeholder>
             <helpText>
@@ -78,6 +84,7 @@
             <copyable>true</copyable>
             <label>Space on the right side of the text (in px)</label>
             <label lang="de-DE">Abstand von rechts (in px)</label>
+            <defaultValue>10</defaultValue>
             <placeholder>Please insert the distance in px. Example: 10 </placeholder>
             <placeholder lang="de-DE">Geben Sie bitte einen Abstand in px ein. Beispiel: 10</placeholder>
             <helpText>
@@ -92,6 +99,7 @@
             <copyable>true</copyable>
             <label>Space under the text (in px)</label>
             <label lang="de-DE">Abstand von unten (in px)</label>
+            <defaultValue>10</defaultValue>
             <placeholder>Please insert the distance in px. Example: 10 </placeholder>
             <placeholder lang="de-DE">Geben Sie bitte einen Abstand in px ein. Beispiel: 10</placeholder>
             <helpText>
@@ -106,6 +114,7 @@
             <copyable>true</copyable>
             <label>Space on the left side of text (in px)</label>
             <label lang="de-DE">Abstand von links (in px)</label>
+            <defaultValue>10</defaultValue>
             <placeholder>Please insert the distance in px. Example : 10 </placeholder>
             <placeholder lang="de-DE">Geben Sie bitte einen Abstand in px ein. Beispiel: 10.</placeholder>
             <helpText>
@@ -128,6 +137,7 @@
             <copyable>true</copyable>
             <label>USP1 text</label>
             <label lang="de-DE">USP1 Text</label>
+            <defaultValue>Home</defaultValue>
             <placeholder>Example: We are the best!</placeholder>
             <placeholder lang="de-DE">Beispiel: Wir sind die Besten!</placeholder>
             <helpText>This text will be displayed in the left corner.</helpText>
@@ -138,6 +148,7 @@
             <copyable>true</copyable>
             <label>USP1 link</label>
             <label lang="de-DE">USP1 Link</label>
+            <defaultValue>/</defaultValue>
             <placeholder>Example: https://facebook.com</placeholder>
             <placeholder lang="de-DE">Beispiel: https://facebook.com</placeholder>
             <helpText>You can type in the link for the USP1.</helpText>
@@ -159,6 +170,7 @@
             <copyable>true</copyable>
             <label>USP2 text</label>
             <label lang="de-DE">USP2 Text</label>
+            <defaultValue>Home</defaultValue>
             <placeholder>Text example: We are the best!</placeholder>
             <placeholder lang="de-DE">Text Beispiel: Wir sind die Beste</placeholder>
             <helpText>This text will be displayed in the middle.</helpText>
@@ -170,6 +182,7 @@
             <copyable>true</copyable>
             <label>USP2 Link</label>
             <label lang="de-DE">USP2 Link</label>
+            <defaultValue>/</defaultValue>
             <placeholder>link example: https://facebook.com</placeholder>
             <placeholder lang="de-DE">Beispiel: https://facebook.com</placeholder>
             <helpText>You can enter the link for the USP2.</helpText>
@@ -192,6 +205,7 @@
             <copyable>true</copyable>
             <label>USP3 text</label>
             <label lang="de-DE">USP3 text</label>
+            <defaultValue>Home</defaultValue>
             <placeholder>Text Example: We are the best!</placeholder>
             <placeholder lang="de-DE">Text Beispiel: Wir sind die Beste</placeholder>
             <helpText>This text will be displayed in the right corner</helpText>
@@ -203,6 +217,7 @@
             <copyable>true</copyable>
             <label>USP3 link</label>
             <label lang="de-DE">USP3 Link</label>
+            <defaultValue>/</defaultValue>
             <placeholder>Example: https://facebook.com</placeholder>
             <placeholder lang="de-DE">Beispiel: https://facebook.com</placeholder>
             <helpText>You can enter the link for the USP3.</helpText>

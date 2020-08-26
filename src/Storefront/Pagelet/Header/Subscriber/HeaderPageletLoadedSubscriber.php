@@ -77,9 +77,6 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
     {
         $context = $event->getContext();
 
-        // Saving plugin configurations in pluginConfig variable
-        $pluginConfig = $this->systemConfigService->get('ScopCustomHeader.config');
-
         $page = $event->getPagelet();
 
         // Getting the iconsID from Configurations
@@ -117,6 +114,9 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
 
         // Adding the image path array as a variable in plugin configuration
         $this->systemConfigService->set('ScopCustomHeader.config.imgArray', $imgArray);
+
+        // Get configuration
+        $pluginConfig = $this->systemConfigService->get('ScopCustomHeader.config');
 
         // Sending the Plugin configuration in ScopCH variable extension in TWIG
         $page->addExtension('ScopCH', new ArrayEntity($pluginConfig));
