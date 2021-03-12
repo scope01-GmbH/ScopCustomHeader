@@ -143,6 +143,7 @@
             <helpText>This text will be displayed in the left corner.</helpText>
             <helpText lang="de-DE">USP 1 wird links angezeigt.</helpText>
         </input-field> <!-- Text Input Left-->
+
         <input-field>
             <name>textLinkLeft</name>
             <copyable>true</copyable>
@@ -154,6 +155,14 @@
             <helpText>You can type in the link for the USP1.</helpText>
             <helpText lang="de-DE">Hier kann die Verlinkung für USP1 eingegeben werden.</helpText>
         </input-field> <!-- Text Link Left-->
+
+        <input-field type="bool">
+            <name>openInNewTabLeft</name>
+            <label>In new tab open.</label>
+            <label lang="de-DE">Im neuen Tab öffnen.</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
         <component name="sw-media-field">
             <name>iconLeft</name>
             <label>Upload media or choose one from the media manager</label>
@@ -189,6 +198,13 @@
             <helpText lang="de-DE">Hier kann die Verlinkung für USP2 eingegeben werden.</helpText>
         </input-field> <!-- Text Link Middle-->
 
+        <input-field type="bool">
+            <name>openInNewTabMiddle</name>
+            <label>In new tab open.</label>
+            <label lang="de-DE">Im neuen Tab öffnen.</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
         <component name="sw-media-field">
             <name>iconMiddle</name>
             <label>Upload media or choose one from the media manager</label>
@@ -223,6 +239,14 @@
             <helpText>You can enter the link for the USP3.</helpText>
             <helpText lang="de-DE">Hier kann die Verlinkung für USP3 eingegeben werden.</helpText>
         </input-field> <!-- Text Link Middle-->
+
+        <input-field type="bool">
+            <name>openInNewTabRight</name>
+            <label>In new tab open.</label>
+            <label lang="de-DE">Im neuen Tab öffnen.</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
         <component name="sw-media-field">
             <name>iconRight</name>
             <label>Upload media or choose one from the media manager</label>

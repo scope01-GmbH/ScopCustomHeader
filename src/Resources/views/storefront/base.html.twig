@@ -63,7 +63,7 @@
 
                 /* Text Hover */
                 {% if config_params.hover  %}
-                .custom-header-wrapper .custom-header .scop-header-link:hover {
+                .custom-header-wrapper .custom-header a.scop-header-link:hover {
                     color: {{ config_params.hover }};
                 }
                 {% endif %}
@@ -140,7 +140,15 @@
 
                                 {% block scop_text_left_link %}
                                     <span>
-                                        <a class="scop-header-link " href="{{ config_params.textLinkLeft }}" target="_blank"> {{  config_params.left }} </a>
+                                        {% if config_params.textLinkLeft %}
+                                            <a class="scop-header-link " href="{{ config_params.textLinkLeft }}"
+                                                {% if config_params.openInNewTabLeft %}
+                                                    target="_blank"
+                                                {% endif %}
+                                            > {{  config_params.left }} </a>
+                                        {% else %}
+                                            <span class="scop-header-link"> {{  config_params.left }} </span>
+                                        {% endif %}
                                     </span>
                                 {% endblock %}
                             </div>
@@ -161,7 +169,15 @@
 
                                 {% block scop_text_middle_link %}
                                     <span>
-                                        <a class="scop-header-link " href="{{ config_params.textLinkMiddle }}" target="_blank"> {{  config_params.middle }} </a>
+                                        {% if config_params.textLinkMiddle %}
+                                            <a class="scop-header-link " href="{{ config_params.textLinkMiddle }}"
+                                                {% if config_params.openInNewTabMiddle %}
+                                                    target="_blank"
+                                                {% endif %}
+                                            > {{  config_params.middle }} </a>
+                                        {% else %}
+                                            <span class="scop-header-link"> {{  config_params.middle }} </span>
+                                        {% endif %}
                                     </span>
                                 {% endblock %}
                             </div>
@@ -182,7 +198,15 @@
 
                                 {% block scop_text_right_link %}
                                     <span>
-                                        <a class="scop-header-link " href="{{ config_params.textLinkRight }}" target="_blank"> {{  config_params.right }} </a>
+                                        {% if config_params.textLinkRight %}
+                                            <a class="scop-header-link " href="{{ config_params.textLinkRight }}"
+                                                {% if config_params.openInNewTabRight %}
+                                                    target="_blank"
+                                                {% endif %}
+                                            > {{  config_params.right }} </a>
+                                        {% else %}
+                                            <span class="scop-header-link"> {{  config_params.right }} </span>
+                                        {% endif %}
                                     </span>
                                 {% endblock %}
                             </div>
