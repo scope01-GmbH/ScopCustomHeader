@@ -140,14 +140,16 @@
 
                                 {% block scop_text_left_link %}
                                     <span>
-                                        {% if config_params.textLinkLeft %}
-                                            <a class="scop-header-link " href="{{ config_params.textLinkLeft }}"
-                                                {% if config_params.openInNewTabLeft %}
-                                                    target="_blank"
-                                                {% endif %}
-                                            > {{  config_params.left }} </a>
-                                        {% else %}
-                                            <span class="scop-header-link"> {{  config_params.left }} </span>
+                                        {% if config_params.activeLeft %}
+                                            {% if config_params.textLinkLeft %}
+                                                <a class="scop-header-link " href="{{ config_params.textLinkLeft }}"
+                                                    {% if config_params.openInNewTabLeft %}
+                                                        target="_blank"
+                                                    {% endif %}
+                                                > {{  config_params.left }} </a>
+                                            {% else %}
+                                                <span class="scop-header-link"> {{  config_params.left }} </span>
+                                            {% endif %}
                                         {% endif %}
                                     </span>
                                 {% endblock %}
@@ -169,14 +171,16 @@
 
                                 {% block scop_text_middle_link %}
                                     <span>
-                                        {% if config_params.textLinkMiddle %}
-                                            <a class="scop-header-link " href="{{ config_params.textLinkMiddle }}"
-                                                {% if config_params.openInNewTabMiddle %}
-                                                    target="_blank"
-                                                {% endif %}
-                                            > {{  config_params.middle }} </a>
-                                        {% else %}
-                                            <span class="scop-header-link"> {{  config_params.middle }} </span>
+                                        {% if config_params.activeMiddle %}
+                                            {% if config_params.textLinkMiddle %}
+                                                <a class="scop-header-link " href="{{ config_params.textLinkMiddle }}"
+                                                    {% if config_params.openInNewTabMiddle %}
+                                                        target="_blank"
+                                                    {% endif %}
+                                                > {{  config_params.middle }} </a>
+                                            {% else %}
+                                                <span class="scop-header-link"> {{  config_params.middle }} </span>
+                                            {% endif %}
                                         {% endif %}
                                     </span>
                                 {% endblock %}
@@ -198,14 +202,16 @@
 
                                 {% block scop_text_right_link %}
                                     <span>
-                                        {% if config_params.textLinkRight %}
-                                            <a class="scop-header-link " href="{{ config_params.textLinkRight }}"
-                                                {% if config_params.openInNewTabRight %}
-                                                    target="_blank"
-                                                {% endif %}
-                                            > {{  config_params.right }} </a>
-                                        {% else %}
-                                            <span class="scop-header-link"> {{  config_params.right }} </span>
+                                        {% if config_params.activeRight %}
+                                            {% if config_params.textLinkRight %}
+                                                <a class="scop-header-link " href="{{ config_params.textLinkRight }}"
+                                                    {% if config_params.openInNewTabRight %}
+                                                        target="_blank"
+                                                    {% endif %}
+                                                > {{  config_params.right }} </a>
+                                            {% else %}
+                                                <span class="scop-header-link"> {{  config_params.right }} </span>
+                                            {% endif %}
                                         {% endif %}
                                     </span>
                                 {% endblock %}
