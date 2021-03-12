@@ -128,12 +128,14 @@
                             <div class="element scop-text-left">
                                 {% block scop_text_left_icon %}
                                     <span class="icon">
-                                        {% if config_params.iconLeft != null %}
-                                            <div class="img-wrap" >
-                                                {% if config_params.imgArray[0] != null %}
-                                                    <img src="{{ config_params.imgArray[0] }}" alt="icon-1" class="sch-icon">
-                                                {% endif %}
-                                            </div>
+                                        {% if config_params.activeLeft %}
+                                            {% if config_params.iconLeft != null %}
+                                                <div class="img-wrap" >
+                                                    {% if config_params.imgArray[0] != null %}
+                                                        <img src="{{ config_params.imgArray[0] }}" alt="icon-1" class="sch-icon">
+                                                    {% endif %}
+                                                </div>
+                                            {% endif %}
                                         {% endif %}
                                     </span>
                                 {% endblock %}
@@ -161,11 +163,15 @@
                             <div class="element scop-text-middle">
                                 {% block scop_text_middle_icon %}
                                     <span class="icon">
-                                        <div class="img-wrap">
-                                            {% if config_params.imgArray[1] != null %}
-                                                <img src="{{ config_params.imgArray[1] }}" alt="icon-2" class="sch-icon">
+                                        {% if config_params.activeMiddle %}
+                                            {% if config_params.iconMiddle != null %}
+                                                <div class="img-wrap">
+                                                    {% if config_params.imgArray[1] != null %}
+                                                        <img src="{{ config_params.imgArray[1] }}" alt="icon-2" class="sch-icon">
+                                                    {% endif %}
+                                                </div>
                                             {% endif %}
-                                        </div>
+                                        {% endif %}
                                     </span>
                                 {% endblock %}
 
@@ -192,11 +198,15 @@
                             <div class="element scop-text-right">
                                 {% block scop_text_right_icon %}
                                     <span class="icon">
-                                        <div class="img-wrap">
-                                            {% if config_params.imgArray[2] != null %}
-                                                <img src="{{ config_params.imgArray[2] }}" alt="icon-3" class="sch-icon">
+                                        {% if config_params.activeRight %}
+                                            {% if config_params.iconRight != null %}
+                                            <div class="img-wrap">
+                                                {% if config_params.imgArray[2] != null %}
+                                                    <img src="{{ config_params.imgArray[2] }}" alt="icon-3" class="sch-icon">
+                                                {% endif %}
+                                            </div>
                                             {% endif %}
-                                        </div>
+                                        {% endif %}
                                     </span>
                                 {% endblock %}
 
