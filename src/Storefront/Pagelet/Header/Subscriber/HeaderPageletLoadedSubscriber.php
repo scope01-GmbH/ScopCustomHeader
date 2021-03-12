@@ -11,6 +11,7 @@ namespace Scop\ScopCustomHeader\Storefront\Pagelet\Header\Subscriber;
 
 use Psr\Log\LoggerInterface;
 use Shopware\Core\Content\Media\MediaEntity;
+use Shopware\Core\Framework\Api\Context\SalesChannelApiSource;
 use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -77,12 +78,16 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
     {
         $context = $event->getContext();
 
+        /** @var SalesChannelApiSource $source */
+        $source = $context->getSource();
+        $saleChannelId = $source->getSalesChannelId();
+
         $page = $event->getPagelet();
 
         // Getting the iconsID from Configurations
-        $mediaIdLeft = $this->systemConfigService->get('ScopCustomHeader.config.iconLeft');
-        $mediaIdRight = $this->systemConfigService->get('ScopCustomHeader.config.iconRight');
-        $mediaIdMiddle = $this->systemConfigService->get('ScopCustomHeader.config.iconMiddle');
+        $mediaIdLeft = $this->systemConfigService->get('ScopCustomHeader.config.iconLeft', $saleChannelId);
+        $mediaIdRight = $this->systemConfigService->get('ScopCustomHeader.config.iconRight', $saleChannelId);
+        $mediaIdMiddle = $this->systemConfigService->get('ScopCustomHeader.config.iconMiddle', $saleChannelId);
 
         // inserts the iconID in an array to loop through
         $imgArray = [
@@ -113,10 +118,10 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
         }
 
         // Adding the image path array as a variable in plugin configuration
-        $this->systemConfigService->set('ScopCustomHeader.config.imgArray', $imgArray);
+        $this->systemConfigService->set('ScopCustomHeader.config.imgArray', $imgArray, $saleChannelId);
 
         // Get configuration
-        $pluginConfig = $this->systemConfigService->get('ScopCustomHeader.config');
+        $pluginConfig = $this->systemConfigService->get('ScopCustomHeader.config', $saleChannelId);
 
         // Sending the Plugin configuration in ScopCH variable extension in TWIG
         $page->addExtension('ScopCH', new ArrayEntity($pluginConfig));
