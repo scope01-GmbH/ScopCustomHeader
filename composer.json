@@ -22,8 +22,8 @@
             "en-GB": "Info Panel Header"
         },
         "description": {
-            "de-DE": "Dieses Plugin erlaubt es einen Header-Block zu erstellen, mit bis zu drei Individualisierbaren Bild-Icons und Link-Texten",
-            "en-GB": "This plugin allows you to add a header panel with up to three content blocks. Each providing an image icon and a customizable link and text"
+            "de-DE": "Dieses Plugin erlaubt es einen Header-Block zu erstellen, mit bis zu drei individualisierbaren Bild-Icons und Link-Texten. Auf kleineren Endgeräten können Sie weniger Icons mit Texten anzeigen.",
+            "en-GB": "This plugin allows you to add a header panel with up to three content blocks. Each providing an image icon and a customizable link and text. On smaller devices you can display fewer icons with texts."
         },
         "manufacturerLink": {
             "de-DE": "https://scope01.com/",
