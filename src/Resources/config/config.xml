@@ -5,6 +5,12 @@
         <title>General</title>
         <title lang="de-DE">Allgemein</title>
 
+        <input-field type="bool">
+            <name>active</name>
+            <label>active</label>
+            <label lang="de-DE">aktiv</label>
+        </input-field>
+
         <input-field type="int">
             <name>height</name>
             <copyable>true</copyable>
@@ -132,12 +138,6 @@
         <title>USP1</title>
         <title lang="de-DE">USP1</title>
 
-        <input-field type="bool">
-            <name>activeLeft</name>
-            <label>active</label>
-            <label lang="de-DE">aktiv</label>
-        </input-field>
-
         <input-field>
             <name>left</name>
             <copyable>true</copyable>
@@ -179,12 +179,6 @@
     <card>
         <title>USP2</title>
         <title lang="de-DE">USP2</title>
-
-        <input-field type="bool">
-            <name>activeMiddle</name>
-            <label>active</label>
-            <label lang="de-DE">aktiv</label>
-        </input-field>
 
         <input-field>
             <name>middle</name>
@@ -228,12 +222,6 @@
     <card>
         <title>USP3</title>
         <title lang="de-DE">USP3</title>
-
-        <input-field type="bool">
-            <name>activeRight</name>
-            <label>active</label>
-            <label lang="de-DE">aktiv</label>
-        </input-field>
 
         <input-field>
             <name>right</name>
