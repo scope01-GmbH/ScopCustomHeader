@@ -51,5 +51,4 @@ $phpStanConfig = str_replace(
     ],
     $phpStanConfigDist
 );
-var_dump(__DIR__ . '/../phpstan.neon');die();
 file_put_contents(__DIR__ . '/../phpstan.neon', $phpStanConfig);
