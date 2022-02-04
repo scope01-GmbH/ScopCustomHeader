@@ -1,5 +1,8 @@
+# v1.4.0
+- Added snippet key support to the text and the link of the USPs.
+
 # v1.3.0
-- neue Option 'im neuen Tab öffnen'
+- new option 'open in new tab'
 - Bugfix: sales channel specific settings
 
 # v1.2.0

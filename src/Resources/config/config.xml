@@ -146,8 +146,8 @@
             <defaultValue>Home</defaultValue>
             <placeholder>Example: We are the best!</placeholder>
             <placeholder lang="de-DE">Beispiel: Wir sind die Besten!</placeholder>
-            <helpText>This text will be displayed in the left corner.</helpText>
-            <helpText lang="de-DE">USP 1 wird links angezeigt.</helpText>
+            <helpText>This text will be displayed in the left corner. You can also use a text snippet key that starts with "scopCustomHeader.".</helpText>
+            <helpText lang="de-DE">USP 1 wird links angezeigt. Sie können auch einen Textbaustein Namen verwenden, der mit "scopCustomHeader." beginnt.</helpText>
         </input-field> <!-- Text Input Left-->
 
         <input-field>
@@ -158,13 +158,13 @@
             <defaultValue>/</defaultValue>
             <placeholder>Example: https://facebook.com</placeholder>
             <placeholder lang="de-DE">Beispiel: https://facebook.com</placeholder>
-            <helpText>You can type in the link for the USP1.</helpText>
-            <helpText lang="de-DE">Hier kann die Verlinkung für USP1 eingegeben werden.</helpText>
+            <helpText>You can type in the link for the USP1. You can also use a text snippet key that starts with "scopCustomHeader.".</helpText>
+            <helpText lang="de-DE">Hier kann die Verlinkung für USP1 eingegeben werden. Sie können auch einen Textbaustein Namen verwenden, der mit "scopCustomHeader." beginnt.</helpText>
         </input-field> <!-- Text Link Left-->
 
         <input-field type="bool">
             <name>openInNewTabLeft</name>
-            <label>In new tab open.</label>
+            <label>Open in new tab.</label>
             <label lang="de-DE">Im neuen Tab öffnen.</label>
             <defaultValue>true</defaultValue>
         </input-field>
@@ -188,8 +188,8 @@
             <defaultValue>Home</defaultValue>
             <placeholder>Text example: We are the best!</placeholder>
             <placeholder lang="de-DE">Text Beispiel: Wir sind die Beste</placeholder>
-            <helpText>This text will be displayed in the middle.</helpText>
-            <helpText lang="de-DE">USP 2 wird mittig angezeigt.</helpText>
+            <helpText>This text will be displayed in the middle. You can also use a text snippet key that starts with "scopCustomHeader.".</helpText>
+            <helpText lang="de-DE">USP 2 wird mittig angezeigt. Sie können auch einen Textbaustein Namen verwenden, der mit "scopCustomHeader." beginnt.</helpText>
         </input-field> <!-- Text Input Middle-->
 
         <input-field>
@@ -200,13 +200,13 @@
             <defaultValue>/</defaultValue>
             <placeholder>link example: https://facebook.com</placeholder>
             <placeholder lang="de-DE">Beispiel: https://facebook.com</placeholder>
-            <helpText>You can enter the link for the USP2.</helpText>
-            <helpText lang="de-DE">Hier kann die Verlinkung für USP2 eingegeben werden.</helpText>
+            <helpText>You can enter the link for the USP2. You can also use a text snippet key that starts with "scopCustomHeader.".</helpText>
+            <helpText lang="de-DE">Hier kann die Verlinkung für USP2 eingegeben werden. Sie können auch einen Textbaustein Namen verwenden, der mit "scopCustomHeader." beginnt.</helpText>
         </input-field> <!-- Text Link Middle-->
 
         <input-field type="bool">
             <name>openInNewTabMiddle</name>
-            <label>In new tab open.</label>
+            <label>Open in new tab.</label>
             <label lang="de-DE">Im neuen Tab öffnen.</label>
             <defaultValue>true</defaultValue>
         </input-field>
@@ -231,8 +231,8 @@
             <defaultValue>Home</defaultValue>
             <placeholder>Text Example: We are the best!</placeholder>
             <placeholder lang="de-DE">Text Beispiel: Wir sind die Beste</placeholder>
-            <helpText>This text will be displayed in the right corner</helpText>
-            <helpText lang="de-DE">This text will be displayed in the right corner</helpText>
+            <helpText>This text will be displayed in the right corner. You can also use a text snippet key that starts with "scopCustomHeader.".</helpText>
+            <helpText lang="de-DE">USP 3 wird rechts angezeigt. Sie können auch einen Textbaustein Namen verwenden, der mit "scopCustomHeader." beginnt.</helpText>
         </input-field> <!-- Text Input Right-->
 
         <input-field>
@@ -243,13 +243,13 @@
             <defaultValue>/</defaultValue>
             <placeholder>Example: https://facebook.com</placeholder>
             <placeholder lang="de-DE">Beispiel: https://facebook.com</placeholder>
-            <helpText>You can enter the link for the USP3.</helpText>
-            <helpText lang="de-DE">Hier kann die Verlinkung für USP3 eingegeben werden.</helpText>
+            <helpText>You can enter the link for the USP3. You can also use a text snippet key that starts with "scopCustomHeader.".</helpText>
+            <helpText lang="de-DE">Hier kann die Verlinkung für USP3 eingegeben werden. Sie können auch einen Textbaustein Namen verwenden, der mit "scopCustomHeader." beginnt.</helpText>
         </input-field> <!-- Text Link Middle-->
 
         <input-field type="bool">
             <name>openInNewTabRight</name>
-            <label>In new tab open.</label>
+            <label>Open in new tab.</label>
             <label lang="de-DE">Im neuen Tab öffnen.</label>
             <defaultValue>true</defaultValue>
         </input-field>

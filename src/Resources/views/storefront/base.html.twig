@@ -142,13 +142,27 @@
                                     {% block scop_text_left_link %}
                                         <span>
                                             {% if config_params.textLinkLeft %}
-                                                <a class="scop-header-link " href="{{ config_params.textLinkLeft }}"
+                                                <a class="scop-header-link " href="
+                                                    {% if config_params.textLinkLeft starts with "scopCustomHeader." %}
+                                                        {{  config_params.textLinkLeft | trans }}
+                                                    {% else %}
+                                                        {{  config_params.textLinkLeft }}
+                                                    {% endif %}"
                                                     {% if config_params.openInNewTabLeft %}
                                                         target="_blank"
                                                     {% endif %}
-                                                > {{  config_params.left }} </a>
+                                                > {% if config_params.left starts with "scopCustomHeader." %}
+                                                    {{  config_params.left | trans }}
+                                                {% else %}
+                                                    {{  config_params.left }}
+                                                {% endif %}</a>
                                             {% else %}
-                                                <span class="scop-header-link"> {{  config_params.left }} </span>
+                                                <span class="scop-header-link">
+                                                    {% if config_params.left starts with "scopCustomHeader." %}
+                                                        {{  config_params.left | trans }}
+                                                    {% else %}
+                                                        {{  config_params.left }}
+                                                    {% endif %} </span>
                                             {% endif %}
                                         </span>
                                     {% endblock %}
@@ -173,13 +187,27 @@
                                     {% block scop_text_middle_link %}
                                         <span>
                                             {% if config_params.textLinkMiddle %}
-                                                <a class="scop-header-link " href="{{ config_params.textLinkMiddle }}"
+                                                <a class="scop-header-link " href="
+                                                    {% if config_params.textLinkMiddle starts with "scopCustomHeader." %}
+                                                        {{  config_params.textLinkMiddle | trans }}
+                                                    {% else %}
+                                                        {{  config_params.textLinkMiddle }}
+                                                    {% endif %}"
                                                     {% if config_params.openInNewTabMiddle %}
                                                         target="_blank"
                                                     {% endif %}
-                                                > {{  config_params.middle }} </a>
+                                                > {% if config_params.middle starts with "scopCustomHeader." %}
+                                                        {{  config_params.middle | trans }}
+                                                    {% else %}
+                                                        {{  config_params.middle }}
+                                                    {% endif %} </a>
                                             {% else %}
-                                                <span class="scop-header-link"> {{  config_params.middle }} </span>
+                                                <span class="scop-header-link">
+                                                    {% if config_params.middle starts with "scopCustomHeader." %}
+                                                        {{  config_params.middle | trans }}
+                                                    {% else %}
+                                                        {{  config_params.middle }}
+                                                    {% endif %} </span>
                                             {% endif %}
                                         </span>
                                     {% endblock %}
@@ -204,13 +232,27 @@
                                     {% block scop_text_right_link %}
                                         <span>
                                             {% if config_params.textLinkRight %}
-                                                <a class="scop-header-link " href="{{ config_params.textLinkRight }}"
+                                                <a class="scop-header-link " href="
+                                                    {% if config_params.textLinkRight starts with "scopCustomHeader." %}
+                                                        {{  config_params.textLinkRight | trans }}
+                                                    {% else %}
+                                                        {{  config_params.textLinkRight }}
+                                                    {% endif %}"
                                                     {% if config_params.openInNewTabRight %}
                                                         target="_blank"
                                                     {% endif %}
-                                                > {{  config_params.right }} </a>
+                                                > {% if config_params.right starts with "scopCustomHeader." %}
+                                                        {{  config_params.right | trans }}
+                                                    {% else %}
+                                                        {{  config_params.right }}
+                                                    {% endif %} </a>
                                             {% else %}
-                                                <span class="scop-header-link"> {{  config_params.right }} </span>
+                                                <span class="scop-header-link">
+                                                    {% if config_params.right starts with "scopCustomHeader." %}
+                                                        {{  config_params.right | trans }}
+                                                    {% else %}
+                                                        {{  config_params.right }}
+                                                    {% endif %} </span>
                                             {% endif %}
                                         </span>
                                     {% endblock %}
