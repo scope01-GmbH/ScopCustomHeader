@@ -1,19 +1,20 @@
 # Shopware 6 Custom Header
 
-| Version    | Changes                                                                             | Availability   |
-|---------	|------------------------------------------------------------------------------------------- |----------------|
-| 1.0.0     | First release                                                                          | Shopware Store         |
-| 1.1.0     | Support for Shopware 6.2                                                                       | Shopware Store         |
-| 1.2.0     | Bugfix that can cause icons to not be shown<br>Shopware 6.3 compatibility                    | Shopware Store         |
-| 1.3.0     | new option 'open in new tab'<br>Bugfix: sales channel specific settings                    | Shopware Store         |
-| 1.4.0     | Added snippet key support to the text and the link of the USPs                          | Github         |
+| Version | Changes                                                                            | Availability   |
+|---------|------------------------------------------------------------------------------------------ |----------------|
+| 1.0.0   | First release                                                                         | Shopware Store         |
+| 1.1.0   | Support for Shopware 6.2                                                                      | Shopware Store         |
+| 1.2.0   | Bugfix that can cause icons to not be shown<br>Shopware 6.3 compatibility                   | Shopware Store         |
+| 1.3.0   | new option 'open in new tab'<br>Bugfix: sales channel specific settings                   | Shopware Store         |
+| 1.4.0   | Added snippet key support to the text and the link of the USPs                         | Github         |
+| 1.5.0   | Moved icon selection to top of the configuration                          | Github         |
 
 # Installation
 
 ## Zip Installation package for the Shopware Plugin Manager
 
 * Download the [latest plugin version](https://github.com/scope01-GmbH/ScopCustomHeader/releases/latest/) (
-  e.g. `ScopCustomHeader-1.4.0.zip`)
+  e.g. `ScopCustomHeader-1.5.0.zip`)
 * Upload and install plugin using Plugin Manager
 
 ## Git Version

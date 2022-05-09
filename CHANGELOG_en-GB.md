@@ -1,3 +1,6 @@
+# v1.5.0
+- Moved icon selection to top of the configuration.
+
 # v1.4.0
 - Added snippet key support to the text and the link of the USPs.
 

@@ -138,6 +138,12 @@
         <title>USP1</title>
         <title lang="de-DE">USP1</title>
 
+        <component name="sw-media-field">
+            <name>iconLeft</name>
+            <label>Upload media or choose one from the media manager</label>
+            <label lang="de-DE">Media hochladen oder auswählen</label>
+        </component>
+
         <input-field>
             <name>left</name>
             <copyable>true</copyable>
@@ -169,16 +175,19 @@
             <defaultValue>true</defaultValue>
         </input-field>
 
-        <component name="sw-media-field">
-            <name>iconLeft</name>
-            <label>Upload media or choose one from the media manager</label>
-            <label lang="de-DE">Media hochladen oder auswählen</label>
-        </component>
+
     </card> <!--USP1-->
 
     <card>
         <title>USP2</title>
         <title lang="de-DE">USP2</title>
+
+
+        <component name="sw-media-field">
+            <name>iconMiddle</name>
+            <label>Upload media or choose one from the media manager</label>
+            <label lang="de-DE">Media hochladen oder auswählen</label>
+        </component>
 
         <input-field>
             <name>middle</name>
@@ -211,17 +220,18 @@
             <defaultValue>true</defaultValue>
         </input-field>
 
-        <component name="sw-media-field">
-            <name>iconMiddle</name>
-            <label>Upload media or choose one from the media manager</label>
-            <label lang="de-DE">Media hochladen oder auswählen</label>
-        </component>
 
     </card> <!--USP2-->
 
     <card>
         <title>USP3</title>
         <title lang="de-DE">USP3</title>
+
+        <component name="sw-media-field">
+            <name>iconRight</name>
+            <label>Upload media or choose one from the media manager</label>
+            <label lang="de-DE">Media hochladen oder auswählen</label>
+        </component>
 
         <input-field>
             <name>right</name>
@@ -254,11 +264,7 @@
             <defaultValue>true</defaultValue>
         </input-field>
 
-        <component name="sw-media-field">
-            <name>iconRight</name>
-            <label>Upload media or choose one from the media manager</label>
-            <label lang="de-DE">Media hochladen oder auswählen</label>
-        </component>
+
     </card> <!--USP3-->
 
     <card>

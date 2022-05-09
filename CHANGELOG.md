@@ -1,3 +1,6 @@
+# v1.5.0
+- Icon Auswahl Reihenfolge angepasst.
+
 # v1.4.0
 - Textbaustein Namen Unterstützung zu Text und Link von USPs hinzugefügt.
 
