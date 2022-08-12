@@ -1,3 +1,7 @@
+# v1.6.0
+- Bugfix: Empty <span> element exists, when no icon is selected.
+- Added a new css class.
+
 # v1.5.0
 - Moved icon selection to top of the configuration.
 
