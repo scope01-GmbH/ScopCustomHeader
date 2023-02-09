@@ -13,7 +13,7 @@ use Psr\Log\LoggerInterface;
 use Shopware\Core\Content\Media\MediaEntity;
 use Shopware\Core\Framework\Api\Context\SalesChannelApiSource;
 use Shopware\Core\Framework\Context;
-use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
+use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\Log\LoggingService;
 use Shopware\Core\Framework\Struct\ArrayEntity;
@@ -34,7 +34,7 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
     private $systemConfigService;
 
     /**
-     * @var EntityRepositoryInterface
+     * @var EntityRepository
      */
     private $mediaRepository;
 
@@ -47,12 +47,12 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
      * HeaderPageletLoadedSubscriber constructor.
      *
      * @param SystemConfigService $systemConfigService
-     * @param EntityRepositoryInterface $mediaRepository
+     * @param EntityRepository $mediaRepository
      * @param LoggerInterface $loggerInterface
      */
     public function __construct(
         SystemConfigService $systemConfigService,
-        EntityRepositoryInterface $mediaRepository,
+        EntityRepository $mediaRepository,
         LoggerInterface $loggerInterface
     ) {
         $this->systemConfigService = $systemConfigService;
