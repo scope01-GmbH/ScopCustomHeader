@@ -1,3 +1,7 @@
+# v1.6.0
+- Fehlerbehebung: Leeres <span> Element vorhanden, wenn kein Icon gewählt.
+- Weitere css Klasse hinzugefügt.
+
 # v1.5.0
 - Icon Auswahl Reihenfolge angepasst.
 

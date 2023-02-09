@@ -128,15 +128,15 @@
                             {% block scop_text_left %}
                                 <div class="element scop-text-left">
                                     {% block scop_text_left_icon %}
-                                        <span class="icon">
-                                            {% if config_params.iconLeft != null %}
+                                        {% if config_params.iconLeft != null %}
+                                            <span class="icon scop-header-icon">
                                                 <div class="img-wrap" >
                                                     {% if config_params.imgArray[0] != null %}
                                                         <img src="{{ config_params.imgArray[0] }}" alt="icon-1" class="sch-icon">
                                                     {% endif %}
                                                 </div>
-                                            {% endif %}
-                                        </span>
+                                            </span>
+                                        {% endif %}
                                     {% endblock %}
 
                                     {% block scop_text_left_link %}
@@ -173,15 +173,15 @@
                             {% block scop_text_middle %}
                                 <div class="element scop-text-middle">
                                     {% block scop_text_middle_icon %}
-                                        <span class="icon">
-                                            {% if config_params.iconMiddle != null %}
+                                        {% if config_params.iconMiddle != null %}
+                                            <span class="icon scop-header-icon">
                                                 <div class="img-wrap">
                                                     {% if config_params.imgArray[1] != null %}
                                                         <img src="{{ config_params.imgArray[1] }}" alt="icon-2" class="sch-icon">
                                                     {% endif %}
                                                 </div>
-                                            {% endif %}
-                                        </span>
+                                            </span>
+                                        {% endif %}
                                     {% endblock %}
 
                                     {% block scop_text_middle_link %}
@@ -218,15 +218,15 @@
                             {% block scop_text_right %}
                                 <div class="element scop-text-right">
                                     {% block scop_text_right_icon %}
-                                        <span class="icon">
-                                            {% if config_params.iconRight != null %}
+                                        {% if config_params.iconRight != null %}
+                                            <span class="icon scop-header-icon">
                                                 <div class="img-wrap">
                                                     {% if config_params.imgArray[2] != null %}
                                                         <img src="{{ config_params.imgArray[2] }}" alt="icon-3" class="sch-icon">
                                                     {% endif %}
                                                 </div>
-                                            {% endif %}
-                                        </span>
+                                            </span>
+                                        {% endif %}
                                     {% endblock %}
 
                                     {% block scop_text_right_link %}

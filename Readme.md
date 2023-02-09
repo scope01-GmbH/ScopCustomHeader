@@ -8,6 +8,7 @@
 | 1.3.0   | new option 'open in new tab'<br>Bugfix: sales channel specific settings                   | Shopware Store         |
 | 1.4.0   | Added snippet key support to the text and the link of the USPs                         | Github         |
 | 1.5.0   | Moved icon selection to top of the configuration                          | Github         |
+| 1.6.0   | Bugfix: Empty <span> element exists, when no icon is selected.<br>Added a new css class.                          | Github         |
 
 # Installation
 
