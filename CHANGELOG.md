@@ -1,3 +1,6 @@
+# v2.0.0
+- Changed to Shopware v6.5
+
 # v1.6.0
 - Fehlerbehebung: Leeres <span> Element vorhanden, wenn kein Icon gewählt.
 - Weitere css Klasse hinzugefügt.

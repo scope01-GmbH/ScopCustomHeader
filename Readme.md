@@ -9,6 +9,10 @@
 | 1.4.0   | Added snippet key support to the text and the link of the USPs                         | Github         |
 | 1.5.0   | Moved icon selection to top of the configuration                          | Github         |
 | 1.6.0   | Bugfix: Empty <span> element exists, when no icon is selected.<br>Added a new css class.                          | Github         |
+| 2.0.0     | Changed to Shopware v6.5                               | Github         |
+
+> **Warning**\
+> Version 2.0.0 is no longer compatible with Shopware 6.4 or below!
 
 # Installation
 
