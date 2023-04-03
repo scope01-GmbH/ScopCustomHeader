@@ -1,5 +1,5 @@
 # v2.0.0
-- Update auf Shopware v6.5
+- Changed to Shopware v6.5
 
 # v1.6.0
 - Bugfix: Empty <span> element exists, when no icon is selected.
