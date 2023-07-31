@@ -1,3 +1,6 @@
+# v2.1.0
+- New option 'Display the info bar as a carousel in the mobile version.'
+
 # v2.0.0
 - Changed to Shopware v6.5
 

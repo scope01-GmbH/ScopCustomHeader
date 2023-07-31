@@ -68,6 +68,12 @@
                         color: {{ config_params.hover }};
                     }
                     {% endif %}
+
+                    /* Mobile Carousel */
+                    .custom-header-carousel {
+                        display: none;
+                    }
+
                     /* Mobile version */
 
                     @media screen and (max-width: 768px) {
@@ -103,15 +109,29 @@
                         }
                         {% endif %}
 
-                        .scop-text-left {
+                        .custom-header-static .scop-text-left {
                             display: {% if config_params.displayTextLeft == false %}none {% else %} block {% endif %};
                         }
-                        .scop-text-middle {
+                        .custom-header-static .scop-text-middle {
                             display: {% if config_params.displayTextMiddle == false %}none {% else %} block {% endif %};
                         }
-                        .scop-text-right {
+                        .custom-header-static .scop-text-right {
                             display: {% if config_params.displayTextRight == false %}none {% else %} block {% endif %};
                         }
+
+                        /* Mobile Carousel */
+                        .custom-header-carousel .element {
+                            text-align: center;
+                        }
+
+                        {% if config_params.mobileBreakpointCarousel == true %}
+                        .custom-header-carousel {
+                            display: block;
+                        }
+                        .custom-header-static {
+                            display: none;
+                        }
+                        {% endif %}
                     }
 
                 </style>
@@ -120,13 +140,22 @@
             {% block custom_header_wrapper %}
                 <div class="custom-header-wrapper">
                 {# Wrapping the content of the header in container #}
-                <div class="container">
+                {% set carouselEnabled = [false] %}
+                {% set carouselSpeed = 5000 %}
+                {% if config_params.mobileBreakpointCarousel == true %}
+                    {% set carouselEnabled = [false, true] %}
+                {% endif %}
+                {% if config_params.mobileCarouselSpeed == true %}
+                    {% set carouselSpeed = config_params.mobileCarouselSpeed * 1000 %}
+                {% endif %}
+                {% for carousel in carouselEnabled %}
+                <div {% if carousel %}id="custom-header-carousel"{% endif %}class="container{% if carousel %} custom-header-carousel carousel slide" data-bs-ride="carousel" data-bs-interval="{{ carouselSpeed }}{% else %} custom-header-static{% endif %}">
                     {% block custom_header %}
-                        <div class="custom-header ">
+                        <div class="custom-header{% if carousel %} carousel-inner{% endif %}">
 
                             {#    LEFT TEXT   #}
                             {% block scop_text_left %}
-                                <div class="element scop-text-left">
+                                <div class="element scop-text-left{% if carousel %} carousel-item active{% endif %}">
                                     {% block scop_text_left_icon %}
                                         {% if config_params.iconLeft != null %}
                                             <span class="icon scop-header-icon">
@@ -171,7 +200,7 @@
 
                             {#    Middle TEXT #}
                             {% block scop_text_middle %}
-                                <div class="element scop-text-middle">
+                                <div class="element scop-text-middle{% if carousel %} carousel-item{% endif %}">
                                     {% block scop_text_middle_icon %}
                                         {% if config_params.iconMiddle != null %}
                                             <span class="icon scop-header-icon">
@@ -216,7 +245,7 @@
 
                             {#    Right TEXT #}
                             {% block scop_text_right %}
-                                <div class="element scop-text-right">
+                                <div class="element scop-text-right{% if carousel %} carousel-item{% endif %}">
                                     {% block scop_text_right_icon %}
                                         {% if config_params.iconRight != null %}
                                             <span class="icon scop-header-icon">
@@ -262,6 +291,7 @@
                     </div>
                     {% endblock %}
                 </div>
+                {% endfor %}
             </div>
             {% endblock %}
 

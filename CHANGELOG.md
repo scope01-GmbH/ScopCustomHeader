@@ -1,3 +1,6 @@
+# v2.1.0
+- Neue Option 'In der mobilen Version die Info-Leiste als Karussell darstellen.'
+
 # v2.0.0
 - Update auf Shopware v6.5
 

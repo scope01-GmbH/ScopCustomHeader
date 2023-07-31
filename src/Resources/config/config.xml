@@ -362,5 +362,24 @@
             <label lang="de-DE">USP3 anzeigen?</label>
         </input-field>
 
+        <input-field type="bool">
+            <name>mobileBreakpointCarousel</name>
+            <label>Display the info bar as a carousel in the mobile version.</label>
+            <label lang="de-DE">In der mobilen Version die Info-Leiste als Karussell darstellen.</label>
+            <helpText>USP1, USP2 and USP3 will be displayed alternating. Not compatible with the options "Display USP1/USP2/USP3?", they will no longer have any effect.</helpText>
+            <helpText lang="de-DE">USP1, USP2 und USP3 werden wechselnd angezeigt. Nicht kompatibel mit den Optionen "USP1/USP2/USP3 anzeigen?", diese haben dann keine Wirkung mehr.</helpText>
+        </input-field> <!--Display as Carousel on Mobile-->
+        <input-field type="int">
+            <name>mobileCarouselSpeed</name>
+            <copyable>true</copyable>
+            <label>Carousel Speed</label>
+            <label lang="de-DE">Geschwindigkeit des Karussells</label>
+            <placeholder>Please insert the speed in seconds. Example: 5 </placeholder>
+            <placeholder lang="de-DE">Geben Sie bitte die Geschwindigkeit in Sekunden ein. Beispiel: 5</placeholder>
+            <helpText>Please insert the speed in seconds. Example: 5 </helpText>
+            <helpText lang="de-DE">Geben Sie bitte die Geschwindigkeit in Sekunden ein. Beispiel: 5</helpText>
+            <defaultValue>5</defaultValue>
+        </input-field> <!-- Carousel Speed-->
+
     </card> <!--Bar mobile configurations-->
 </config>
