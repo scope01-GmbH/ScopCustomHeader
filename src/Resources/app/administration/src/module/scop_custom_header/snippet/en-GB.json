@@ -1,0 +1,67 @@
+{
+  "scopcustomheader": {
+    "general": {
+      "title": "Custom Header",
+      "errorTitle": "Error"
+    },
+    "list": {
+      "createButton": "Create header",
+      "label": "Name",
+      "columnEnabled": "Enabled",
+      "salesChannel": "Sales channel",
+      "allSalesChannels": "All"
+    },
+    "detail": {
+      "cancelButton": "Cancel",
+      "saveButton": "Save",
+      "label": "Name",
+      "description": "Description",
+      "validFromLabel": "Valid from",
+      "validFromPlaceholder": "Select start date",
+      "validUntilLabel": "Valid until",
+      "validUntilPlaceholder": "Select end date",
+      "salesChannel": {
+        "select": "Select SalesChannel",
+        "all": "All"
+      },
+      "priority": "Priority",
+      "enabledLabel": "Enabled",
+      "general": "General",
+      "settingsDesktop": "Desktop",
+      "settingsMobile": "Mobile",
+      "height": "Header height",
+      "backgroundColor": "Background color",
+      "fontSize": "Font size",
+      "hoverColor": "Hover color",
+      "textColor": "Text color",
+      "paddingTop": "Padding top",
+      "paddingRight": "Padding right",
+      "paddingBottom": "Padding bottom",
+      "paddingLeft": "Padding left",
+      "tabs": {
+        "tabGeneral": "General",
+        "tabColumns": "Columns"
+      },
+      "columns": {
+        "buttonAddColumn": "Add column",
+        "label": "Name",
+        "textLink": "Link",
+        "openInNewTab": "Open link in new window",
+        "showMobileLabel": "Show column on mobile",
+        "showDesktopLabel": "Show column on desktop",
+        "mediaUpload": "Icon",
+        "buttonDeleteColumn": "Delete column",
+        "delete": {
+          "confirmTitle": "Delete column",
+          "confirmText": "Do you really want to remove this column from the header?",
+          "buttonCancel": "Cancel",
+          "buttonDelete": "Delete column"
+        },
+        "buttonMoveUp": "Nach oben",
+        "buttonMoveDown": "Nach unten"
+      },
+      "mobileBreakpointCarouselLabel": "Display the info bar as a carousel in the mobile version.",
+      "mobileCarouselSpeedLabel": "Carousel Speed"
+  }
+}
+}

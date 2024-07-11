@@ -1,0 +1,67 @@
+{
+  "scopcustomheader": {
+    "general": {
+      "title": "Individueller Header",
+      "errorTitle": "Fehler"
+    },
+    "list": {
+      "createButton": "Header erstellen",
+      "label": "Name",
+      "columnEnabled": "Aktiv",
+      "salesChannel": "Verkaufskanal",
+      "allSalesChannels": "Alle"
+    },
+    "detail": {
+      "cancelButton": "Abbrechen",
+      "saveButton": "Speichern",
+      "label": "Name",
+      "description": "Beschreibung",
+      "validFrom": "Gültig ab",
+      "validFromPlaceholder": "Wähle ein Startdatum",
+      "validUntil": "Gültig bis",
+      "validUntilPlaceholder": "Wähle ein Enddatum",
+      "salesChannel": {
+        "select": "Verkaufskanal auswählen",
+        "all": "Alle"
+      },
+      "priority": "Priorität",
+      "enabledLabel": "Aktiv",
+      "general": "Allgemein",
+      "settingsDesktop": "Desktop",
+      "settingsMobile": "Mobile",
+      "height": "Höhe der Leiste",
+      "backgroundColor": "Hintergrundfarbe",
+      "fontSize": "Schriftgröße",
+      "hoverColor": "Hover Farbe",
+      "textColor": "Textfarbe",
+      "paddingTop": "Abstand oben",
+      "paddingRight": "Abstand rechts",
+      "paddingBottom": "Abstand unten",
+      "paddingLeft": "Abstand links",
+      "tabs": {
+        "tabGeneral": "Allgemein",
+        "tabColumns": "Spalten"
+      },
+      "columns": {
+        "buttonAddColumn": "Spalte hinzufügen",
+        "label": "Name",
+        "textLink": "Link",
+        "openInNewTab": "Link in einem neuen Tab öffnen",
+        "showMobileLabel": "Spalte auf dem Handy anzeigen",
+        "showDesktopLabel": "Spalte auf dem Desktop anzeigen",
+        "mediaUpload": "Icon",
+        "buttonDeleteColumn": "Spalte entfernen",
+        "delete": {
+          "confirmTitle": "Spalte entfernen",
+          "confirmText": "Möchtest Du diese Spalte wirklich aus dem Header entfernen?",
+          "buttonCancel": "Abbrechen",
+          "buttonDelete": "Spalte entfernen"
+        },
+        "buttonMoveUp": "Nach oben",
+        "buttonMoveDown": "Nach unten"
+      },
+      "mobileBreakpointCarouselLabel": "In der mobilen Version die Info-Leiste als Karussell darstellen.",
+      "mobileCarouselSpeedLabel": "Geschwindigkeit des Karussells"
+    }
+  }
+}

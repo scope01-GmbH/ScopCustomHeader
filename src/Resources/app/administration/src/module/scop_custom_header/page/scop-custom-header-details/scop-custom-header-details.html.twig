@@ -1,0 +1,52 @@
+{% block scop_custom_header_details %}
+    <sw-page class="scop-custom-header-details">
+
+        <template #smart-bar-actions>
+            <sw-button :routerLink="{name: 'scop.custom.header.list'}">
+                {{ $t('scopcustomheader.detail.cancelButton') }}</sw-button>
+            <sw-button-process :isLoading="isLoading"
+                               :processSuccess="processSuccess" variant="primary"
+                               @update:processSuccess="saveFinish" @click="onClickSave">
+                {{ $t('scopcustomheader.detail.saveButton') }}</sw-button-process>
+        </template>
+        <template #content>
+            <sw-tabs
+                    v-if="!isCreateMode"
+                    position-identifier="scop-custom-header-details"
+            >
+                <sw-tabs-item
+                        :route="{ name: 'scop.custom.header.details.base', params: { id: $route.params.id } }"
+                        :title="$tc('scopcustomheader.detail.tabs.tabGeneral')"
+                >
+                    {{ $tc('scopcustomheader.detail.tabs.tabGeneral') }}
+                </sw-tabs-item>
+
+                <sw-tabs-item
+                        :route="{ name: 'scop.custom.header.details.columns', params: { id: $route.params.id } }"
+                        :title="$tc('scopcustomheader.detail.tabs.tabColumns')"
+                >
+                    {{ $tc('scopcustomheader.detail.tabs.tabColumns') }}
+                </sw-tabs-item>
+
+            </sw-tabs>
+
+            <div
+                    v-if="isLoading && !header"
+            >
+                <sw-skeleton />
+                <sw-skeleton />
+                <sw-skeleton />
+            </div>
+
+            <template v-else>
+                <router-view v-slot="{ Component }">
+                    <component
+                            :is="Component"
+                            :header="header"
+                            :is-create-mode="isCreateMode"
+                    ></component>
+                </router-view>
+            </template>
+        </template>
+    </sw-page>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% block scop_custom_header_list %}
+    <sw-page class="scop-custom-header-list">
+        <template #smart-bar-actions>
+            {% block scop_custom_header_list_smarbar %}
+                <sw-button variant="primary" :routerLink="{name: 'scop.custom.header.create'}">
+                    {{ $t('scopcustomheader.list.createButton') }}
+                </sw-button>
+            {% endblock %}
+        </template>
+        <template #content>
+            {% block scop_custom_header_list_content %}
+                <sw-entity-listing
+                        v-if="header"
+                        :items="header"
+                        :repository="repository"
+                        :columns="columns"
+                        detailRoute="scop.custom.header.details"
+                        @update-records="onUpdate"
+                >
+                    <template #column-salesChannel="{ item }">
+                        {{ item.salesChannel ? item.salesChannel.translated.name : $tc('scopcustomheader.list.allSalesChannels') }}
+                    </template>
+                </sw-entity-listing>
+            {% endblock %}
+        </template>
+    </sw-page>
+{% endblock %}

@@ -1,0 +1,83 @@
+import scopHeaderState from './page/scop-custom-header-details/state';
+
+import './page/scop-custom-header-list';
+import './page/scop-custom-header-details';
+import './view/scop-custom-header-details-base'
+import './view/scop-custom-header-details-columns'
+import './component/scop-custom-header-column-component'
+import deDE from './snippet/de-DE.json';
+import enGB from './snippet/en-GB.json';
+
+Shopware.State.registerModule('scopHeaderDetail', scopHeaderState);
+
+Shopware.Module.register('scop-custom-header', {
+        type: 'plugin',
+        name: 'scop-custom-header',
+        title: 'scopcustomheader.general.title',
+        description: 'scopcustomheader.general.title',
+        color: '#019994',
+        icon: 'small-copy',
+        routes: {
+            list: {
+                components: {
+                    default: 'scop-custom-header-list',
+                },
+                path: 'list'
+            },
+            create: {
+                component: 'scop-custom-header-details',
+                path: 'create',
+                redirect: {
+                    name: 'scop.custom.header.create.base',
+                },
+                children: {
+                    base: {
+                        component: 'scop-custom-header-details-base',
+                        path: 'base',
+                        meta: {
+                            parentPath: 'scop.custom.header.list'
+                        },
+                    },
+                }
+            },
+            details: {
+                component: 'scop-custom-header-details',
+                path: 'details/:id?',
+                meta: {
+                    parentPath: 'scop.custom.header.list'
+                },
+                redirect: {
+                    name: 'scop.custom.header.details.base',
+                },
+                children: {
+                    base: {
+                        component: 'scop-custom-header-details-base',
+                        path: 'base'
+                    },
+                    columns: {
+                        component: 'scop-custom-header-details-columns',
+                        path: 'columns'
+                    }
+                },
+                props: {
+                    default: (route) => {
+                        return {
+                            headerId: route.params.id,
+                        }
+                    }
+                }
+            },
+
+        },
+        // TODO: Icon umändern (layout?)
+        settingsItem: [{
+            to: 'scop.custom.header.list',
+            group: 'shop',
+            icon: 'default-shopping-paper-bag-product'
+        }],
+        snippets: {
+            'de-DE': deDE,
+            'en-GB': enGB
+        }
+    }
+);

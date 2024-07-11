@@ -1,0 +1,98 @@
+<sw-card :title="getTitle" position-identifier="scop-custom-header-column-component">
+    <sw-context-button class="scop-custom-header-column-component__context-button">
+        <sw-context-menu-item
+                variant="danger"
+                @click="onShowDeleteModal"
+        >
+            {{ $tc('scopcustomheader.detail.columns.buttonDeleteColumn') }}
+        </sw-context-menu-item>
+        <sw-context-menu-item
+                variant="default"
+                v-if="!isFirst(column)"
+                @click="onMoveUp(column)"
+        >
+            {{ $tc('scopcustomheader.detail.columns.buttonMoveUp') }}
+        </sw-context-menu-item>
+        <sw-context-menu-item
+                variant="default"
+                v-if="!isLast(column)"
+                @click="onMoveDown(column)"
+        >
+            {{ $tc('scopcustomheader.detail.columns.buttonMoveDown') }}
+        </sw-context-menu-item>
+    </sw-context-button>
+
+    <sw-container columns="1fr 1fr" gap="16px">
+
+        <sw-text-field :label="$t('scopcustomheader.detail.columns.label')" v-model:value="column.label"
+                       validation="required"></sw-text-field>
+
+        <sw-text-field :label="$t('scopcustomheader.detail.columns.textLink')" v-model:value="column.textLink"
+                       validation="required"></sw-text-field>
+
+    </sw-container>
+
+    <sw-upload-listener
+            :upload-tag="column.id"
+            auto-upload
+            @media-upload-finish="setMediaItem"
+    ></sw-upload-listener>
+
+    <sw-media-upload-v2
+            :source="column.iconId"
+            :allow-multi-select="false"
+            :upload-tag="column.id"
+            :label="$t('scopcustomheader.detail.columns.mediaUpload')"
+            @sw-media-upload-v2-media-upload-success="setMediaItem"
+            @media-drop="onDropMedia"
+            @media-upload-sidebar-open="onOpenMediaModal"
+            @media-upload-remove-image="onUnlinkIcon"
+    ></sw-media-upload-v2>
+
+    <sw-media-modal-v2
+            v-if="mediaModalIsOpen"
+            variant="full"
+            :allow-multi-select="false"
+            @media-upload-remove-image="onImageRemove"
+            @media-modal-selection-change="onSelectionChanges"
+            @modal-close="onCloseModal"
+    ></sw-media-modal-v2>
+
+    <sw-switch-field :label="$t('scopcustomheader.detail.columns.openInNewTab')"
+                     v-model:value="column.openInNewTab" validation="required"></sw-switch-field>
+
+    <sw-checkbox-field v-model:value="column.showDesktop" :label="$t('scopcustomheader.detail.columns.showDesktopLabel')"></sw-checkbox-field>
+
+    <sw-checkbox-field v-model:value="column.showMobile" :label="$t('scopcustomheader.detail.columns.showMobileLabel')"></sw-checkbox-field>
+
+
+    <sw-modal
+            v-if="showDeleteModal"
+            variant="small"
+            :title="$tc('scopcustomheader.detail.columns.delete.confirmTitle')"
+            @modal-close="onCloseDeleteModal"
+    >
+            <p>
+                {{ $tc('scopcustomheader.detail.columns.delete.confirmText') }}
+            </p>
+
+            <template #modal-footer>
+                    <sw-button
+                            size="small"
+                            @click="onCloseDeleteModal"
+                    >
+                        {{ $tc('scopcustomheader.detail.columns.delete.buttonCancel') }}
+                    </sw-button>
+
+                    <sw-button
+                            size="small"
+                            variant="danger"
+                            @click="onConfirmDelete"
+                    >
+                        {{ $tc('scopcustomheader.detail.columns.delete.buttonDelete') }}
+                    </sw-button>
+            </template>
+    </sw-modal>
+
+
+</sw-card>
