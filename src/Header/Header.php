@@ -109,13 +109,13 @@ class Header extends Entity
      */
     protected $mobileCarouselSpeed;
 
-    protected int $heightMobile;
+    protected $heightMobile;
 
-    protected string $backgroundColorMobile;
+    protected $backgroundColorMobile;
 
-    protected string $hoverColorMobile;
+    protected $hoverColorMobile;
 
-    protected string $textColorMobile;
+    protected $textColorMobile;
 
 
     /**
@@ -151,7 +151,7 @@ class Header extends Entity
     /**
      * @return string
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
@@ -196,7 +196,7 @@ class Header extends Entity
         $this->enabled = $enabled;
     }
 
-    public function getHeight(): int
+    public function getHeight(): ?int
     {
         return $this->height;
     }
@@ -206,7 +206,7 @@ class Header extends Entity
         $this->height = $height;
     }
 
-    public function getBackground(): string
+    public function getBackground(): ?string
     {
         return $this->background;
     }
@@ -216,7 +216,7 @@ class Header extends Entity
         $this->background = $background;
     }
 
-    public function getTextFontSize(): int
+    public function getTextFontSize(): ?int
     {
         return $this->textFontSize;
     }
@@ -226,7 +226,7 @@ class Header extends Entity
         $this->textFontSize = $textFontSize;
     }
 
-    public function getTextColor(): string
+    public function getTextColor(): ?string
     {
         return $this->textColor;
     }
@@ -236,7 +236,7 @@ class Header extends Entity
         $this->textColor = $textColor;
     }
 
-    public function getHover(): string
+    public function getHover(): ?string
     {
         return $this->hover;
     }
@@ -246,7 +246,7 @@ class Header extends Entity
         $this->hover = $hover;
     }
 
-    public function getPaddingTop(): int
+    public function getPaddingTop(): ?int
     {
         return $this->paddingTop;
     }
@@ -256,7 +256,7 @@ class Header extends Entity
         $this->paddingTop = $paddingTop;
     }
 
-    public function getPaddingBottom(): int
+    public function getPaddingBottom(): ?int
     {
         return $this->paddingBottom;
     }
@@ -267,7 +267,7 @@ class Header extends Entity
     }
 
 
-    public function getPaddingLeft(): int
+    public function getPaddingLeft(): ?int
     {
         return $this->paddingLeft;
     }
@@ -277,7 +277,7 @@ class Header extends Entity
         $this->paddingLeft = $paddingLeft;
     }
 
-    public function getPaddingRight(): int
+    public function getPaddingRight(): ?int
     {
         return $this->paddingRight;
     }
@@ -287,7 +287,7 @@ class Header extends Entity
         $this->paddingRight = $paddingRight;
     }
 
-    public function getTextFontSizeMobile(): int
+    public function getTextFontSizeMobile(): ?int
     {
         return $this->textFontSizeMobile;
     }
@@ -297,7 +297,7 @@ class Header extends Entity
         $this->textFontSizeMobile = $textFontSizeMobile;
     }
 
-    public function getPaddingTopMobile(): int
+    public function getPaddingTopMobile(): ?int
     {
         return $this->paddingTopMobile;
     }
@@ -307,7 +307,7 @@ class Header extends Entity
         $this->paddingTopMobile = $paddingTopMobile;
     }
 
-    public function getPaddingBottomMobile(): int
+    public function getPaddingBottomMobile(): ?int
     {
         return $this->paddingBottomMobile;
     }
@@ -317,7 +317,7 @@ class Header extends Entity
         $this->paddingBottomMobile = $paddingBottomMobile;
     }
 
-    public function getPaddingLeftMobile(): int
+    public function getPaddingLeftMobile(): ?int
     {
         return $this->paddingLeftMobile;
     }
@@ -327,7 +327,7 @@ class Header extends Entity
         $this->paddingLeftMobile = $paddingLeftMobile;
     }
 
-    public function getPaddingRightMobile(): int
+    public function getPaddingRightMobile(): ?int
     {
         return $this->paddingRightMobile;
     }
@@ -337,7 +337,7 @@ class Header extends Entity
         $this->paddingRightMobile = $paddingRightMobile;
     }
 
-    public function isMobileBreakpointCarousel(): bool
+    public function isMobileBreakpointCarousel(): ?bool
     {
         return $this->mobileBreakpointCarousel;
     }
@@ -347,17 +347,17 @@ class Header extends Entity
         $this->mobileBreakpointCarousel = $mobileBreakpointCarousel;
     }
 
-    public function getMobileCarouselSpeed(): int
-    {
-        return $this->mobileCarouselSpeed;
-    }
-
     public function setMobileCarouselSpeed(int $mobileCarouselSpeed): void
     {
         $this->mobileCarouselSpeed = $mobileCarouselSpeed;
     }
 
-    public function getTextColorMobile(): string
+    public function getMobileCarouselSpeed(): ?int
+    {
+        return $this->mobileCarouselSpeed;
+    }
+
+    public function getTextColorMobile(): ?string
     {
         return $this->textColorMobile;
     }
@@ -367,7 +367,7 @@ class Header extends Entity
         $this->textColorMobile = $textColorMobile;
     }
 
-    public function getHoverColorMobile(): string
+    public function getHoverColorMobile(): ?string
     {
         return $this->hoverColorMobile;
     }
@@ -377,17 +377,17 @@ class Header extends Entity
         $this->hoverColorMobile = $hoverColorMobile;
     }
 
-    public function getBackgroundColorMobile(): string
-    {
-        return $this->backgroundColorMobile;
-    }
-
     public function setBackgroundColorMobile(string $backgroundColorMobile): void
     {
         $this->backgroundColorMobile = $backgroundColorMobile;
     }
 
-    public function getHeightMobile(): int
+    public function getBackgroundColorMobile(): ?string
+    {
+        return $this->backgroundColorMobile;
+    }
+
+    public function getHeightMobile(): ?int
     {
         return $this->heightMobile;
     }

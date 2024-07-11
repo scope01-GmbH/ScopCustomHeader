@@ -47,12 +47,12 @@ Shopware.Component.register('scop-custom-header-list', {
                 label: this.$tc('scopcustomheader.list.columnEnabled'),
                 inlineEdit: 'boolean'
             },
-            {
-                property: 'salesChannel',
-                dataIndex: 'salesChannel',
-                label: this.$tc('scopcustomheader.list.salesChannel'),
-                allowResize: true
-            },
+                {
+                    property: 'salesChannel',
+                    dataIndex: 'salesChannel',
+                    label: this.$tc('scopcustomheader.list.salesChannel'),
+                    allowResize: true
+                },
             ];
         }
     },

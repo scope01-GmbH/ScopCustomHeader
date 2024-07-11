@@ -55,9 +55,9 @@ class HeaderColumns extends Entity
      */
     protected $position;
 
-    protected bool $showDesktop;
+    protected $showDesktop;
 
-    protected bool $showMobile;
+    protected $showMobile;
 
     /**
      * @var Header $header
@@ -85,7 +85,7 @@ class HeaderColumns extends Entity
     /**
      * @return string
      */
-    public function getLabel(): string
+    public function getLabel(): ?string
     {
         return $this->label;
     }
@@ -118,7 +118,7 @@ class HeaderColumns extends Entity
         $this->iconId = $iconId;
     }
 
-    public function getTextLink(): string
+    public function getTextLink(): ?string
     {
         return $this->textLink;
     }
@@ -128,7 +128,7 @@ class HeaderColumns extends Entity
         $this->textLink = $textLink;
     }
 
-    public function isOpenInNewTab(): bool
+    public function isOpenInNewTab(): ?bool
     {
         return $this->openInNewTab;
     }
@@ -138,7 +138,7 @@ class HeaderColumns extends Entity
         $this->openInNewTab = $openInNewTab;
     }
 
-    public function isShowDesktop(): bool
+    public function isShowDesktop(): ?bool
     {
         return $this->showDesktop;
     }
@@ -148,7 +148,7 @@ class HeaderColumns extends Entity
         $this->showDesktop = $showDesktop;
     }
 
-    public function isShowMobile(): bool
+    public function isShowMobile(): ?bool
     {
         return $this->showMobile;
     }

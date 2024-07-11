@@ -165,13 +165,13 @@
             /* Mobile version */
 
             @media screen and (max-width: 768px) {
-            {% if config_params.background or config_params.height  %}
+            {% if config_params.backgroundColorMobile or config_params.heightMobile  %}
                 .custom-header-wrapper {
                 {% if config_params.backgroundColorMobile  %}
                     background-color:{{ config_params.backgroundColorMobile }};
                 {% endif %}
 
-                {% if config_params.height %}
+                {% if config_params.heightMobile %}
                     min-height:{{ config_params.heightMobile ~ 'px' }};
                 {% endif %}
                 }

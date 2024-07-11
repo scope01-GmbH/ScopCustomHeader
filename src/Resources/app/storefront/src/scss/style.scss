@@ -8,6 +8,15 @@
             text-decoration: none;
         }
 
+        .element.scop-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .element.scop-text:has(.scop-header-icon) {
+            display: block;
+        }
+
         // IMG BOX
         .img-wrap {
             transform: translateY(17%);

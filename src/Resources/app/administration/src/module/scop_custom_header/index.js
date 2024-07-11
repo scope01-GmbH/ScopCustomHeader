@@ -16,7 +16,7 @@ Shopware.Module.register('scop-custom-header', {
         title: 'scopcustomheader.general.title',
         description: 'scopcustomheader.general.title',
         color: '#019994',
-        icon: 'small-copy',
+        icon: 'regular-window-terminal',
         routes: {
             list: {
                 components: {
@@ -69,11 +69,11 @@ Shopware.Module.register('scop-custom-header', {
             },
 
         },
-        // TODO: Icon umändern (layout?)
+
         settingsItem: [{
             to: 'scop.custom.header.list',
             group: 'shop',
-            icon: 'default-shopping-paper-bag-product'
+            icon: 'regular-window-terminal'
         }],
         snippets: {
             'de-DE': deDE,

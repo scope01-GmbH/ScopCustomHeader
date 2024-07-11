@@ -1,6 +1,6 @@
 import template from './scop-custom-header-details-base.html.twig';
 
-const { Component, Mixin } = Shopware;
+const {Component, Mixin} = Shopware;
 
 Component.register('scop-custom-header-details-base', {
     template,

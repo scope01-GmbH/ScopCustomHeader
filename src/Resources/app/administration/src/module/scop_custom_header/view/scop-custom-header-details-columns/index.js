@@ -1,7 +1,7 @@
 import template from './scop-custom-header-details-columns.html.twig';
 import './scop-custom-header-details-columns.scss';
 
-const { Component, Mixin, State } = Shopware;
+const {Component, Mixin, State} = Shopware;
 
 Component.register('scop-custom-header-details-columns', {
     template,

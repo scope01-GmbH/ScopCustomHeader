@@ -42,7 +42,7 @@ Shopware.Component.register('scop-custom-header-column-component', {
     },
 
     methods: {
-        setMediaItem({ targetId }) {
+        setMediaItem({targetId}) {
             this.column.iconId = targetId;
         },
 
@@ -51,7 +51,7 @@ Shopware.Component.register('scop-custom-header-column-component', {
         },
 
         onDropMedia(dragData) {
-            this.setMediaItem({ targetId: dragData.id });
+            this.setMediaItem({targetId: dragData.id});
         },
 
         onCloseModal() {
@@ -65,7 +65,7 @@ Shopware.Component.register('scop-custom-header-column-component', {
         onSelectionChanges(mediaEntity) {
             const media = mediaEntity[0];
 
-            this.setMediaItem({ targetId: media.id })
+            this.setMediaItem({targetId: media.id})
         },
 
         onShowDeleteModal() {
@@ -81,7 +81,7 @@ Shopware.Component.register('scop-custom-header-column-component', {
 
             this.$nextTick(() => {
 
-                while(!this.isLast(this.column)){
+                while (!this.isLast(this.column)) {
                     this.onMoveDown(this.column);
                 }
 
@@ -100,7 +100,7 @@ Shopware.Component.register('scop-custom-header-column-component', {
         onMoveUp(column) {
             const currentPosition = column.position;
             this.header.columns.forEach(elem => {
-                if(elem.position === currentPosition-1){
+                if (elem.position === currentPosition - 1) {
                     elem.position++;
                 }
             })
@@ -109,7 +109,7 @@ Shopware.Component.register('scop-custom-header-column-component', {
         onMoveDown(column) {
             const currentPosition = column.position;
             this.header.columns.forEach(elem => {
-                if(elem.position === currentPosition+1){
+                if (elem.position === currentPosition + 1) {
                     elem.position--;
                 }
             })

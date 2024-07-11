@@ -1,7 +1,7 @@
 import template from './scop-custom-header-details.html.twig';
 
 const {Component, Mixin} = Shopware;
-const { Criteria } = Shopware.Data;
+const {Criteria} = Shopware.Data;
 
 Component.register('scop-custom-header-details', {
     template,
@@ -40,8 +40,8 @@ Component.register('scop-custom-header-details', {
     },
 
     watch: {
-      headerId() {
-          this.getHeader();
+        headerId() {
+            this.getHeader();
         }
     },
 
@@ -64,14 +64,12 @@ Component.register('scop-custom-header-details', {
             this.isLoading = true;
 
 
-
-
-            if(!this.headerId) {
+            if (!this.headerId) {
                 this.header = this.headerRepository.create();
 
                 this.header.label = "";
                 this.header.priority = 1;
-
+                this.header.backgroundColorMobile = "";
 
                 this.isLoading = false;
 
@@ -87,11 +85,11 @@ Component.register('scop-custom-header-details', {
 
             criteria.getAssociation('columns').addSorting(Criteria.sort('createdAt', 'ASC'));
 
-            if(!this.header.id){
+            if (!this.headerId) {
                 return;
             }
 
-            return this.headerRepository.get(this.header.id, Shopware.Context.api, criteria).then((header) => {
+            return this.headerRepository.get(this.headerId, Shopware.Context.api, criteria).then((header) => {
 
                 if (header === null) {
                     return;
@@ -99,7 +97,7 @@ Component.register('scop-custom-header-details', {
 
                 this.header = header;
 
-                if(!this.header || !this.header.columns || this.header.length < 1) {
+                if (!this.header || !this.header.columns || this.header.length < 1) {
                     return;
                 }
 
@@ -122,7 +120,7 @@ Component.register('scop-custom-header-details', {
 
         createHeader() {
             return this.saveHeader().then(() => {
-                this.$router.push({ name: 'scop.custom.header.details', params: { id: this.header.id }})
+                this.$router.push({name: 'scop.custom.header.details', params: {id: this.header.id}})
             })
         },
 
