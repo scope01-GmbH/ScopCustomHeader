@@ -1,5 +1,9 @@
 {
   "scopcustomheader": {
+    "config": {
+      "information": "Die Konfiguration des Plugins wurde verschoben. Die Konfiguration des Header kann nun in den Einstellungen vorgenommen werden:",
+      "link": "Einstellungen -> Shop -> Individueller Header"
+    },
     "general": {
       "title": "Individueller Header",
       "errorTitle": "Fehler"

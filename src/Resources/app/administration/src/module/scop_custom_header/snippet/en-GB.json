@@ -1,5 +1,9 @@
 {
   "scopcustomheader": {
+    "config": {
+      "information": "The Configuration of this plugin was moved. You can now configure you header in the settings:",
+      "link": "Settings -> Shop -> Custom Header"
+    },
     "general": {
       "title": "Custom Header",
       "errorTitle": "Error"
