@@ -3,9 +3,9 @@
         <sw-container columns="3fr 1fr 1fr" gap="16px">
 
             <sw-text-field :label="$t('scopcustomheader.detail.label')" v-model:value="header.label"
-                           validation="required" required></sw-text-field>
+                           validation="required" required :error="headerLabelError"></sw-text-field>
 
-            <sw-number-field :label="$t('scopcustomheader.detail.priority')" v-model:value="header.priority" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false" required></sw-number-field>
+            <sw-number-field :label="$t('scopcustomheader.detail.priority')" v-model:value="header.priority" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false" required :error="headerPriorityError"></sw-number-field>
 
             <sw-switch-field :label="$tc('scopcustomheader.detail.enabledLabel')"
                              v-model:value="header.enabled" validation="required" bordered></sw-switch-field>

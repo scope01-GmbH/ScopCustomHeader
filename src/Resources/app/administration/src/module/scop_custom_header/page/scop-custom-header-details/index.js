@@ -7,7 +7,8 @@ Component.register('scop-custom-header-details', {
     template,
 
     inject: [
-        'repositoryFactory'
+        'repositoryFactory',
+        'entityValidationService'
     ],
 
 
@@ -47,6 +48,11 @@ Component.register('scop-custom-header-details', {
     },
 
     created() {
+        if (this.isCreateMode) {
+            if (!Shopware.State.getters['context/isSystemDefaultLanguage']) {
+                Shopware.State.commit('context/resetLanguageToDefault');
+            }
+        }
         this.getHeader();
     },
 
@@ -68,9 +74,19 @@ Component.register('scop-custom-header-details', {
             if (!this.headerId) {
                 this.header = this.headerRepository.create();
 
+                //Default values
                 this.header.label = "";
                 this.header.priority = 1;
-                this.header.backgroundColorMobile = "";
+                this.header.height = 10;
+                this.header.background = "#ffffff";
+                this.header.textFontSize = 10;
+                this.header.textColor = "#000000";
+                this.header.hover = "#14b79f";
+                this.header.paddingTop = 10;
+                this.header.paddingBottom = 10;
+                this.header.paddingLeft = 10;
+                this.header.paddingRight = 10;
+                this.header.mobileCarouselSpeed = 5;
 
                 this.isLoading = false;
 
@@ -121,12 +137,28 @@ Component.register('scop-custom-header-details', {
 
         createHeader() {
             return this.saveHeader().then(() => {
-                this.$router.push({name: 'scop.custom.header.details', params: {id: this.header.id}})
+                if (this.processSuccess)
+                    this.$router.push({name: 'scop.custom.header.details', params: {id: this.header.id}})
             })
         },
 
         saveHeader() {
             this.isLoading = true;
+
+            if (!this.entityValidationService.validate(this.header)) {
+                const titleSaveError = this.$tc('global.default.error');
+                const messageSaveError = this.$tc(
+                    'global.notification.notificationSaveErrorMessageRequiredFieldsInvalid',
+                );
+
+                this.createNotificationError({
+                    title: titleSaveError,
+                    message: messageSaveError,
+                });
+
+                this.isLoading = false;
+                return Promise.resolve();
+            }
 
             return this.headerRepository.save(this.header).then(() => { //Updating the Header in the Database
                 this.processSuccess = true;

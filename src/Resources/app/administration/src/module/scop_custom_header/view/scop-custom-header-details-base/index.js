@@ -1,6 +1,7 @@
 import template from './scop-custom-header-details-base.html.twig';
 
 const {Component, Mixin} = Shopware;
+const { mapPropertyErrors } = Shopware.Component.getComponentHelper();
 
 Component.register('scop-custom-header-details-base', {
     template,
@@ -29,6 +30,13 @@ Component.register('scop-custom-header-details-base', {
             type: Boolean,
             required: true,
         },
+    },
+
+    computed: {
+        ...mapPropertyErrors('header', [
+            'label',
+            'priority'
+        ]),
     },
 
     data() {
