@@ -35,6 +35,10 @@ Component.register('scop-custom-header-details-columns', {
 
         sortedColumns() {
             return [...this.columns].sort((a, b) => a.position - b.position);
+        },
+
+        isSystemLanguage() {
+            return State.get('context').api.systemLanguageId === State.get('context').api.languageId;
         }
     },
 

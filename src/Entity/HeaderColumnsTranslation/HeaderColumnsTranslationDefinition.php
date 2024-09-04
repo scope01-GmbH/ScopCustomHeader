@@ -8,33 +8,24 @@ declare(strict_types=1);
  * @link https://scope01.com
  */
 
-namespace Scop\ScopCustomHeader\Header\Columns;
+namespace Scop\ScopCustomHeader\Entity\HeaderColumnsTranslation;
 
-use Scop\ScopCustomHeader\Header\Header;
-use Scop\ScopCustomHeader\Header\HeaderCollection;
-use Scop\ScopCustomHeader\Header\HeaderDefinition;
+use Scop\ScopCustomHeader\Entity\HeaderColumns\HeaderColumnsDefinition;
 use Shopware\Core\Content\Media\MediaDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityDefinition;
-use Shopware\Core\Framework\DataAbstractionLayer\Field\BoolField;
+use Shopware\Core\Framework\DataAbstractionLayer\EntityTranslationDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\FkField;
-use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\ApiAware;
-use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\PrimaryKey;
-use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
-use Shopware\Core\Framework\DataAbstractionLayer\Field\IdField;
-use Shopware\Core\Framework\DataAbstractionLayer\Field\IntField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField;
-use Shopware\Core\Framework\DataAbstractionLayer\Field\OneToOneAssociationField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Shopware\Core\Framework\DataAbstractionLayer\FieldCollection;
-use Shopware\Core\System\SalesChannel\SalesChannelDefinition;
 
-class HeaderColumnsDefinition extends EntityDefinition
+class HeaderColumnsTranslationDefinition extends EntityTranslationDefinition
 {
 
     /**
      * @var string
      */
-    public const ENTITY_NAME = 'scop_custom_header_columns';
+    public const ENTITY_NAME = 'scop_custom_header_columns_translation';
 
     /**
      * {@inheritDoc}
@@ -51,7 +42,7 @@ class HeaderColumnsDefinition extends EntityDefinition
      */
     public function getCollectionClass(): string
     {
-        return HeaderColumnsCollection::class;
+        return HeaderColumnsTranslationCollection::class;
     }
 
     /**
@@ -60,7 +51,12 @@ class HeaderColumnsDefinition extends EntityDefinition
      */
     public function getEntityClass(): string
     {
-        return HeaderColumns::class;
+        return HeaderColumnsTranslationEntity::class;
+    }
+
+    protected function getParentDefinitionClass(): string
+    {
+        return HeaderColumnsDefinition::class;
     }
 
     /**
@@ -70,17 +66,10 @@ class HeaderColumnsDefinition extends EntityDefinition
     protected function defineFields(): FieldCollection
     {
         return new FieldCollection([
-            (new IdField('id', 'id'))->addFlags(new PrimaryKey(), new Required()),
-            (new FkField('header_id', 'headerId', HeaderDefinition::class, 'id'))->addFlags(new Required()),
             new StringField("label", "label"),
             new FkField('icon_id', 'iconId', MediaDefinition::class),
             new StringField('text_link', 'textLink'),
-            new BoolField('open_in_new_tab', 'openInNewTab'),
-            new IntField('position', 'position'),
-            new BoolField('show_desktop', 'showDesktop'),
-            new BoolField('show_mobile', 'showMobile'),
 
-            new ManyToOneAssociationField('header', 'header_id', HeaderDefinition::class, 'id'),
             new ManyToOneAssociationField('icon', 'icon_id', MediaDefinition::class, 'id', false),
         ]);
     }

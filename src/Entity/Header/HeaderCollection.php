@@ -8,18 +8,18 @@ declare(strict_types=1);
  * @link https://scope01.com
  */
 
-namespace Scop\ScopCustomHeader\Header;
+namespace Scop\ScopCustomHeader\Entity\Header;
 
 use Shopware\Core\Framework\DataAbstractionLayer\EntityCollection;
 
 /**
- * @method void          add(Header $entity)
- * @method void          set(string $key, Header $entity)
- * @method Header[]    getIterator()
- * @method Header[]    getElements()
- * @method Header|null get(string $key)
- * @method Header|null first()
- * @method Header|null last()
+ * @method void          add(HeaderEntity $entity)
+ * @method void          set(string $key, HeaderEntity $entity)
+ * @method HeaderEntity[]    getIterator()
+ * @method HeaderEntity[]    getElements()
+ * @method HeaderEntity|null get(string $key)
+ * @method HeaderEntity|null first()
+ * @method HeaderEntity|null last()
  */
 class HeaderCollection extends EntityCollection
 {
@@ -30,6 +30,6 @@ class HeaderCollection extends EntityCollection
      */
     protected function getExpectedClass(): string
     {
-        return Header::class;
+        return HeaderEntity::class;
     }
 }

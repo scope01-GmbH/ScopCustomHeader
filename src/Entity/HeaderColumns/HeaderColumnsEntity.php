@@ -15,15 +15,14 @@ declare(strict_types=1);
  * @link https://scope01.com
  */
 
-namespace Scop\ScopCustomHeader\Header\Columns;
+namespace Scop\ScopCustomHeader\Entity\HeaderColumns;
 
 use phpDocumentor\Reflection\Types\Boolean;
-use Scop\ScopCustomHeader\Header\Header;
+use Scop\ScopCustomHeader\Entity\Header\HeaderEntity;
 use Shopware\Core\Framework\DataAbstractionLayer\Entity;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
-use Shopware\Core\System\SalesChannel\SalesChannelEntity;
 
-class HeaderColumns extends Entity
+class HeaderColumnsEntity extends Entity
 {
     use EntityIdTrait;
 
@@ -60,7 +59,7 @@ class HeaderColumns extends Entity
     protected $showMobile;
 
     /**
-     * @var Header $header
+     * @var HeaderEntity $header
      */
     protected $header;
 
@@ -159,12 +158,12 @@ class HeaderColumns extends Entity
     }
 
 
-    public function getHeader(): ?Header
+    public function getHeader(): ?HeaderEntity
     {
         return $this->header;
     }
 
-    public function setHeader(Header $header): void
+    public function setHeader(HeaderEntity $header): void
     {
         $this->header = $header;
     }

@@ -12,7 +12,14 @@
     </ul>
 
     <div class="scopcustomheader-details-columns__action_add">
-        <sw-button :is-loading="isLoading" variant="ghost" @click="onAddColumn">
+        <sw-button
+                v-tooltip="{
+                        message: $tc('scopcustomheader.detail.columns.buttonAddColumnDisabled'),
+                        disabled: isSystemLanguage,
+                        showOnDisabledElements: true
+                    }"
+                :disabled="!isSystemLanguage"
+                :is-loading="isLoading" variant="ghost" @click="onAddColumn">
             {{ $tc('scopcustomheader.detail.columns.buttonAddColumn') }}
         </sw-button>
     </div>

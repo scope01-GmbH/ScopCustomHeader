@@ -5,12 +5,16 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="Scop\ScopCustomHeader\Header\HeaderDefinition">
+        <service id="Scop\ScopCustomHeader\Entity\Header\HeaderDefinition">
             <tag name="shopware.entity.definition" entity="scop_custom_header"/>
         </service>
 
-        <service id="Scop\ScopCustomHeader\Header\Columns\HeaderColumnsDefinition">
+        <service id="Scop\ScopCustomHeader\Entity\HeaderColumns\HeaderColumnsDefinition">
             <tag name="shopware.entity.definition" entity="scop_custom_header_columns"/>
+        </service>
+
+        <service id="Scop\ScopCustomHeader\Entity\HeaderColumnsTranslation\HeaderColumnsTranslationDefinition">
+            <tag name="shopware.entity.definition" entity="scop_custom_header_columns_translation"/>
         </service>
 
         <service id="Scop\ScopCustomHeader\Storefront\Pagelet\Header\Subscriber\HeaderPageletLoadedSubscriber">

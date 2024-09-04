@@ -48,6 +48,7 @@
       },
       "columns": {
         "buttonAddColumn": "Add column",
+        "buttonAddColumnDisabled": "Columns can only be added in the default language",
         "label": "Name",
         "textLink": "Link",
         "openInNewTab": "Open link in new window",
@@ -65,7 +66,8 @@
         "buttonMoveDown": "Nach unten"
       },
       "mobileBreakpointCarouselLabel": "Display the info bar as a carousel in the mobile version.",
-      "mobileCarouselSpeedLabel": "Carousel Speed"
-  }
+      "mobileCarouselSpeedLabel": "Carousel Speed",
+      "newHeader": "New Custom Header"
+    }
 }
 }

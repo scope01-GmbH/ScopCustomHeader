@@ -6,7 +6,6 @@
 
     {% if config_params.enabled  %}
 
-
         {% if config_params.columns.elements | length > 0 %}
             {% block custom_header_wrapper %}
                 <div class="custom-header-wrapper">
@@ -32,8 +31,8 @@
                                         {% block scop_text %}
                                             <div class="element scop-text{% if column.showDesktop == false %} hide-desktop{% endif %}{% if column.showMobile == false %} hide-mobile{% endif %}{% if carousel %} carousel-item{% if firstCarouselItem and column.showMobile %} active{% endif %}{% endif %}">
                                                 {% block scop_text_icon %}
-                                                    {% if column.iconId != null %}
-                                                        {% for image in searchMedia([column.iconId], context.context).elements %}
+                                                    {% if column.translated.iconId != null %}
+                                                        {% for image in searchMedia([column.translated.iconId], context.context).elements %}
                                                             <span class="icon scop-header-icon">
                                                                 <div class="img-wrap" >
                                                                     <img src="{{ image.url }}" alt="icon-1" class="sch-icon">
@@ -45,27 +44,27 @@
 
                                                 {% block scop_text_link %}
                                                     <span>
-                                                    {% if column.textLink %}
+                                                    {% if column.translated.textLink %}
                                                         <a class="scop-header-link " href="
-                                                            {% if column.textLink starts with "scopCustomHeader." %}
-                                                                {{  column.textLink | trans }}
+                                                            {% if column.translated.textLink starts with "scopCustomHeader." %}
+                                                                {{  column.translated.textLink | trans }}
                                                             {% else %}
-                                                                {{  column.textLink }}
+                                                                {{  column.translated.textLink }}
                                                             {% endif %}"
                                                             {% if column.openInNewTab %}
                                                                 target="_blank"
                                                             {% endif %}
-                                                        > {% if column.label starts with "scopCustomHeader." %}
-                                                                {{  column.label | trans }}
+                                                        > {% if column.translated.label starts with "scopCustomHeader." %}
+                                                                {{  column.translated.label | trans }}
                                                             {% else %}
-                                                                {{  column.label }}
+                                                                {{  column.translated.label }}
                                                             {% endif %}</a>
                                                     {% else %}
                                                         <span class="scop-header-link">
-                                                            {% if column.label starts with "scopCustomHeader." %}
-                                                                {{  column.label | trans }}
+                                                            {% if column.translated.label starts with "scopCustomHeader." %}
+                                                                {{  column.translated.label | trans }}
                                                             {% else %}
-                                                                {{  column.label }}
+                                                                {{  column.translated.label }}
                                                             {% endif %} </span>
                                                     {% endif %}
                                                 </span>

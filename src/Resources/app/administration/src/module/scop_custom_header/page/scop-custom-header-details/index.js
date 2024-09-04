@@ -12,7 +12,8 @@ Component.register('scop-custom-header-details', {
 
 
     mixins: [
-        Mixin.getByName('notification')
+        Mixin.getByName('notification'),
+        Mixin.getByName('placeholder')
     ],
 
     props: {
@@ -141,6 +142,19 @@ Component.register('scop-custom-header-details', {
 
         saveFinish() {
             this.processSuccess = false;
+        },
+
+        abortOnLanguageChange() {
+            return this.headerRepository.hasChanges(this.header);
+        },
+
+        saveOnLanguageChange() {
+            return this.saveHeader();
+        },
+
+        onChangeLanguage(languageId) {
+            Shopware.State.commit('context/setApiLanguageId', languageId);
+            this.getHeader();
         },
 
     }

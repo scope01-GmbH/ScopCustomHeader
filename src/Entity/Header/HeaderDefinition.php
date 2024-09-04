@@ -8,10 +8,9 @@ declare(strict_types=1);
  * @link https://scope01.com
  */
 
-namespace Scop\ScopCustomHeader\Header;
+namespace Scop\ScopCustomHeader\Entity\Header;
 
-use GuzzleHttp\Tests\Stream\Str;
-use Scop\ScopCustomHeader\Header\Columns\HeaderColumnsDefinition;
+use Scop\ScopCustomHeader\Entity\HeaderColumns\HeaderColumnsDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\BoolField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\FkField;
@@ -59,7 +58,7 @@ class HeaderDefinition extends EntityDefinition
      */
     public function getEntityClass(): string
     {
-        return Header::class;
+        return HeaderEntity::class;
     }
 
     /**

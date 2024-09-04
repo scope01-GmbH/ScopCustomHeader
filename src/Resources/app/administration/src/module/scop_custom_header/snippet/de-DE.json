@@ -48,6 +48,7 @@
       },
       "columns": {
         "buttonAddColumn": "Spalte hinzufügen",
+        "buttonAddColumnDisabled": "Spalten können nur in der Standardsprache hinzugefügt werden",
         "label": "Name",
         "textLink": "Link",
         "openInNewTab": "Link in einem neuen Tab öffnen",
@@ -65,7 +66,8 @@
         "buttonMoveDown": "Nach unten"
       },
       "mobileBreakpointCarouselLabel": "In der mobilen Version die Info-Leiste als Karussell darstellen.",
-      "mobileCarouselSpeedLabel": "Geschwindigkeit des Karussells"
+      "mobileCarouselSpeedLabel": "Geschwindigkeit des Karussells",
+      "newHeader": "Neuer individueller Header"
     }
   }
 }

@@ -15,15 +15,15 @@ declare(strict_types=1);
  * @link https://scope01.com
  */
 
-namespace Scop\ScopCustomHeader\Header;
+namespace Scop\ScopCustomHeader\Entity\HeaderColumnsTranslation;
 
 use phpDocumentor\Reflection\Types\Boolean;
-use Scop\ScopCustomHeader\Header\Columns\HeaderColumnsCollection;
-use Shopware\Core\Framework\DataAbstractionLayer\Entity;
+use Scop\ScopCustomHeader\Entity\HeaderColumns\HeaderColumnsCollection;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
+use Shopware\Core\Framework\DataAbstractionLayer\TranslationEntity;
 use Shopware\Core\System\SalesChannel\SalesChannelEntity;
 
-class Header extends Entity
+class HeaderColumnsTranslationEntity extends TranslationEntity
 {
     use EntityIdTrait;
 
