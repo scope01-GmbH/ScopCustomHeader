@@ -5,6 +5,7 @@ export default {
         return {
             header: null,
             isLoading: false,
+            highlightInvalidColumns: false
         };
     },
 
@@ -14,6 +15,9 @@ export default {
         },
         setIsLoading(state, isLoading) {
             state.isLoading = isLoading;
+        },
+        setHighlightInvalidColumns(state, highlightInvalidColumns) {
+            state.highlightInvalidColumns = highlightInvalidColumns;
         },
     },
 };

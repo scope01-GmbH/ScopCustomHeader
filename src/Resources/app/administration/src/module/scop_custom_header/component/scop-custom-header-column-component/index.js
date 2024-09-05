@@ -17,6 +17,11 @@ Shopware.Component.register('scop-custom-header-column-component', {
             type: Object,
             required: true,
         },
+        error: {
+            type: Boolean,
+            required: false,
+            default: false
+        }
     },
     data() {
         return {
@@ -78,6 +83,8 @@ Shopware.Component.register('scop-custom-header-column-component', {
 
         onConfirmDelete() {
             this.onCloseDeleteModal();
+
+            Shopware.State.commit('scopHeaderDetail/setHighlightInvalidColumns', false);
 
             this.$nextTick(() => {
 

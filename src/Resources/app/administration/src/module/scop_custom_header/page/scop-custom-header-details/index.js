@@ -1,6 +1,6 @@
 import template from './scop-custom-header-details.html.twig';
 
-const {Component, Mixin} = Shopware;
+const {Component, Mixin, State} = Shopware;
 const {Criteria} = Shopware.Data;
 
 Component.register('scop-custom-header-details', {
@@ -49,8 +49,8 @@ Component.register('scop-custom-header-details', {
 
     created() {
         if (this.isCreateMode) {
-            if (!Shopware.State.getters['context/isSystemDefaultLanguage']) {
-                Shopware.State.commit('context/resetLanguageToDefault');
+            if (!State.getters['context/isSystemDefaultLanguage']) {
+                State.commit('context/resetLanguageToDefault');
             }
         }
         this.getHeader();
@@ -63,6 +63,14 @@ Component.register('scop-custom-header-details', {
 
         headerRepository() {
             return this.repositoryFactory.create('scop_custom_header');
+        },
+        highlightInvalidColumns: {
+            get() {
+                return State.get('scopHeaderDetail').highlightInvalidColumns;
+            },
+            set(isLoading) {
+                State.commit('scopHeaderDetail/setHighlightInvalidColumns', isLoading);
+            },
         }
     },
 
@@ -118,7 +126,7 @@ Component.register('scop-custom-header-details', {
                     return;
                 }
 
-                Shopware.State.commit('scopHeaderDetail/setHeader', this.header);
+                State.commit('scopHeaderDetail/setHeader', this.header);
 
             }).finally(() => {
                 this.isLoading = false;
@@ -160,6 +168,23 @@ Component.register('scop-custom-header-details', {
                 return Promise.resolve();
             }
 
+            for (let column of this.header.columns) {
+                if ((column.label == null || column.label === '') && column.iconId == null) {
+                    const titleSaveError = this.$tc('global.default.error');
+                    const messageSaveError = this.$tc('scopcustomheader.detail.columns.invalidSave');
+
+                    this.createNotificationError({
+                        title: titleSaveError,
+                        message: messageSaveError,
+                    });
+
+                    this.isLoading = false;
+                    this.highlightInvalidColumns = true;
+                    return Promise.resolve();
+                }
+            }
+            this.highlightInvalidColumns = false;
+
             return this.headerRepository.save(this.header).then(() => { //Updating the Header in the Database
                 this.processSuccess = true;
                 this.loadEntity();
@@ -185,7 +210,7 @@ Component.register('scop-custom-header-details', {
         },
 
         onChangeLanguage(languageId) {
-            Shopware.State.commit('context/setApiLanguageId', languageId);
+            State.commit('context/setApiLanguageId', languageId);
             this.getHeader();
         },
 

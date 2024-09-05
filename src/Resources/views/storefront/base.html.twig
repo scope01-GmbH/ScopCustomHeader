@@ -29,8 +29,9 @@
                                 <div class="custom-header{% if carousel %} carousel-inner{% endif %}">
                                     {% for column in config_params.columns.elements  %}
                                         {% block scop_text %}
-                                            {% if column.showDesktop or column.showMobile %}
-                                            <div class="element scop-text{% if column.showDesktop == false %} hide-desktop{% endif %}{% if column.showMobile == false %} hide-mobile{% endif %}{% if carousel %} carousel-item{% if firstCarouselItem and column.showMobile %} active{% endif %}{% endif %}">
+                                            {% if column.showMobile or (column.showDesktop and not carousel) %}
+                                            <div class="element scop-text{% if column.showDesktop == false %} hide-desktop{% endif %}{% if column.showMobile == false %} hide-mobile{% endif %}{% if carousel %} carousel-item{% if firstCarouselItem %} active{% endif %}{% endif %}">
+                                                <div class="element-inner">
                                                 {% block scop_text_icon %}
                                                     {% if column.translated.iconId != null %}
                                                         {% for image in searchMedia([column.translated.iconId], context.context).elements %}
@@ -71,7 +72,7 @@
                                                 </span>
 
                                                 {% endblock %}
-
+                                                </div>
                                             </div>
                                             {% endif %}
                                         {% endblock %}
@@ -233,7 +234,7 @@
                 }
 
                 .custom-header-static .custom-header .element.hide-desktop:not(.hide-mobile) {
-                    display: block;
+                    display: flex;
                 }
             {% if config_params.textFontSizeMobile or config_params.textColorMobile %}
                 .custom-header-wrapper .custom-header .element .scop-header-link {
@@ -250,6 +251,19 @@
                 /* Mobile Carousel */
                 .custom-header-carousel .element {
                     text-align: center;
+                }
+
+                .custom-header-carousel .element div.element-inner {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: center;
+                    justify-content: center;
+
+                    {% if config_params.heightMobile %}
+                        min-height: {{ config_params.heightMobile }}px;
+                    {% elseif config_params.height %}
+                        min-height: {{ config_params.height }}px;
+                    {% endif %}
                 }
 
             {% if config_params.mobileBreakpointCarousel == true %}

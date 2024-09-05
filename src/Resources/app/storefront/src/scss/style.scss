@@ -8,13 +8,10 @@
             text-decoration: none;
         }
 
-        .scop-text {
+        .scop-text:not(.carousel-item) {
             display: flex;
             align-items: center;
-        }
-
-        .scop-text:has(.scop-header-icon) {
-            display: block;
+            justify-content: center;
         }
 
         // IMG BOX

@@ -62,8 +62,9 @@
           "buttonCancel": "Cancel",
           "buttonDelete": "Delete column"
         },
-        "buttonMoveUp": "Nach oben",
-        "buttonMoveDown": "Nach unten"
+        "buttonMoveUp": "Move up",
+        "buttonMoveDown": "Move down",
+        "invalidSave": "Every column must at least consist of either a name or an icon"
       },
       "mobileBreakpointCarouselLabel": "Display the info bar as a carousel in the mobile version.",
       "mobileCarouselSpeedLabel": "Carousel Speed",

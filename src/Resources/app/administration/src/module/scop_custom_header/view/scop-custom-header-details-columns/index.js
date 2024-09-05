@@ -28,6 +28,14 @@ Component.register('scop-custom-header-details-columns', {
                 State.commit('scopHeaderDetail/setIsLoading', isLoading);
             },
         },
+        highlightInvalidColumns: {
+            get() {
+                return State.get('scopHeaderDetail').highlightInvalidColumns;
+            },
+            set(isLoading) {
+                State.commit('scopHeaderDetail/setHighlightInvalidColumns', isLoading);
+            },
+        },
         columns() {
             return State.get('scopHeaderDetail').header &&
                 State.get('scopHeaderDetail').header.columns;
@@ -53,6 +61,10 @@ Component.register('scop-custom-header-details-columns', {
             newColumn.headerId = this.header.id;
             newColumn.position = this.columns.length + 1;
 
+            newColumn.showDesktop = true;
+            newColumn.showMobile = true;
+
+            this.highlightInvalidColumns = false;
             this.columns.push(newColumn);
         },
 
@@ -76,6 +88,10 @@ Component.register('scop-custom-header-details-columns', {
 
         sortColumns() {
             return [...this.columns].sort((a, b) => a.position - b.position);
+        },
+
+        hasError(column){
+            return (column.label == null || column.label === '') && column.iconId == null;
         }
 
     },

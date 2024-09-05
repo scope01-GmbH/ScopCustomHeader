@@ -63,7 +63,8 @@
           "buttonDelete": "Spalte entfernen"
         },
         "buttonMoveUp": "Nach oben",
-        "buttonMoveDown": "Nach unten"
+        "buttonMoveDown": "Nach unten",
+        "invalidSave": "Jede Spalte muss entweder einen Namen oder ein Icon besitzen!"
       },
       "mobileBreakpointCarouselLabel": "In der mobilen Version die Info-Leiste als Karussell darstellen.",
       "mobileCarouselSpeedLabel": "Geschwindigkeit des Karussells",
