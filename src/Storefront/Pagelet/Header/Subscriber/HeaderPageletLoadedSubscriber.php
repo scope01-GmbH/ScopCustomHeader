@@ -10,20 +10,17 @@
 namespace Scop\ScopCustomHeader\Storefront\Pagelet\Header\Subscriber;
 
 use Psr\Log\LoggerInterface;
-use Shopware\Core\Content\Media\MediaEntity;
+use Scop\ScopCustomHeader\Entity\Header\HeaderEntity;
 use Shopware\Core\Framework\Api\Context\SalesChannelApiSource;
-use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\MultiFilter;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\OrFilter;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Shopware\Core\Framework\Log\LoggingService;
-use Shopware\Core\Framework\Struct\ArrayEntity;
+use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Shopware\Storefront\Pagelet\Header\HeaderPageletLoadedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Shopware\Core\System\SystemConfig\SystemConfigService;
 
 /**
  * Class HeaderPageletLoadedSubscriber
@@ -104,8 +101,26 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
 
         $criteria->setLimit(1);
 
+        /**
+         * @var HeaderEntity $header
+         */
         $header = $this->headerRepository->search($criteria, $context)->first();
         $page = $event->getPagelet();
+
+        $desktopVisible = false;
+        $mobileVisible = false;
+        foreach($header->getColumns() as $column){
+            if($column->isShowDesktop()){
+                $desktopVisible = true;
+            }
+            if($column->isShowMobile()){
+                $mobileVisible = true;
+            }
+        }
+        $header->addArrayExtension('ScopVisible', [
+            'desktopVisible' => $desktopVisible,
+            'mobileVisible' => $mobileVisible
+        ]);
 
         // Sending the Plugin configuration in ScopCH variable extension in TWIG
         if ($header) {

@@ -10,17 +10,16 @@ declare(strict_types=1);
 
 namespace Scop\ScopCustomHeader\Entity\HeaderColumns;
 
-use Scop\ScopCustomHeader\Entity\HeaderColumnsTranslation\HeaderColumnsTranslationEntity;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityCollection;
 
 /**
- * @method void          add(HeaderColumnsTranslationEntity $entity)
- * @method void          set(string $key, HeaderColumnsTranslationEntity $entity)
- * @method HeaderColumnsTranslationEntity[]    getIterator()
- * @method HeaderColumnsTranslationEntity[]    getElements()
- * @method HeaderColumnsTranslationEntity|null get(string $key)
- * @method HeaderColumnsTranslationEntity|null first()
- * @method HeaderColumnsTranslationEntity|null last()
+ * @method void          add(HeaderColumnsEntity $entity)
+ * @method void          set(string $key, HeaderColumnsEntity $entity)
+ * @method HeaderColumnsEntity[]    getIterator()
+ * @method HeaderColumnsEntity[]    getElements()
+ * @method HeaderColumnsEntity|null get(string $key)
+ * @method HeaderColumnsEntity|null first()
+ * @method HeaderColumnsEntity|null last()
  */
 class HeaderColumnsCollection extends EntityCollection
 {

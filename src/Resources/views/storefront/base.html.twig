@@ -29,6 +29,7 @@
                                 <div class="custom-header{% if carousel %} carousel-inner{% endif %}">
                                     {% for column in config_params.columns.elements  %}
                                         {% block scop_text %}
+                                            {% if column.showDesktop or column.showMobile %}
                                             <div class="element scop-text{% if column.showDesktop == false %} hide-desktop{% endif %}{% if column.showMobile == false %} hide-mobile{% endif %}{% if carousel %} carousel-item{% if firstCarouselItem and column.showMobile %} active{% endif %}{% endif %}">
                                                 {% block scop_text_icon %}
                                                     {% if column.translated.iconId != null %}
@@ -72,7 +73,7 @@
                                                 {% endblock %}
 
                                             </div>
-
+                                            {% endif %}
                                         {% endblock %}
 
                                         {% if carousel %}
@@ -93,7 +94,9 @@
 
         <style type="text/css">
 
-            {% if config_params.background or config_params.height  %}
+            {% set visible = config_params.extensions.ScopVisible %}
+
+            {% if config_params.background or config_params.height or not visible.desktopVisible  %}
             .custom-header-wrapper {
             {% if config_params.background  %}
                 background-color:{{ config_params.background }};
@@ -101,6 +104,10 @@
 
             {% if config_params.height %}
                 min-height:{{ config_params.height ~ 'px' }};
+            {% endif %}
+
+            {% if not visible.desktopVisible %}
+                display: none
             {% endif %}
             }
             {% endif %}
@@ -152,7 +159,7 @@
             }
             {% endif %}
 
-            .custom-header-static .hide-desktop {
+            .custom-header-static .custom-header .element.hide-desktop {
                 display: none;
             }
 
@@ -164,7 +171,7 @@
             /* Mobile version */
 
             @media screen and (max-width: 768px) {
-            {% if config_params.backgroundColorMobile or config_params.heightMobile  %}
+            {% if config_params.backgroundColorMobile or config_params.heightMobile or not visible.desktopVisible or not visible.mobileVisible %}
                 .custom-header-wrapper {
                 {% if config_params.backgroundColorMobile  %}
                     background-color:{{ config_params.backgroundColorMobile }};
@@ -172,6 +179,12 @@
 
                 {% if config_params.heightMobile %}
                     min-height:{{ config_params.heightMobile ~ 'px' }};
+                {% endif %}
+
+                {% if not visible.mobileVisible %}
+                    display: none;
+                {% elseif not visible.desktopVisible %}
+                    display: block;
                 {% endif %}
                 }
             {% endif %}
@@ -215,10 +228,13 @@
                 }
             {% endif %}
 
-                .custom-header-static .hide-mobile {
+                .custom-header-static  .custom-header .element.hide-mobile {
                     display: none;
                 }
 
+                .custom-header-static .custom-header .element.hide-desktop:not(.hide-mobile) {
+                    display: block;
+                }
             {% if config_params.textFontSizeMobile or config_params.textColorMobile %}
                 .custom-header-wrapper .custom-header .element .scop-header-link {
                 {% if config_params.textFontSizeMobile %}

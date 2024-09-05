@@ -8,12 +8,12 @@
             text-decoration: none;
         }
 
-        .element.scop-text {
+        .scop-text {
             display: flex;
             align-items: center;
         }
 
-        .element.scop-text:has(.scop-header-icon) {
+        .scop-text:has(.scop-header-icon) {
             display: block;
         }
 
