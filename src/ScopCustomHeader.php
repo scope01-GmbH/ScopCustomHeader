@@ -13,12 +13,15 @@ namespace Scop\ScopCustomHeader;
 
 use Doctrine\DBAL\Connection;
 use Shopware\Core\Defaults;
+use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shopware\Core\Framework\Plugin;
 use Shopware\Core\Framework\Plugin\Context\UninstallContext;
 use Shopware\Core\Framework\Uuid\Uuid;
+use Shopware\Core\System\Language\LanguageEntity;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
+use Symfony\Component\Translation\TranslatorBagInterface;
 
 /**
  * Class ScopCustomHeader
@@ -158,9 +161,9 @@ class ScopCustomHeader extends Plugin
             [
                 'id' => Uuid::randomHex(),
                 'headerId' => $headerId,
-                'label' => isset($salesChannelConfig['left']) && $salesChannelConfig['left'] ? $salesChannelConfig['left'] : 'Home',
+                'label' => $this->resolveTranslation(isset($salesChannelConfig['left']) && $salesChannelConfig['left'] ? $salesChannelConfig['left'] : 'Home', $context),
                 'iconId' => isset($salesChannelConfig['iconLeft']) && $salesChannelConfig['iconLeft'] ? $salesChannelConfig['iconLeft'] : null,
-                'textLink' => isset($salesChannelConfig['textLinkLeft']) && $salesChannelConfig['textLinkLeft'] ? $salesChannelConfig['textLinkLeft'] : '/',
+                'textLink' => $this->resolveTranslation(isset($salesChannelConfig['textLinkLeft']) && $salesChannelConfig['textLinkLeft'] ? $salesChannelConfig['textLinkLeft'] : '/', $context),
                 'openInNewTab' => isset($salesChannelConfig['openInNewTabLeft']) && $salesChannelConfig['openInNewTabLeft'] ? $salesChannelConfig['openInNewTabLeft'] : true,
                 'showMobile' => isset($salesChannelConfig['displayTextLeft']) && $salesChannelConfig['displayTextLeft'] ? $salesChannelConfig['displayTextLeft'] : false,
                 'position' => 1
@@ -171,9 +174,9 @@ class ScopCustomHeader extends Plugin
             [
                 'id' => Uuid::randomHex(),
                 'headerId' => $headerId,
-                'label' => isset($salesChannelConfig['middle']) && $salesChannelConfig['middle'] ? $salesChannelConfig['middle'] : 'Home',
+                'label' => $this->resolveTranslation(isset($salesChannelConfig['middle']) && $salesChannelConfig['middle'] ? $salesChannelConfig['middle'] : 'Home', $context),
                 'iconId' => isset($salesChannelConfig['iconMiddle']) && $salesChannelConfig['iconMiddle'] ? $salesChannelConfig['iconMiddle'] : null,
-                'textLink' => isset($salesChannelConfig['textLinkMiddle']) && $salesChannelConfig['textLinkMiddle'] ? $salesChannelConfig['textLinkMiddle'] : '/',
+                'textLink' => $this->resolveTranslation(isset($salesChannelConfig['textLinkMiddle']) && $salesChannelConfig['textLinkMiddle'] ? $salesChannelConfig['textLinkMiddle'] : '/', $context),
                 'openInNewTab' => isset($salesChannelConfig['openInNewTabMiddle']) && $salesChannelConfig['openInNewTabMiddle'] ? $salesChannelConfig['openInNewTabMiddle'] : true,
                 'showMobile' => isset($salesChannelConfig['displayTextMiddle']) && $salesChannelConfig['displayTextMiddle'] ? $salesChannelConfig['displayTextMiddle'] : false,
                 'position' => 2
@@ -184,14 +187,44 @@ class ScopCustomHeader extends Plugin
             [
                 'id' => Uuid::randomHex(),
                 'headerId' => $headerId,
-                'label' => isset($salesChannelConfig['right']) && $salesChannelConfig['right'] ? $salesChannelConfig['right'] : 'Home',
+                'label' => $this->resolveTranslation(isset($salesChannelConfig['right']) && $salesChannelConfig['right'] ? $salesChannelConfig['right'] : 'Home', $context),
                 'iconId' => isset($salesChannelConfig['iconRight']) && $salesChannelConfig['iconRight'] ? $salesChannelConfig['iconRight'] : null,
-                'textLink' => isset($salesChannelConfig['textLinkRight']) && $salesChannelConfig['textLinkRight'] ? $salesChannelConfig['textLinkRight'] : '/',
+                'textLink' => $this->resolveTranslation(isset($salesChannelConfig['textLinkRight']) && $salesChannelConfig['textLinkRight'] ? $salesChannelConfig['textLinkRight'] : '/', $context),
                 'openInNewTab' => isset($salesChannelConfig['openInNewTabRight']) && $salesChannelConfig['openInNewTabRight'] ? $salesChannelConfig['openInNewTabRight'] : true,
                 'showMobile' => isset($salesChannelConfig['displayTextRight']) && $salesChannelConfig['displayTextRight'] ? $salesChannelConfig['displayTextRight'] : false,
                 'position' => 3
             ]
         ], $context);
 
+    }
+
+    private function resolveTranslation(string $value, Context $context): string|array
+    {
+        if (!str_starts_with($value, 'scopCustomHeader.'))
+            return $value;
+
+        /**
+         * @var TranslatorBagInterface $translator
+         */
+        $translator = $this->container->get('translator');
+
+        $languageRepository = $this->container->get('language.repository');
+        $criteria = new Criteria();
+        $criteria->addAssociation('locale');
+        $languages = $languageRepository->search($criteria, $context)->getElements();
+
+        $translatedValue = [];
+        /**
+         * @var LanguageEntity $language
+         */
+        foreach ($languages as $language) {
+            $localeCode = $language->getLocale()->getCode();
+            $translationCatalogue = $translator->getCatalogue($localeCode);
+            if ($translationCatalogue?->has($value)) {
+                $translatedValue[$localeCode] = $translationCatalogue->get($value);
+            }
+        }
+
+        return $translatedValue;
     }
 }

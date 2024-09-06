@@ -67,7 +67,7 @@ SQL;
         $sql = <<<SQL
 CREATE TABLE IF NOT EXISTS `scop_custom_header_columns` (
     `id` BINARY(16) NOT NULL,
-    `header_id` BINARY(16) NULL,
+    `header_id` BINARY(16) NOT NULL,
     `open_in_new_tab` TINYINT(1) NULL DEFAULT '0',
     `position` INT(11) NULL,
     `show_desktop` TINYINT(1) NULL DEFAULT '1',
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `scop_custom_header_columns` (
     `updated_at` DATETIME(3) NULL,
     PRIMARY KEY (`id`),
     KEY `fk.scop_custom_header_columns.header_id` (`header_id`),
-    CONSTRAINT `fk.scop_custom_header_columns.header_id` FOREIGN KEY (`header_id`) REFERENCES `scop_custom_header` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+    CONSTRAINT `fk.scop_custom_header_columns.header_id` FOREIGN KEY (`header_id`) REFERENCES `scop_custom_header` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 SQL;
         $connection->executeUpdate($sql);
@@ -92,8 +92,10 @@ CREATE TABLE IF NOT EXISTS `scop_custom_header_columns_translation` (
     `updated_at` DATETIME(3) NULL,
     PRIMARY KEY (`scop_custom_header_columns_id`, `language_id`),
     KEY `fk.scop_custom_header_columns.scop_custom_header_columns_id` (`scop_custom_header_columns_id`),
+    KEY `fk.scop_custom_header_columns.language_id` (`language_id`),
     KEY `fk.scop_custom_header_columns.icon_id` (`icon_id`),
     CONSTRAINT `fk.scop_custom_header_columns.scop_custom_header_columns_id` FOREIGN KEY (`scop_custom_header_columns_id`) REFERENCES `scop_custom_header_columns` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `fk.scop_custom_header_columns.language_id` FOREIGN KEY (`language_id`) REFERENCES `language` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT `fk.scop_custom_header_columns.icon_id` FOREIGN KEY (`icon_id`) REFERENCES `media` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 SQL;
