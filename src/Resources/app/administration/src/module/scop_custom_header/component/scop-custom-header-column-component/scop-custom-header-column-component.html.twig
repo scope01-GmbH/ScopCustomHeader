@@ -24,10 +24,10 @@
 
     <sw-container columns="1fr 1fr" gap="16px">
 
-        <sw-text-field :label="$t('scopcustomheader.detail.columns.label')" v-model:value="column.label"
+        <sw-text-field :label="$t('scopcustomheader.detail.columns.label')" v-model:value="column.label" :placeholder="column.translated.label"
                        validation="required"></sw-text-field>
 
-        <sw-text-field :label="$t('scopcustomheader.detail.columns.textLink')" v-model:value="column.textLink"
+        <sw-text-field :label="$t('scopcustomheader.detail.columns.textLink')" v-model:value="column.textLink" :placeholder="column.translated.textLink"
                        validation="required"></sw-text-field>
 
     </sw-container>
