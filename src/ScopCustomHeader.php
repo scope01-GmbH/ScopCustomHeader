@@ -43,6 +43,10 @@ class ScopCustomHeader extends Plugin
          */
         $connection = $this->container->get(Connection::class);
 
+        $sql = "DROP TABLE IF EXISTS `scop_custom_header_columns_translation`;";
+
+        $connection->executeUpdate($sql);
+
         $sql = "DROP TABLE IF EXISTS `scop_custom_header_columns`;";
 
         $connection->executeUpdate($sql);
