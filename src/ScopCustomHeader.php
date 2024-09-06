@@ -135,24 +135,24 @@ class ScopCustomHeader extends Plugin
                 'label' => 'Default USP',
                 'description' => '',
                 'priority' => 1,
-                'enabled' => isset($salesChannelConfig['active']) && $salesChannelConfig['active'] ? $salesChannelConfig['active'] : false, // not required
-                'height' => isset($salesChannelConfig['height']) && $salesChannelConfig['height'] ? $salesChannelConfig['height'] : 10, // not required
-                'background' => isset($salesChannelConfig['background']) && $salesChannelConfig['background'] ? $salesChannelConfig['background'] : '#ffffff', // not required,
-                'textFontSize' => isset($salesChannelConfig['textFontSize']) && $salesChannelConfig['textFontSize'] ? $salesChannelConfig['textFontSize'] : 10, // not required
-                'textColor' => isset($salesChannelConfig['textColor']) && $salesChannelConfig['textColor'] ? $salesChannelConfig['textColor'] : '#000000', // not required,
-                'hover' => isset($salesChannelConfig['hover']) && $salesChannelConfig['hover'] ? $salesChannelConfig['hover'] : '#14b79f', // not required,
-                'paddingTop' => isset($salesChannelConfig['paddingTop']) && $salesChannelConfig['paddingTop'] ? $salesChannelConfig['paddingTop'] : 10, // not required,,
-                'paddingBottom' => isset($salesChannelConfig['paddingBottom']) && $salesChannelConfig['paddingBottom'] ? $salesChannelConfig['paddingBottom'] : 10, // not required,
-                'paddingLeft' => isset($salesChannelConfig['paddingLeft']) && $salesChannelConfig['paddingLeft'] ? $salesChannelConfig['paddingLeft'] : 10, // not required,
-                'paddingRight' => isset($salesChannelConfig['paddingRight']) && $salesChannelConfig['paddingRight'] ? $salesChannelConfig['paddingRight'] : 10, // not required,
+                'enabled' => $salesChannelConfig['active'] ?? null,
+                'height' => $salesChannelConfig['height'] ?? null,
+                'background' => $salesChannelConfig['background'] ?? null,
+                'textFontSize' => $salesChannelConfig['textFontSize'] ?? null,
+                'textColor' => $salesChannelConfig['textColor'] ?? null,
+                'hover' => $salesChannelConfig['hover'] ?? null,
+                'paddingTop' => $salesChannelConfig['paddingTop'] ?? null,
+                'paddingBottom' => $salesChannelConfig['paddingBottom'] ?? null,
+                'paddingLeft' => $salesChannelConfig['paddingLeft'] ?? null,
+                'paddingRight' => $salesChannelConfig['paddingRight'] ?? null,
 
-                'textFontSizeMobile' => isset($salesChannelConfig['textFontSizeMobile']) && $salesChannelConfig['textFontSizeMobile'] ? $salesChannelConfig['textFontSizeMobile'] : 10, // not required
-                'paddingTopMobile' => isset($salesChannelConfig['paddingTopMobile']) && $salesChannelConfig['paddingTopMobile'] ? $salesChannelConfig['paddingTopMobile'] : 10, // not required
-                'paddingRightMobile' => isset($salesChannelConfig['paddingRightMobile']) && $salesChannelConfig['paddingRightMobile'] ? $salesChannelConfig['paddingRightMobile'] : 10, // not required
-                'paddingLeftMobile' => isset($salesChannelConfig['paddingLeftMobile']) && $salesChannelConfig['paddingLeftMobile'] ? $salesChannelConfig['paddingLeftMobile'] : 10, // not required
-                'paddingBottomMobile' => isset($salesChannelConfig['paddingBottomMobile']) && $salesChannelConfig['paddingBottomMobile'] ? $salesChannelConfig['paddingBottomMobile'] : 10, // not required
-                'mobileBreakpointCarousel' => isset($salesChannelConfig['mobileBreakpointCarousel']) && $salesChannelConfig['mobileBreakpointCarousel'] ? $salesChannelConfig['mobileBreakpointCarousel'] : true, // not required
-                'mobileCarouselSpeed' => isset($salesChannelConfig['mobileCarouselSpeed']) && $salesChannelConfig['mobileCarouselSpeed'] ? $salesChannelConfig['mobileCarouselSpeed'] : 5, // not required
+                'textFontSizeMobile' => $salesChannelConfig['textFontSizeMobile'] ?? null,
+                'paddingTopMobile' => $salesChannelConfig['paddingTopMobile'] ?? null,
+                'paddingRightMobile' => $salesChannelConfig['paddingRightMobile'] ?? null,
+                'paddingLeftMobile' => $salesChannelConfig['paddingLeftMobile'] ?? null,
+                'paddingBottomMobile' => $salesChannelConfig['paddingBottomMobile'] ?? null,
+                'mobileBreakpointCarousel' => $salesChannelConfig['mobileBreakpointCarousel'] ?? null,
+                'mobileCarouselSpeed' => $salesChannelConfig['mobileCarouselSpeed'] ?? null,
                 'salesChannelId' => $salesChannelId
             ]
         ], $context);
@@ -161,11 +161,11 @@ class ScopCustomHeader extends Plugin
             [
                 'id' => Uuid::randomHex(),
                 'headerId' => $headerId,
-                'label' => $this->resolveTranslation(isset($salesChannelConfig['left']) && $salesChannelConfig['left'] ? $salesChannelConfig['left'] : 'Home', $context),
-                'iconId' => isset($salesChannelConfig['iconLeft']) && $salesChannelConfig['iconLeft'] ? $salesChannelConfig['iconLeft'] : null,
-                'textLink' => $this->resolveTranslation(isset($salesChannelConfig['textLinkLeft']) && $salesChannelConfig['textLinkLeft'] ? $salesChannelConfig['textLinkLeft'] : '/', $context),
-                'openInNewTab' => isset($salesChannelConfig['openInNewTabLeft']) && $salesChannelConfig['openInNewTabLeft'] ? $salesChannelConfig['openInNewTabLeft'] : true,
-                'showMobile' => isset($salesChannelConfig['displayTextLeft']) && $salesChannelConfig['displayTextLeft'] ? $salesChannelConfig['displayTextLeft'] : false,
+                'label' => $this->resolveTranslation($salesChannelConfig['left'] ?? null, $context),
+                'iconId' => $salesChannelConfig['iconLeft'] ?? null,
+                'textLink' => $this->resolveTranslation($salesChannelConfig['textLinkLeft'] ?? null, $context),
+                'openInNewTab' => $salesChannelConfig['openInNewTabLeft'] ?? null,
+                'showMobile' => ($salesChannelConfig['displayTextLeft'] ?? null) && !($salesChannelConfig['mobileBreakpointDisplay'] ?? null),
                 'position' => 1
             ]
         ], $context);
@@ -174,11 +174,11 @@ class ScopCustomHeader extends Plugin
             [
                 'id' => Uuid::randomHex(),
                 'headerId' => $headerId,
-                'label' => $this->resolveTranslation(isset($salesChannelConfig['middle']) && $salesChannelConfig['middle'] ? $salesChannelConfig['middle'] : 'Home', $context),
-                'iconId' => isset($salesChannelConfig['iconMiddle']) && $salesChannelConfig['iconMiddle'] ? $salesChannelConfig['iconMiddle'] : null,
-                'textLink' => $this->resolveTranslation(isset($salesChannelConfig['textLinkMiddle']) && $salesChannelConfig['textLinkMiddle'] ? $salesChannelConfig['textLinkMiddle'] : '/', $context),
-                'openInNewTab' => isset($salesChannelConfig['openInNewTabMiddle']) && $salesChannelConfig['openInNewTabMiddle'] ? $salesChannelConfig['openInNewTabMiddle'] : true,
-                'showMobile' => isset($salesChannelConfig['displayTextMiddle']) && $salesChannelConfig['displayTextMiddle'] ? $salesChannelConfig['displayTextMiddle'] : false,
+                'label' => $this->resolveTranslation($salesChannelConfig['middle'] ?? null, $context),
+                'iconId' => $salesChannelConfig['iconMiddle'] ?? null,
+                'textLink' => $this->resolveTranslation($salesChannelConfig['textLinkMiddle'] ?? null, $context),
+                'openInNewTab' => $salesChannelConfig['openInNewTabMiddle'] ?? null,
+                'showMobile' => ($salesChannelConfig['displayTextMiddle'] ?? null) && !($salesChannelConfig['mobileBreakpointDisplay'] ?? null),
                 'position' => 2
             ]
         ], $context);
@@ -187,19 +187,21 @@ class ScopCustomHeader extends Plugin
             [
                 'id' => Uuid::randomHex(),
                 'headerId' => $headerId,
-                'label' => $this->resolveTranslation(isset($salesChannelConfig['right']) && $salesChannelConfig['right'] ? $salesChannelConfig['right'] : 'Home', $context),
-                'iconId' => isset($salesChannelConfig['iconRight']) && $salesChannelConfig['iconRight'] ? $salesChannelConfig['iconRight'] : null,
-                'textLink' => $this->resolveTranslation(isset($salesChannelConfig['textLinkRight']) && $salesChannelConfig['textLinkRight'] ? $salesChannelConfig['textLinkRight'] : '/', $context),
-                'openInNewTab' => isset($salesChannelConfig['openInNewTabRight']) && $salesChannelConfig['openInNewTabRight'] ? $salesChannelConfig['openInNewTabRight'] : true,
-                'showMobile' => isset($salesChannelConfig['displayTextRight']) && $salesChannelConfig['displayTextRight'] ? $salesChannelConfig['displayTextRight'] : false,
+                'label' => $this->resolveTranslation($salesChannelConfig['right'] ?? null, $context),
+                'iconId' => $salesChannelConfig['iconRight'] ?? null,
+                'textLink' => $this->resolveTranslation($salesChannelConfig['textLinkRight'] ?? null, $context),
+                'openInNewTab' => $salesChannelConfig['openInNewTabRight'] ?? null,
+                'showMobile' => ($salesChannelConfig['displayTextRight'] ?? null) && !($salesChannelConfig['mobileBreakpointDisplay'] ?? null),
                 'position' => 3
             ]
         ], $context);
 
     }
 
-    private function resolveTranslation(string $value, Context $context): string|array
+    private function resolveTranslation(?string $value, Context $context): string|array|null
     {
+        if ($value === null)
+            return null;
         if (!str_starts_with($value, 'scopCustomHeader.'))
             return $value;
 
