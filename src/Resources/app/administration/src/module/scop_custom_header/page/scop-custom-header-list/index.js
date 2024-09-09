@@ -2,7 +2,7 @@ import template from './scop-custom-header-list.html.twig';
 
 const Criteria = Shopware.Data.Criteria;
 
-const {Component, Mixin} = Shopware;
+const {Mixin} = Shopware;
 
 Shopware.Component.register('scop-custom-header-list', {
     template,

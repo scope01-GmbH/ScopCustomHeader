@@ -12,10 +12,6 @@ Component.register('scop-custom-header-details-columns', {
         Mixin.getByName('placeholder'),
     ],
 
-    data() {
-
-    },
-
     computed: {
         header() {
             return State.get('scopHeaderDetail').header;
@@ -90,7 +86,7 @@ Component.register('scop-custom-header-details-columns', {
             return [...this.columns].sort((a, b) => a.position - b.position);
         },
 
-        hasError(column){
+        hasError(column) {
             return (column.label == null || column.label === '') && column.iconId == null;
         }
 

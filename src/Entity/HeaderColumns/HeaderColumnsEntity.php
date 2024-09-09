@@ -17,7 +17,6 @@ declare(strict_types=1);
 
 namespace Scop\ScopCustomHeader\Entity\HeaderColumns;
 
-use phpDocumentor\Reflection\Types\Boolean;
 use Scop\ScopCustomHeader\Entity\Header\HeaderEntity;
 use Shopware\Core\Framework\DataAbstractionLayer\Entity;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
@@ -29,39 +28,45 @@ class HeaderColumnsEntity extends Entity
     /**
      * @var String $headerId
      */
-    protected $headerId;
+    protected string $headerId;
 
     /**
-     * @var String $label
+     * @var String|null $label
      */
-    protected $label;
+    protected ?string $label;
 
     /**
-     * @var String $iconId
+     * @var String|null $iconId
      */
-    protected $iconId;
+    protected ?string $iconId;
     /**
-     * @var String $textLink
+     * @var String|null $textLink
      */
-    protected $textLink;
+    protected ?string $textLink;
     /**
      * @var bool $openInNewTab
      */
-    protected $openInNewTab;
+    protected ?bool $openInNewTab;
 
     /**
-     * @var int $position
+     * @var int|null $position
      */
-    protected $position;
+    protected ?int $position;
 
-    protected $showDesktop;
+    /**
+     * @var bool|null
+     */
+    protected ?bool $showDesktop;
 
-    protected $showMobile;
+    /**
+     * @var bool|null
+     */
+    protected ?bool $showMobile;
 
     /**
      * @var HeaderEntity $header
      */
-    protected $header;
+    protected HeaderEntity $header;
 
 
     /**
@@ -80,9 +85,8 @@ class HeaderColumnsEntity extends Entity
         $this->headerId = $headerId;
     }
 
-
     /**
-     * @return string
+     * @return string|null
      */
     public function getLabel(): ?string
     {
@@ -97,72 +101,121 @@ class HeaderColumnsEntity extends Entity
         $this->label = $label;
     }
 
+    /**
+     * @return int
+     */
     public function getPosition(): int
     {
         return $this->position;
     }
 
+    /**
+     * @param int $position
+     * @return void
+     */
     public function setPosition(int $position): void
     {
         $this->position = $position;
     }
 
+    /**
+     * @return string|null
+     */
     public function getIconId(): ?string
     {
         return $this->iconId;
     }
 
+    /**
+     * @param string $iconId
+     * @return void
+     */
     public function setIconId(string $iconId): void
     {
         $this->iconId = $iconId;
     }
 
+    /**
+     * @return string|null
+     */
     public function getTextLink(): ?string
     {
         return $this->textLink;
     }
 
+    /**
+     * @param string $textLink
+     * @return void
+     */
     public function setTextLink(string $textLink): void
     {
         $this->textLink = $textLink;
     }
 
+    /**
+     * @return bool|null
+     */
     public function isOpenInNewTab(): ?bool
     {
         return $this->openInNewTab;
     }
 
+    /**
+     * @param bool $openInNewTab
+     * @return void
+     */
     public function setOpenInNewTab(bool $openInNewTab): void
     {
         $this->openInNewTab = $openInNewTab;
     }
 
+    /**
+     * @return bool|null
+     */
     public function isShowDesktop(): ?bool
     {
         return $this->showDesktop;
     }
 
+    /**
+     * @param bool $showDesktop
+     * @return void
+     */
     public function setShowDesktop(bool $showDesktop): void
     {
         $this->showDesktop = $showDesktop;
     }
 
+    /**
+     * @return bool|null
+     */
     public function isShowMobile(): ?bool
     {
         return $this->showMobile;
     }
 
+    /**
+     * @param bool $showMobile
+     * @return void
+     */
     public function setShowMobile(bool $showMobile): void
     {
         $this->showMobile = $showMobile;
     }
 
 
+    /**
+     * @return HeaderEntity|null
+     */
     public function getHeader(): ?HeaderEntity
     {
         return $this->header;
     }
 
+    /**
+     * @param HeaderEntity $header
+     * @return void
+     */
     public function setHeader(HeaderEntity $header): void
     {
         $this->header = $header;

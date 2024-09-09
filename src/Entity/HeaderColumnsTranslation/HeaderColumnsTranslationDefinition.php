@@ -28,8 +28,7 @@ class HeaderColumnsTranslationDefinition extends EntityTranslationDefinition
     public const ENTITY_NAME = 'scop_custom_header_columns_translation';
 
     /**
-     * {@inheritDoc}
-     * @see \Shopware\Core\Framework\DataAbstractionLayer\EntityDefinition::getEntityName()
+     * @see EntityDefinition::getEntityName
      */
     public function getEntityName(): string
     {
@@ -38,7 +37,7 @@ class HeaderColumnsTranslationDefinition extends EntityTranslationDefinition
 
     /**
      * {@inheritDoc}
-     * @see \Shopware\Core\Framework\DataAbstractionLayer\EntityDefinition::getCollectionClass()
+     * @see EntityDefinition::getCollectionClass
      */
     public function getCollectionClass(): string
     {
@@ -47,7 +46,7 @@ class HeaderColumnsTranslationDefinition extends EntityTranslationDefinition
 
     /**
      * {@inheritDoc}
-     * @see \Shopware\Core\Framework\DataAbstractionLayer\EntityDefinition::getEntityClass()
+     * @see EntityDefinition::getEntityClass
      */
     public function getEntityClass(): string
     {
@@ -60,8 +59,7 @@ class HeaderColumnsTranslationDefinition extends EntityTranslationDefinition
     }
 
     /**
-     * {@inheritDoc}
-     * @see \Shopware\Core\Framework\DataAbstractionLayer\EntityDefinition::defineFields()
+     * @see EntityDefinition::defineFields
      */
     protected function defineFields(): FieldCollection
     {

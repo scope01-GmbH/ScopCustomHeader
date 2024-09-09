@@ -1,14 +1,11 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
 namespace Scop\ScopCustomHeader\Migration;
 
 use Doctrine\DBAL\Connection;
-use Shopware\Core\Defaults;
-use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\Log\Package;
 use Shopware\Core\Framework\Migration\MigrationStep;
-use Shopware\Core\Framework\Uuid\Uuid;
-use Shopware\Core\System\SystemConfig\SystemConfigService;
 
 /**
  * @internal
@@ -17,22 +14,27 @@ use Shopware\Core\System\SystemConfig\SystemConfigService;
 class Migration1719908948 extends MigrationStep
 {
 
+    /**
+     * @return int
+     */
     public function getCreationTimestamp(): int
     {
         return 1719908948;
     }
 
+    /**
+     * @param Connection $connection
+     * @return void
+     */
     public function update(Connection $connection): void
     {
-
-//        $config = $this->container->get(SystemConfigService::class);
 
         $sql = <<<SQL
 CREATE TABLE IF NOT EXISTS `scop_custom_header` (
     `id` BINARY(16) NOT NULL,
-    `label` VARCHAR(255) NULL,
+    `label` VARCHAR(255) NOT NULL,
     `description` VARCHAR(255) NULL,
-    `priority` INT(11) NULL,
+    `priority` INT(11) NOT NULL,
     `enabled` TINYINT(1) NULL DEFAULT '0',
     `height` INT(11) NULL,
     `background` VARCHAR(255) NULL,
@@ -100,28 +102,6 @@ CREATE TABLE IF NOT EXISTS `scop_custom_header_columns_translation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 SQL;
         $connection->executeUpdate($sql);
-
-//        $insertDefaultSettingSql = <<<SQL
-//            INSERT INTO `scop_custom_header`
-//              (`id`, `label`, `description`, `created_at`)
-//            VALUES (:id, :label, :description, NOW())
-//        SQL;
-
-//        $connection->executeStatement(
-//            $insertDefaultSettingSql,
-//            [
-//                'id' => Uuid::randomBytes(),
-//                'label' => $config->get('ScopCustomHeader.config.textFontSize'),
-//                'description' => 'example_value',
-//            ]
-//        );
-
-
-
     }
 
-    public function updateDestructive(Connection $connection): void
-    {
-
-    }
 }

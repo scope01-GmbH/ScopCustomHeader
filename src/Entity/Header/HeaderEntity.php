@@ -17,7 +17,6 @@ declare(strict_types=1);
 
 namespace Scop\ScopCustomHeader\Entity\Header;
 
-use phpDocumentor\Reflection\Types\Boolean;
 use Scop\ScopCustomHeader\Entity\HeaderColumns\HeaderColumnsCollection;
 use Shopware\Core\Framework\DataAbstractionLayer\Entity;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
@@ -30,107 +29,119 @@ class HeaderEntity extends Entity
     /**
      * @var String $label
      */
-    protected $label;
+    protected string $label;
     /**
-     * @var String $description
+     * @var String|null $description
      */
-    protected $description;
+    protected ?string $description;
     /**
      * @var int $priority
      */
-    protected $priority;
+    protected int $priority;
     /**
      * @var bool $enabled
      */
-    protected $enabled;
+    protected ?bool $enabled;
     /**
-     * @var int $height
+     * @var int|null $height
      */
-    protected $height;
+    protected ?int $height;
     /**
-     * @var String $background
+     * @var String|null $background
      */
-    protected $background;
+    protected ?string $background;
     /**
-     * @var int $textFontSize
+     * @var int|null $textFontSize
      */
-    protected $textFontSize;
+    protected ?int $textFontSize;
     /**
-     * @var String $textColor
+     * @var String|null $textColor
      */
-    protected $textColor;
+    protected ?string $textColor;
     /**
-     * @var String $hover
+     * @var String|null $hover
      */
-    protected $hover;
+    protected ?string $hover;
     /**
-     * @var int $paddingTop
+     * @var int|null $paddingTop
      */
-    protected $paddingTop;
+    protected ?int $paddingTop;
     /**
-     * @var int $paddingBottom
+     * @var int|null $paddingBottom
      */
-    protected $paddingBottom;
+    protected ?int $paddingBottom;
     /**
-     * @var int $paddingLeft
+     * @var int|null $paddingLeft
      */
-    protected $paddingLeft;
+    protected ?int $paddingLeft;
     /**
-     * @var int $paddingRight
+     * @var int|null $paddingRight
      */
-    protected $paddingRight;
+    protected ?int $paddingRight;
 
     /**
-     * @var int $textFontSizeMobile
+     * @var int|null $textFontSizeMobile
      */
-    protected $textFontSizeMobile;
+    protected ?int $textFontSizeMobile;
     /**
-     * @var int $paddingTopMobile
+     * @var int|null $paddingTopMobile
      */
-    protected $paddingTopMobile;
+    protected ?int $paddingTopMobile;
     /**
-     * @var int $paddingBottomMobile
+     * @var int|null $paddingBottomMobile
      */
-    protected $paddingBottomMobile;
+    protected ?int $paddingBottomMobile;
     /**
-     * @var int $paddingLeftMobile
+     * @var int|null $paddingLeftMobile
      */
-    protected $paddingLeftMobile;
+    protected ?int $paddingLeftMobile;
     /**
-     * @var int $paddingRightMobile
+     * @var int|null $paddingRightMobile
      */
-    protected $paddingRightMobile;
+    protected ?int $paddingRightMobile;
     /**
      * @var bool $mobileBreakpointCarousel
      */
-    protected $mobileBreakpointCarousel;
+    protected ?bool $mobileBreakpointCarousel;
     /**
-     * @var int $mobileCarouselSpeed
+     * @var int|null $mobileCarouselSpeed
      */
-    protected $mobileCarouselSpeed;
+    protected ?int $mobileCarouselSpeed;
 
-    protected $heightMobile;
+    /**
+     * @var int|null
+     */
+    protected ?int $heightMobile;
 
-    protected $backgroundColorMobile;
+    /**
+     * @var string|null
+     */
+    protected ?string $backgroundColorMobile;
 
-    protected $hoverColorMobile;
+    /**
+     * @var string|null
+     */
+    protected ?string $hoverColorMobile;
 
-    protected $textColorMobile;
+    /**
+     * @var string|null
+     */
+    protected ?string $textColorMobile;
 
 
     /**
      * @var HeaderColumnsCollection $columns
      */
-    protected $columns;
+    protected HeaderColumnsCollection $columns;
 
     /**
      * @var string|null $salesChannelId
      */
-    protected $salesChannelId;
+    protected ?string $salesChannelId;
     /**
      * @var SalesChannelEntity|null $salesChannel
      */
-    protected $salesChannel;
+    protected ?SalesChannelEntity $salesChannel;
 
     /**
      * @return string
@@ -149,7 +160,7 @@ class HeaderEntity extends Entity
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getDescription(): ?string
     {
@@ -189,227 +200,374 @@ class HeaderEntity extends Entity
     }
 
     /**
-     * @param boolean $enabled
+     * @param bool $enabled
      */
-    public function setEnabled(boolean $enabled): void
+    public function setEnabled(bool $enabled): void
     {
         $this->enabled = $enabled;
     }
 
+    /**
+     * @return int|null
+     */
     public function getHeight(): ?int
     {
         return $this->height;
     }
 
+    /**
+     * @param int $height
+     * @return void
+     */
     public function setHeight(int $height): void
     {
         $this->height = $height;
     }
 
+    /**
+     * @return string|null
+     */
     public function getBackground(): ?string
     {
         return $this->background;
     }
 
+    /**
+     * @param string $background
+     * @return void
+     */
     public function setBackground(string $background): void
     {
         $this->background = $background;
     }
 
+    /**
+     * @return int|null
+     */
     public function getTextFontSize(): ?int
     {
         return $this->textFontSize;
     }
 
+    /**
+     * @param int $textFontSize
+     * @return void
+     */
     public function setTextFontSize(int $textFontSize): void
     {
         $this->textFontSize = $textFontSize;
     }
 
+    /**
+     * @return string|null
+     */
     public function getTextColor(): ?string
     {
         return $this->textColor;
     }
 
+    /**
+     * @param string $textColor
+     * @return void
+     */
     public function setTextColor(string $textColor): void
     {
         $this->textColor = $textColor;
     }
 
+    /**
+     * @return string|null
+     */
     public function getHover(): ?string
     {
         return $this->hover;
     }
 
+    /**
+     * @param string $hover
+     * @return void
+     */
     public function setHover(string $hover): void
     {
         $this->hover = $hover;
     }
 
+    /**
+     * @return int|null
+     */
     public function getPaddingTop(): ?int
     {
         return $this->paddingTop;
     }
 
+    /**
+     * @param int $paddingTop
+     * @return void
+     */
     public function setPaddingTop(int $paddingTop): void
     {
         $this->paddingTop = $paddingTop;
     }
 
+    /**
+     * @return int|null
+     */
     public function getPaddingBottom(): ?int
     {
         return $this->paddingBottom;
     }
 
+    /**
+     * @param int $paddingBottom
+     * @return void
+     */
     public function setPaddingBottom(int $paddingBottom): void
     {
         $this->paddingBottom = $paddingBottom;
     }
 
 
+    /**
+     * @return int|null
+     */
     public function getPaddingLeft(): ?int
     {
         return $this->paddingLeft;
     }
 
+    /**
+     * @param int $paddingLeft
+     * @return void
+     */
     public function setPaddingLeft(int $paddingLeft): void
     {
         $this->paddingLeft = $paddingLeft;
     }
 
+    /**
+     * @return int|null
+     */
     public function getPaddingRight(): ?int
     {
         return $this->paddingRight;
     }
 
+    /**
+     * @param int $paddingRight
+     * @return void
+     */
     public function setPaddingRight(int $paddingRight): void
     {
         $this->paddingRight = $paddingRight;
     }
 
+    /**
+     * @return int|null
+     */
     public function getTextFontSizeMobile(): ?int
     {
         return $this->textFontSizeMobile;
     }
 
+    /**
+     * @param int $textFontSizeMobile
+     * @return void
+     */
     public function setTextFontSizeMobile(int $textFontSizeMobile): void
     {
         $this->textFontSizeMobile = $textFontSizeMobile;
     }
 
+    /**
+     * @return int|null
+     */
     public function getPaddingTopMobile(): ?int
     {
         return $this->paddingTopMobile;
     }
 
+    /**
+     * @param int $paddingTopMobile
+     * @return void
+     */
     public function setPaddingTopMobile(int $paddingTopMobile): void
     {
         $this->paddingTopMobile = $paddingTopMobile;
     }
 
+    /**
+     * @return int|null
+     */
     public function getPaddingBottomMobile(): ?int
     {
         return $this->paddingBottomMobile;
     }
 
+    /**
+     * @param int $paddingBottomMobile
+     * @return void
+     */
     public function setPaddingBottomMobile(int $paddingBottomMobile): void
     {
         $this->paddingBottomMobile = $paddingBottomMobile;
     }
 
+    /**
+     * @return int|null
+     */
     public function getPaddingLeftMobile(): ?int
     {
         return $this->paddingLeftMobile;
     }
 
+    /**
+     * @param int $paddingLeftMobile
+     * @return void
+     */
     public function setPaddingLeftMobile(int $paddingLeftMobile): void
     {
         $this->paddingLeftMobile = $paddingLeftMobile;
     }
 
+    /**
+     * @return int|null
+     */
     public function getPaddingRightMobile(): ?int
     {
         return $this->paddingRightMobile;
     }
 
+    /**
+     * @param int $paddingRightMobile
+     * @return void
+     */
     public function setPaddingRightMobile(int $paddingRightMobile): void
     {
         $this->paddingRightMobile = $paddingRightMobile;
     }
 
+    /**
+     * @return bool|null
+     */
     public function isMobileBreakpointCarousel(): ?bool
     {
         return $this->mobileBreakpointCarousel;
     }
 
+    /**
+     * @param bool $mobileBreakpointCarousel
+     * @return void
+     */
     public function setMobileBreakpointCarousel(bool $mobileBreakpointCarousel): void
     {
         $this->mobileBreakpointCarousel = $mobileBreakpointCarousel;
     }
 
-    public function setMobileCarouselSpeed(int $mobileCarouselSpeed): void
-    {
-        $this->mobileCarouselSpeed = $mobileCarouselSpeed;
-    }
-
+    /**
+     * @return int|null
+     */
     public function getMobileCarouselSpeed(): ?int
     {
         return $this->mobileCarouselSpeed;
     }
 
+    /**
+     * @param int $mobileCarouselSpeed
+     * @return void
+     */
+    public function setMobileCarouselSpeed(int $mobileCarouselSpeed): void
+    {
+        $this->mobileCarouselSpeed = $mobileCarouselSpeed;
+    }
+
+    /**
+     * @return string|null
+     */
     public function getTextColorMobile(): ?string
     {
         return $this->textColorMobile;
     }
 
+    /**
+     * @param string $textColorMobile
+     * @return void
+     */
     public function setTextColorMobile(string $textColorMobile): void
     {
         $this->textColorMobile = $textColorMobile;
     }
 
+    /**
+     * @return string|null
+     */
     public function getHoverColorMobile(): ?string
     {
         return $this->hoverColorMobile;
     }
 
+    /**
+     * @param string $hoverColorMobile
+     * @return void
+     */
     public function setHoverColorMobile(string $hoverColorMobile): void
     {
         $this->hoverColorMobile = $hoverColorMobile;
     }
 
-    public function setBackgroundColorMobile(string $backgroundColorMobile): void
-    {
-        $this->backgroundColorMobile = $backgroundColorMobile;
-    }
-
+    /**
+     * @return string|null
+     */
     public function getBackgroundColorMobile(): ?string
     {
         return $this->backgroundColorMobile;
     }
 
+    /**
+     * @param string $backgroundColorMobile
+     * @return void
+     */
+    public function setBackgroundColorMobile(string $backgroundColorMobile): void
+    {
+        $this->backgroundColorMobile = $backgroundColorMobile;
+    }
+
+    /**
+     * @return int|null
+     */
     public function getHeightMobile(): ?int
     {
         return $this->heightMobile;
     }
 
+    /**
+     * @param int $heightMobile
+     * @return void
+     */
     public function setHeightMobile(int $heightMobile): void
     {
         $this->heightMobile = $heightMobile;
     }
 
 
+    /**
+     * @return HeaderColumnsCollection|null
+     */
     public function getColumns(): ?HeaderColumnsCollection
     {
         return $this->columns;
     }
 
+    /**
+     * @param HeaderColumnsCollection $columns
+     * @return void
+     */
     public function setColumns(HeaderColumnsCollection $columns): void
     {
         $this->columns = $columns;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getSalesChannelId(): ?string
     {
@@ -417,7 +575,7 @@ class HeaderEntity extends Entity
     }
 
     /**
-     * @param string $salesChannelId
+     * @param string|null $salesChannelId
      */
     public function setSalesChannelId(?string $salesChannelId): void
     {

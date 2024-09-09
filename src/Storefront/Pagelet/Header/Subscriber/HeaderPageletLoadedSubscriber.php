@@ -9,7 +9,6 @@
 
 namespace Scop\ScopCustomHeader\Storefront\Pagelet\Header\Subscriber;
 
-use Psr\Log\LoggerInterface;
 use Scop\ScopCustomHeader\Entity\Header\HeaderEntity;
 use Shopware\Core\Framework\Api\Context\SalesChannelApiSource;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -17,8 +16,6 @@ use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\OrFilter;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
-use Shopware\Core\Framework\Log\LoggingService;
-use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Shopware\Storefront\Pagelet\Header\HeaderPageletLoadedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -29,42 +26,18 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
 {
 
-    /**
-     * @var SystemConfigService
-     */
-    private $systemConfigService;
-
-    private $headerRepository;
-
-    /**
-     * @var EntityRepository
-     */
-    private $mediaRepository;
-
-    /**
-     * @var LoggingService
-     */
-    private $loggerInterface;
+    private EntityRepository $headerRepository;
 
     /**
      * HeaderPageletLoadedSubscriber constructor.
      *
-     * @param SystemConfigService $systemConfigService
      * @param EntityRepository $headerRepository
-     * @param EntityRepository $mediaRepository
-     * @param LoggerInterface $loggerInterface
      */
     public function __construct(
-        SystemConfigService $systemConfigService,
-        EntityRepository    $headerRepository,
-        EntityRepository    $mediaRepository,
-        LoggerInterface     $loggerInterface
+        EntityRepository $headerRepository,
     )
     {
-        $this->systemConfigService = $systemConfigService;
         $this->headerRepository = $headerRepository;
-        $this->mediaRepository = $mediaRepository;
-        $this->loggerInterface = $loggerInterface;
     }
 
     /**
@@ -105,25 +78,25 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
          * @var HeaderEntity $header
          */
         $header = $this->headerRepository->search($criteria, $context)->first();
-        $page = $event->getPagelet();
-
-        $desktopVisible = false;
-        $mobileVisible = false;
-        foreach($header->getColumns() as $column){
-            if($column->isShowDesktop()){
-                $desktopVisible = true;
-            }
-            if($column->isShowMobile()){
-                $mobileVisible = true;
-            }
-        }
-        $header->addArrayExtension('ScopVisible', [
-            'desktopVisible' => $desktopVisible,
-            'mobileVisible' => $mobileVisible
-        ]);
-
-        // Sending the Plugin configuration in ScopCH variable extension in TWIG
         if ($header) {
+            $page = $event->getPagelet();
+
+            $desktopVisible = false;
+            $mobileVisible = false;
+            foreach ($header->getColumns() as $column) {
+                if ($column->isShowDesktop()) {
+                    $desktopVisible = true;
+                }
+                if ($column->isShowMobile()) {
+                    $mobileVisible = true;
+                }
+            }
+            $header->addArrayExtension('ScopVisible', [
+                'desktopVisible' => $desktopVisible,
+                'mobileVisible' => $mobileVisible
+            ]);
+
+            // Sending the Plugin configuration in ScopCH variable extension in TWIG
             $page->addExtension('ScopCH', $header);
         }
     }

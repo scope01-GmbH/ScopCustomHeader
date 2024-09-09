@@ -26,7 +26,7 @@ class HeaderColumnsTranslationCollection extends EntityCollection
 
     /**
      * {@inheritDoc}
-     * @see \Shopware\Core\Framework\DataAbstractionLayer\EntityCollection::getExpectedClass()
+     * @see EntityCollection::getExpectedClass
      */
     protected function getExpectedClass(): string
     {

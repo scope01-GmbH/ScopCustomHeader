@@ -1,4 +1,4 @@
-<?php /** @noinspection ALL */
+<?php
 declare(strict_types=1);
 
 /**
@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Scop\ScopCustomHeader;
 
 use Doctrine\DBAL\Connection;
+use RuntimeException;
 use Shopware\Core\Defaults;
 use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -68,17 +69,26 @@ class ScopCustomHeader extends Plugin
         $config = $this->container->get(SystemConfigService::class);
         $context = $activateContext->getContext();
 
+        if ($headerRepository === null || $columnRepository === null || $config === null) {
+            throw new RuntimeException("Unexpected null");
+        }
+
         if ($headerRepository->search(new Criteria(), $context)->getTotal() === 0) {
 
             $salesChannelCriteria = new Criteria();
             $salesChannelCriteria->addFilter(new EqualsFilter('typeId', Defaults::SALES_CHANNEL_TYPE_STOREFRONT));
             $salesChannelRepository = $this->container->get('sales_channel.repository');
+            if ($salesChannelRepository === null) {
+                throw new RuntimeException("Unexpected null");
+            }
+
             $salesChannelIds = $salesChannelRepository->search($salesChannelCriteria, $context)->getIds();
 
             $salesChannelConfigArray = [];
+            $id = null;
             foreach ($salesChannelIds as $id) {
                 $salesChannelConfig = $config->get('ScopCustomHeader.config', $id);
-                array_push($salesChannelConfigArray, $salesChannelConfig);
+                $salesChannelConfigArray[] = $salesChannelConfig;
             }
 
             if ($this->allArraysIdentical($salesChannelConfigArray)) {
@@ -94,25 +104,21 @@ class ScopCustomHeader extends Plugin
 
     }
 
-    private function allArraysIdentical($arrays)
+    private function allArraysIdentical($arrays): bool
     {
         if (empty($arrays)) {
             return true;
         }
 
-        if (isset($arrays[0]) && isset($arrays[0]["imgArray"])) {
-            if ($arrays[0]["imgArray"][0] === NULL && $arrays[0]["imgArray"][1] === NULL && $arrays[0]["imgArray"][2] === NULL) {
-                unset($arrays[0]["imgArray"]);
-            }
+        if (isset($arrays[0]["imgArray"]) && $arrays[0]["imgArray"][0] === NULL && $arrays[0]["imgArray"][1] === NULL && $arrays[0]["imgArray"][2] === NULL) {
+            unset($arrays[0]["imgArray"]);
         }
 
         $firstArraySerialized = serialize($arrays[0]);
-        // Test wenn der zweite++ SalesChannel auch imgArray hat
+        // Tests if the second++ SalesChannel contains also imgArray
         foreach ($arrays as $array) {
-            if (isset($array) && isset($array["imgArray"])) {
-                if ($array["imgArray"][0] === NULL && $array["imgArray"][1] === NULL && $array["imgArray"][2] === NULL) {
-                    unset($array["imgArray"]);
-                }
+            if (isset($array["imgArray"]) && $array["imgArray"][0] === NULL && $array["imgArray"][1] === NULL && $array["imgArray"][2] === NULL) {
+                unset($array["imgArray"]);
             }
 
             if (serialize($array) !== $firstArraySerialized) {
@@ -123,7 +129,7 @@ class ScopCustomHeader extends Plugin
         return true;
     }
 
-    private function migrateValues($id, $context, $headerRepository, $columnRepository, $config, $salesChannelId)
+    private function migrateValues($id, $context, $headerRepository, $columnRepository, $config, $salesChannelId): void
     {
         $salesChannelConfig = $config->get('ScopCustomHeader.config', $id);
 
@@ -200,10 +206,12 @@ class ScopCustomHeader extends Plugin
 
     private function resolveTranslation(?string $value, Context $context): string|array|null
     {
-        if ($value === null)
+        if ($value === null) {
             return null;
-        if (!str_starts_with($value, 'scopCustomHeader.'))
+        }
+        if (!str_starts_with($value, 'scopCustomHeader.')) {
             return $value;
+        }
 
         /**
          * @var TranslatorBagInterface $translator
@@ -211,6 +219,9 @@ class ScopCustomHeader extends Plugin
         $translator = $this->container->get('translator');
 
         $languageRepository = $this->container->get('language.repository');
+        if ($languageRepository === null) {
+            throw new RuntimeException('Unexpected null');
+        }
         $criteria = new Criteria();
         $criteria->addAssociation('locale');
         $languages = $languageRepository->search($criteria, $context)->getElements();
@@ -220,9 +231,9 @@ class ScopCustomHeader extends Plugin
          * @var LanguageEntity $language
          */
         foreach ($languages as $language) {
-            $localeCode = $language->getLocale()->getCode();
+            $localeCode = $language->getLocale()?->getCode();
             $translationCatalogue = $translator->getCatalogue($localeCode);
-            if ($translationCatalogue?->has($value)) {
+            if ($translationCatalogue->has($value)) {
                 $translatedValue[$localeCode] = $translationCatalogue->get($value);
             }
         }

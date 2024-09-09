@@ -42,10 +42,6 @@ Shopware.Component.register('scop-custom-header-column-component', {
         }
     },
 
-    created() {
-
-    },
-
     methods: {
         setMediaItem({targetId}) {
             this.column.iconId = targetId;

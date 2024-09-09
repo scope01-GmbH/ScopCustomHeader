@@ -5,59 +5,70 @@
             <sw-text-field :label="$t('scopcustomheader.detail.label')" v-model:value="header.label"
                            validation="required" required :error="headerLabelError"></sw-text-field>
 
-            <sw-number-field :label="$t('scopcustomheader.detail.priority')" v-model:value="header.priority" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false" required :error="headerPriorityError"></sw-number-field>
+            <sw-number-field :label="$t('scopcustomheader.detail.priority')" v-model:value="header.priority"
+                             numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false"
+                             required :error="headerPriorityError"></sw-number-field>
 
             <sw-switch-field :label="$tc('scopcustomheader.detail.enabledLabel')"
                              v-model:value="header.enabled" validation="required" bordered></sw-switch-field>
 
         </sw-container>
-        <sw-textarea-field :label="$t('scopcustomheader.detail.description')" v-model:value="header.description"></sw-textarea-field>
+        <sw-textarea-field :label="$t('scopcustomheader.detail.description')"
+                           v-model:value="header.description"></sw-textarea-field>
 
-{#        <sw-container columns="1fr 1fr" gap="16px">#}
-{#            <sw-datepicker v-model:value="header.validFrom" date-type="datetime" :label="$tc('scopcustomheader.detail.validFromLabel')" :placeholder-text="$tc('scopcustomheader.detail.validFromPlaceholder')"></sw-datepicker>#}
-
-{#            <sw-datepicker v-model:value="header.validUntil" date-type="datetime" :label="$tc('scopcustomheader.detail.validUntilLabel')" :placeholder-text="$tc('scopcustomheader.detail.validUntilPlaceholder')"></sw-datepicker>#}
-{#        </sw-container>#}
-
-        <sw-entity-single-select v-model:value="header.salesChannelId" entity="sales_channel" :resetOption="$t('scopcustomheader.detail.salesChannel.all')" :label="$t('scopcustomheader.detail.salesChannel.select')"></sw-entity-single-select>
+        <sw-entity-single-select v-model:value="header.salesChannelId" entity="sales_channel"
+                                 :resetOption="$t('scopcustomheader.detail.salesChannel.all')"
+                                 :label="$t('scopcustomheader.detail.salesChannel.select')"></sw-entity-single-select>
     </sw-card>
 
     <sw-card :title="$tc('scopcustomheader.detail.settingsDesktop')" v-if="header" :isLoading="isLoading">
-        <sw-number-field :label="$t('scopcustomheader.detail.height')" v-model:value="header.height" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+        <sw-number-field :label="$t('scopcustomheader.detail.height')" v-model:value="header.height" numberType="int"
+                         :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
             <template #suffix>
                 <span>px</span>
             </template>
         </sw-number-field>
 
         <sw-container columns="1fr 1fr 1fr" gap="16px">
-            <sw-colorpicker :label="$t('scopcustomheader.detail.backgroundColor')" v-model:value="header.background" value="#6ed59f" colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true" zIndex="100"></sw-colorpicker>
-            <sw-colorpicker :label="$t('scopcustomheader.detail.hoverColor')" v-model:value="header.hover" value="#6ed59f" colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true" zIndex="100"></sw-colorpicker>
-            <sw-colorpicker :label="$t('scopcustomheader.detail.textColor')" v-model:value="header.textColor" value="#6ed59f" colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true" zIndex="100"></sw-colorpicker>
+            <sw-colorpicker :label="$t('scopcustomheader.detail.backgroundColor')" v-model:value="header.background"
+                            value="#6ed59f" colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true"
+                            zIndex="100"></sw-colorpicker>
+            <sw-colorpicker :label="$t('scopcustomheader.detail.hoverColor')" v-model:value="header.hover"
+                            value="#6ed59f" colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true"
+                            zIndex="100"></sw-colorpicker>
+            <sw-colorpicker :label="$t('scopcustomheader.detail.textColor')" v-model:value="header.textColor"
+                            value="#6ed59f" colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true"
+                            zIndex="100"></sw-colorpicker>
         </sw-container>
 
-        <sw-number-field :label="$t('scopcustomheader.detail.fontSize')" v-model:value="header.textFontSize" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+        <sw-number-field :label="$t('scopcustomheader.detail.fontSize')" v-model:value="header.textFontSize"
+                         numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
             <template #suffix>
                 <span>px</span>
             </template>
         </sw-number-field>
 
         <sw-container columns="1fr 1fr 1fr 1fr" gap="16px">
-            <sw-number-field :label="$t('scopcustomheader.detail.paddingTop')" v-model:value="header.paddingTop" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+            <sw-number-field :label="$t('scopcustomheader.detail.paddingTop')" v-model:value="header.paddingTop"
+                             numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
                 <template #suffix>
                     <span>px</span>
                 </template>
             </sw-number-field>
-            <sw-number-field :label="$t('scopcustomheader.detail.paddingRight')" v-model:value="header.paddingRight" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+            <sw-number-field :label="$t('scopcustomheader.detail.paddingRight')" v-model:value="header.paddingRight"
+                             numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
                 <template #suffix>
                     <span>px</span>
                 </template>
             </sw-number-field>
-            <sw-number-field :label="$t('scopcustomheader.detail.paddingBottom')" v-model:value="header.paddingBottom" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+            <sw-number-field :label="$t('scopcustomheader.detail.paddingBottom')" v-model:value="header.paddingBottom"
+                             numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
                 <template #suffix>
                     <span>px</span>
                 </template>
             </sw-number-field>
-            <sw-number-field :label="$t('scopcustomheader.detail.paddingLeft')" v-model:value="header.paddingLeft" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+            <sw-number-field :label="$t('scopcustomheader.detail.paddingLeft')" v-model:value="header.paddingLeft"
+                             numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
                 <template #suffix>
                     <span>px</span>
                 </template>
@@ -69,49 +80,66 @@
     <sw-card :title="$tc('scopcustomheader.detail.settingsMobile')" v-if="header" :isLoading="isLoading">
 
         <sw-switch-field :label="$tc('scopcustomheader.detail.mobileBreakpointCarouselLabel')"
-                         v-model:value="header.mobileBreakpointCarousel" validation="required" bordered></sw-switch-field>
+                         v-model:value="header.mobileBreakpointCarousel" validation="required"
+                         bordered></sw-switch-field>
 
-        <sw-number-field :label="$t('scopcustomheader.detail.mobileCarouselSpeedLabel')" v-model:value="header.mobileCarouselSpeed" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+        <sw-number-field :label="$t('scopcustomheader.detail.mobileCarouselSpeedLabel')"
+                         v-model:value="header.mobileCarouselSpeed" numberType="int" :step="1" :min="0" :value="1"
+                         :fillDigits="true" :allowEmpty="false">
             <template #suffix>
                 <span>s</span>
             </template>
         </sw-number-field>
 
-        <sw-number-field :label="$t('scopcustomheader.detail.height')" v-model:value="header.heightMobile" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+        <sw-number-field :label="$t('scopcustomheader.detail.height')" v-model:value="header.heightMobile"
+                         numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
             <template #suffix>
                 <span>px</span>
             </template>
         </sw-number-field>
 
         <sw-container columns="1fr 1fr 1fr" gap="16px">
-            <sw-colorpicker :label="$t('scopcustomheader.detail.backgroundColor')" v-model:value="header.backgroundColorMobile" value="#6ed59f" colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true" zIndex="100"></sw-colorpicker>
-            <sw-colorpicker :label="$t('scopcustomheader.detail.hoverColor')" v-model:value="header.hoverColorMobile" value="#6ed59f" colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true" zIndex="100"></sw-colorpicker>
-            <sw-colorpicker :label="$t('scopcustomheader.detail.textColor')" v-model:value="header.textColorMobile" value="#6ed59f" colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true" zIndex="100"></sw-colorpicker>
+            <sw-colorpicker :label="$t('scopcustomheader.detail.backgroundColor')"
+                            v-model:value="header.backgroundColorMobile" value="#6ed59f" colorOutput="auto"
+                            :alpha="true" :disabled="false" :colorLabels="true" zIndex="100"></sw-colorpicker>
+            <sw-colorpicker :label="$t('scopcustomheader.detail.hoverColor')" v-model:value="header.hoverColorMobile"
+                            value="#6ed59f" colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true"
+                            zIndex="100"></sw-colorpicker>
+            <sw-colorpicker :label="$t('scopcustomheader.detail.textColor')" v-model:value="header.textColorMobile"
+                            value="#6ed59f" colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true"
+                            zIndex="100"></sw-colorpicker>
         </sw-container>
 
-        <sw-number-field :label="$t('scopcustomheader.detail.fontSize')" v-model:value="header.textFontSizeMobile" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+        <sw-number-field :label="$t('scopcustomheader.detail.fontSize')" v-model:value="header.textFontSizeMobile"
+                         numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
             <template #suffix>
                 <span>px</span>
             </template>
         </sw-number-field>
 
         <sw-container columns="1fr 1fr 1fr 1fr" gap="16px">
-            <sw-number-field :label="$t('scopcustomheader.detail.paddingTop')" v-model:value="header.paddingTopMobile" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+            <sw-number-field :label="$t('scopcustomheader.detail.paddingTop')" v-model:value="header.paddingTopMobile"
+                             numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
                 <template #suffix>
                     <span>px</span>
                 </template>
             </sw-number-field>
-            <sw-number-field :label="$t('scopcustomheader.detail.paddingRight')" v-model:value="header.paddingRightMobile" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+            <sw-number-field :label="$t('scopcustomheader.detail.paddingRight')"
+                             v-model:value="header.paddingRightMobile" numberType="int" :step="1" :min="0" :value="1"
+                             :fillDigits="true" :allowEmpty="false">
                 <template #suffix>
                     <span>px</span>
                 </template>
             </sw-number-field>
-            <sw-number-field :label="$t('scopcustomheader.detail.paddingBottom')" v-model:value="header.paddingBottomMobile" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+            <sw-number-field :label="$t('scopcustomheader.detail.paddingBottom')"
+                             v-model:value="header.paddingBottomMobile" numberType="int" :step="1" :min="0" :value="1"
+                             :fillDigits="true" :allowEmpty="false">
                 <template #suffix>
                     <span>px</span>
                 </template>
             </sw-number-field>
-            <sw-number-field :label="$t('scopcustomheader.detail.paddingLeft')" v-model:value="header.paddingLeftMobile" numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
+            <sw-number-field :label="$t('scopcustomheader.detail.paddingLeft')" v-model:value="header.paddingLeftMobile"
+                             numberType="int" :step="1" :min="0" :value="1" :fillDigits="true" :allowEmpty="false">
                 <template #suffix>
                     <span>px</span>
                 </template>
