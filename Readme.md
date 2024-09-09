@@ -14,7 +14,7 @@
 | 3.0.0   | Advanced Header Configuration: Multiple header configurations, any number of columns, improved language Support | **6.6**          |
 
 > [!Important]\
-> Version 2.0.0 is no longer compatible with Shopware 6.4 or below!
+> Version 2.0.0 is no longer compatible with Shopware 6.4 or below!\
 > Version 3.0.0 is no longer compatible with Shopware 6.5 or below!
 
 # Installation
