@@ -64,7 +64,7 @@ class HeaderColumnsEntity extends Entity
     protected ?bool $showMobile = null;
 
     /**
-     * @var HeaderEntity $header
+     * @var HeaderEntity|null $header
      */
     protected ?HeaderEntity $header = null;
 
