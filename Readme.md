@@ -15,8 +15,6 @@
 
 > [!Important]\
 > Version 2.0.0 is no longer compatible with Shopware 6.4 or below!
-
-> [!Important]\
 > Version 3.0.0 is no longer compatible with Shopware 6.5 or below!
 
 # Installation
