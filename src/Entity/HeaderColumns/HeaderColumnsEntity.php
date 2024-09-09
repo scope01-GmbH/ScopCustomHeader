@@ -33,40 +33,40 @@ class HeaderColumnsEntity extends Entity
     /**
      * @var String|null $label
      */
-    protected ?string $label;
+    protected ?string $label = null;
 
     /**
      * @var String|null $iconId
      */
-    protected ?string $iconId;
+    protected ?string $iconId = null;
     /**
      * @var String|null $textLink
      */
-    protected ?string $textLink;
+    protected ?string $textLink = null;
     /**
      * @var bool $openInNewTab
      */
-    protected ?bool $openInNewTab;
+    protected ?bool $openInNewTab = null;
 
     /**
      * @var int|null $position
      */
-    protected ?int $position;
+    protected ?int $position = null;
 
     /**
      * @var bool|null
      */
-    protected ?bool $showDesktop;
+    protected ?bool $showDesktop = null;
 
     /**
      * @var bool|null
      */
-    protected ?bool $showMobile;
+    protected ?bool $showMobile = null;
 
     /**
      * @var HeaderEntity $header
      */
-    protected HeaderEntity $header;
+    protected ?HeaderEntity $header = null;
 
 
     /**

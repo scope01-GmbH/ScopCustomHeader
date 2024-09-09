@@ -28,22 +28,22 @@ class HeaderColumnsTranslationEntity extends TranslationEntity
     /**
      * @var string|null
      */
-    protected ?string $label;
+    protected ?string $label = null;
 
     /**
      * @var string|null
      */
-    protected ?string $iconId;
+    protected ?string $iconId = null;
 
     /**
      * @var string|null
      */
-    protected ?string $textLink;
+    protected ?string $textLink = null;
 
     /**
      * @var MediaEntity|null
      */
-    protected ?MediaEntity $icon;
+    protected ?MediaEntity $icon = null;
 
     /**
      * @return string|null
@@ -112,5 +112,5 @@ class HeaderColumnsTranslationEntity extends TranslationEntity
     {
         $this->icon = $icon;
     }
-    
+
 }

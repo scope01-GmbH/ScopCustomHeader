@@ -33,7 +33,7 @@ class HeaderEntity extends Entity
     /**
      * @var String|null $description
      */
-    protected ?string $description;
+    protected ?string $description = null;
     /**
      * @var int $priority
      */
@@ -41,98 +41,98 @@ class HeaderEntity extends Entity
     /**
      * @var bool $enabled
      */
-    protected ?bool $enabled;
+    protected ?bool $enabled = null;
     /**
      * @var int|null $height
      */
-    protected ?int $height;
+    protected ?int $height = null;
     /**
      * @var String|null $background
      */
-    protected ?string $background;
+    protected ?string $background = null;
     /**
      * @var int|null $textFontSize
      */
-    protected ?int $textFontSize;
+    protected ?int $textFontSize = null;
     /**
      * @var String|null $textColor
      */
-    protected ?string $textColor;
+    protected ?string $textColor = null;
     /**
      * @var String|null $hover
      */
-    protected ?string $hover;
+    protected ?string $hover = null;
     /**
      * @var int|null $paddingTop
      */
-    protected ?int $paddingTop;
+    protected ?int $paddingTop = null;
     /**
      * @var int|null $paddingBottom
      */
-    protected ?int $paddingBottom;
+    protected ?int $paddingBottom = null;
     /**
      * @var int|null $paddingLeft
      */
-    protected ?int $paddingLeft;
+    protected ?int $paddingLeft = null;
     /**
      * @var int|null $paddingRight
      */
-    protected ?int $paddingRight;
+    protected ?int $paddingRight = null;
 
     /**
      * @var int|null $textFontSizeMobile
      */
-    protected ?int $textFontSizeMobile;
+    protected ?int $textFontSizeMobile = null;
     /**
      * @var int|null $paddingTopMobile
      */
-    protected ?int $paddingTopMobile;
+    protected ?int $paddingTopMobile = null;
     /**
      * @var int|null $paddingBottomMobile
      */
-    protected ?int $paddingBottomMobile;
+    protected ?int $paddingBottomMobile = null;
     /**
      * @var int|null $paddingLeftMobile
      */
-    protected ?int $paddingLeftMobile;
+    protected ?int $paddingLeftMobile = null;
     /**
      * @var int|null $paddingRightMobile
      */
-    protected ?int $paddingRightMobile;
+    protected ?int $paddingRightMobile = null;
     /**
      * @var bool $mobileBreakpointCarousel
      */
-    protected ?bool $mobileBreakpointCarousel;
+    protected ?bool $mobileBreakpointCarousel = null;
     /**
      * @var int|null $mobileCarouselSpeed
      */
-    protected ?int $mobileCarouselSpeed;
+    protected ?int $mobileCarouselSpeed = null;
 
     /**
      * @var int|null
      */
-    protected ?int $heightMobile;
+    protected ?int $heightMobile = null;
 
     /**
      * @var string|null
      */
-    protected ?string $backgroundColorMobile;
+    protected ?string $backgroundColorMobile = null;
 
     /**
      * @var string|null
      */
-    protected ?string $hoverColorMobile;
+    protected ?string $hoverColorMobile = null;
 
     /**
      * @var string|null
      */
-    protected ?string $textColorMobile;
+    protected ?string $textColorMobile = null;
 
 
     /**
-     * @var HeaderColumnsCollection $columns
+     * @var HeaderColumnsCollection|null $columns
      */
-    protected HeaderColumnsCollection $columns;
+    protected ?HeaderColumnsCollection $columns = null;
 
     /**
      * @var string|null $salesChannelId
@@ -141,7 +141,7 @@ class HeaderEntity extends Entity
     /**
      * @var SalesChannelEntity|null $salesChannel
      */
-    protected ?SalesChannelEntity $salesChannel;
+    protected ?SalesChannelEntity $salesChannel = null;
 
     /**
      * @return string
