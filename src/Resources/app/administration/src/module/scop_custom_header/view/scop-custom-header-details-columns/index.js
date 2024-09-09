@@ -59,6 +59,7 @@ Component.register('scop-custom-header-details-columns', {
 
             newColumn.showDesktop = true;
             newColumn.showMobile = true;
+            newColumn.translated = {};
 
             this.highlightInvalidColumns = false;
             this.columns.push(newColumn);
