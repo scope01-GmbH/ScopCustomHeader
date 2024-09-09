@@ -1,18 +1,18 @@
 # Shopware 6 Custom Header
 
-| Version | Changes                                                                            | Availability   |
+| Version | Changes                                                                            | Shopware Version   |
 |---------|------------------------------------------------------------------------------------------ |----------------|
-| 1.0.0   | First release                                                                         | Shopware Store         |
-| 1.1.0   | Support for Shopware 6.2                                                                      | Shopware Store         |
-| 1.2.0   | Bugfix that can cause icons to not be shown<br>Shopware 6.3 compatibility                   | Shopware Store         |
-| 1.3.0   | New option 'open in new tab'<br>Bugfix: sales channel specific settings                   | Shopware Store         |
-| 1.4.0   | Added snippet key support to the text and the link of the USPs                         | Github         |
-| 1.5.0   | Moved icon selection to top of the configuration                          | Github         |
-| 1.6.0   | Bugfix: Empty <span> element exists, when no icon is selected.<br>Added a new css class.                          | Github         |
-| 2.0.0     | Changed to Shopware v6.5                               | Github         |
-| 2.1.0     | New option: 'Display the info bar as a carousel in the mobile version.'  | Github         |
+| 1.0.0   | First release  | <= 6.1             |                                             
+| 1.1.0   | Support for Shopware 6.2   | **<= 6.2**             |                                 
+| 1.2.0   | Bugfix that can cause icons to not be shown<br>Shopware 6.3 compatibility                   | **<= 6.4**             |
+| 1.3.0   | New option 'open in new tab'<br>Bugfix: sales channel specific settings           | <= 6.4             |
+| 1.4.0   | Added snippet key support to the text and the link of the USPs                         | <= 6.4             |
+| 1.5.0   | Moved icon selection to top of the configuration | <= 6.4             |
+| 1.6.0   | Bugfix: Empty <span> element exists, when no icon is selected.<br>Added a new css class.                          | <= 6.4             |
+| 2.0.0     | Changed to Shopware v6.5                               | **6.5 & 6.6**             |
+| 2.1.0     | New option: 'Display the info bar as a carousel in the mobile version.'  | 6.5 & 6.6             |
 
-> **Warning**\
+> [!Important]\
 > Version 2.0.0 is no longer compatible with Shopware 6.4 or below!
 
 # Installation
