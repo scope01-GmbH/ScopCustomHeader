@@ -169,7 +169,7 @@ Component.register('scop-custom-header-details', {
             }
 
             for (let column of this.header.columns) {
-                if ((column.translated.label == null || column.translated.label === '') && column.translated.iconId == null) {
+                if ((column.translated.label == null || column.translated.label === '') && (column.label == null || column.label === '') && column.translated.iconId == null && column.iconId == null) {
                     const titleSaveError = this.$tc('global.default.error');
                     const messageSaveError = this.$tc('scopcustomheader.detail.columns.invalidSave');
 

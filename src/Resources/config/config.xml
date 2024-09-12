@@ -179,7 +179,7 @@
             <helpText lang="de-DE">USP 1 wird links angezeigt. Sie können auch einen Textbaustein Namen verwenden, der
                 mit "scopCustomHeader." beginnt.
             </helpText>
-
+            <disabled>true</disabled>
         </input-field> <!-- Text Input Left-->
 
         <input-field>
@@ -196,7 +196,7 @@
             <helpText lang="de-DE">Hier kann die Verlinkung für USP1 eingegeben werden. Sie können auch einen
                 Textbaustein Namen verwenden, der mit "scopCustomHeader." beginnt.
             </helpText>
-
+            <disabled>true</disabled>
         </input-field> <!-- Text Link Left-->
 
         <input-field type="bool">
@@ -236,7 +236,7 @@
             <helpText lang="de-DE">USP 2 wird mittig angezeigt. Sie können auch einen Textbaustein Namen verwenden, der
                 mit "scopCustomHeader." beginnt.
             </helpText>
-
+            <disabled>true</disabled>
         </input-field> <!-- Text Input Middle-->
 
         <input-field>
@@ -253,7 +253,7 @@
             <helpText lang="de-DE">Hier kann die Verlinkung für USP2 eingegeben werden. Sie können auch einen
                 Textbaustein Namen verwenden, der mit "scopCustomHeader." beginnt.
             </helpText>
-
+            <disabled>true</disabled>
         </input-field> <!-- Text Link Middle-->
 
         <input-field type="bool">
@@ -292,7 +292,7 @@
             <helpText lang="de-DE">USP 3 wird rechts angezeigt. Sie können auch einen Textbaustein Namen verwenden, der
                 mit "scopCustomHeader." beginnt.
             </helpText>
-
+            <disabled>true</disabled>
         </input-field> <!-- Text Input Right-->
 
         <input-field>
@@ -309,7 +309,7 @@
             <helpText lang="de-DE">Hier kann die Verlinkung für USP3 eingegeben werden. Sie können auch einen
                 Textbaustein Namen verwenden, der mit "scopCustomHeader." beginnt.
             </helpText>
-
+            <disabled>true</disabled>
         </input-field> <!-- Text Link Middle-->
 
         <input-field type="bool">
@@ -437,7 +437,7 @@
             <helpText lang="de-DE">USP1, USP2 und USP3 werden wechselnd angezeigt. Nicht kompatibel mit den Optionen
                 "USP1/USP2/USP3 anzeigen?", diese haben dann keine Wirkung mehr.
             </helpText>
-
+            <disabled>true</disabled>
         </input-field> <!--Display as Carousel on Mobile-->
         <input-field type="int">
             <name>mobileCarouselSpeed</name>

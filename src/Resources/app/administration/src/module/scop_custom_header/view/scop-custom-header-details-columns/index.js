@@ -88,7 +88,7 @@ Component.register('scop-custom-header-details-columns', {
         },
 
         hasError(column) {
-            return (column.translated.label == null || column.translated.label === '') && column.translated.iconId == null;
+            return (column.translated.label == null || column.translated.label === '') && (column.label == null || column.label === '') && column.translated.iconId == null && column.iconId == null;
         }
 
     },

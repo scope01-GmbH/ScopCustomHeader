@@ -18,7 +18,9 @@ use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shopware\Core\Framework\Plugin;
+use Shopware\Core\Framework\Plugin\Context\ActivateContext;
 use Shopware\Core\Framework\Plugin\Context\UninstallContext;
+use Shopware\Core\Framework\Plugin\Context\UpdateContext;
 use Shopware\Core\Framework\Uuid\Uuid;
 use Shopware\Core\System\Language\LanguageEntity;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
@@ -60,14 +62,23 @@ class ScopCustomHeader extends Plugin
         $connection->executeUpdate($sql);
     }
 
-    public function activate(Plugin\Context\ActivateContext $activateContext): void
+    public function activate(ActivateContext $activateContext): void
+    {
+        $this->createDefaultHeader($activateContext);
+    }
+
+    /**
+     * @param Plugin\Context\InstallContext $installContext
+     * @return void
+     */
+    private function createDefaultHeader(Plugin\Context\InstallContext $installContext): void
     {
         // Create a default Header if plugin gets updated or installed
         $headerRepository = $this->container->get('scop_custom_header.repository');
         $columnRepository = $this->container->get('scop_custom_header_columns.repository');
 
         $config = $this->container->get(SystemConfigService::class);
-        $context = $activateContext->getContext();
+        $context = $installContext->getContext();
 
         if ($headerRepository === null || $columnRepository === null || $config === null) {
             throw new RuntimeException("Unexpected null");
@@ -100,8 +111,6 @@ class ScopCustomHeader extends Plugin
             }
 
         }
-
-
     }
 
     private function allArraysIdentical($arrays): bool
@@ -239,5 +248,10 @@ class ScopCustomHeader extends Plugin
         }
 
         return $translatedValue;
+    }
+
+    public function postUpdate(UpdateContext $updateContext): void
+    {
+        $this->createDefaultHeader($updateContext);
     }
 }
