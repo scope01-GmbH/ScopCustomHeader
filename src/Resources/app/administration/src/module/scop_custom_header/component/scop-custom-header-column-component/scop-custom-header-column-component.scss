@@ -1,0 +1,9 @@
+@import "~scss/variables";
+
+.scop-custom-header-column-component__context-button {
+  float: right;
+}
+
+.sw-card.scop-has--error {
+  border: solid $color-crimson-500 1px;
+}

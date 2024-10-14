@@ -9,17 +9,15 @@
 
 namespace Scop\ScopCustomHeader\Storefront\Pagelet\Header\Subscriber;
 
-use Psr\Log\LoggerInterface;
-use Shopware\Core\Content\Media\MediaEntity;
+use Scop\ScopCustomHeader\Entity\Header\HeaderEntity;
 use Shopware\Core\Framework\Api\Context\SalesChannelApiSource;
-use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Shopware\Core\Framework\Log\LoggingService;
-use Shopware\Core\Framework\Struct\ArrayEntity;
+use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
+use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\OrFilter;
+use Shopware\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Shopware\Storefront\Pagelet\Header\HeaderPageletLoadedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Shopware\Core\System\SystemConfig\SystemConfigService;
 
 /**
  * Class HeaderPageletLoadedSubscriber
@@ -28,36 +26,18 @@ use Shopware\Core\System\SystemConfig\SystemConfigService;
 class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
 {
 
-    /**
-     * @var SystemConfigService
-     */
-    private $systemConfigService;
-
-    /**
-     * @var EntityRepository
-     */
-    private $mediaRepository;
-
-    /**
-     * @var LoggingService
-     */
-    private $loggerInterface;
+    private EntityRepository $headerRepository;
 
     /**
      * HeaderPageletLoadedSubscriber constructor.
      *
-     * @param SystemConfigService $systemConfigService
-     * @param EntityRepository $mediaRepository
-     * @param LoggerInterface $loggerInterface
+     * @param EntityRepository $headerRepository
      */
     public function __construct(
-        SystemConfigService $systemConfigService,
-        EntityRepository $mediaRepository,
-        LoggerInterface $loggerInterface
-    ) {
-        $this->systemConfigService = $systemConfigService;
-        $this->mediaRepository = $mediaRepository;
-        $this->loggerInterface = $loggerInterface;
+        EntityRepository $headerRepository,
+    )
+    {
+        $this->headerRepository = $headerRepository;
     }
 
     /**
@@ -78,67 +58,47 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
     {
         $context = $event->getContext();
 
+        $criteria = new Criteria();
+
+        $criteria->addAssociation('columns');
+
         /** @var SalesChannelApiSource $source */
         $source = $context->getSource();
-        $saleChannelId = $source->getSalesChannelId();
+        $salesChannelId = $source->getSalesChannelId();
 
-        $page = $event->getPagelet();
+        $criteria->addFilter(new EqualsFilter('enabled', true));
 
-        // Getting the iconsID from Configurations
-        $mediaIdLeft = $this->systemConfigService->get('ScopCustomHeader.config.iconLeft', $saleChannelId);
-        $mediaIdRight = $this->systemConfigService->get('ScopCustomHeader.config.iconRight', $saleChannelId);
-        $mediaIdMiddle = $this->systemConfigService->get('ScopCustomHeader.config.iconMiddle', $saleChannelId);
+        $criteria->addFilter(new OrFilter([new EqualsFilter('salesChannelId', $salesChannelId), new EqualsFilter('salesChannelId', null)]));
 
-        // inserts the iconID in an array to loop through
-        $imgArray = [
-            $mediaIdLeft,
-            $mediaIdMiddle,
-            $mediaIdRight
-        ];
+        $criteria->addSorting(new FieldSorting('priority', FieldSorting::DESCENDING));
 
-        // Looping through the array and replacing the id with image-path
-        foreach ($imgArray as $index => $img) {
-            if ($img !== null && (string)trim($img) !== '') {
-                if ($this->findMediaById($img, $context) instanceof MediaEntity) {
-                    $imgPath = $this->findMediaById($img, $context)->getUrl();
+        $criteria->setLimit(1);
 
-                    // Writing in imgArray the media path instead of mediaID
-                    $imgArray[$index] = $imgPath;
-                } else {
+        /**
+         * @var HeaderEntity $header
+         */
+        $header = $this->headerRepository->search($criteria, $context)->first();
+        if ($header) {
+            $page = $event->getPagelet();
 
-                    // Logging Error if media wasnt found by mediaID
-                    $logError = new \DirectoryIterator(dirname(__DIR__));
-                    $logError = "MEDIA NOT FOUND ERROR -> " . "Failed to find Media Path for Media ID: " . $img . " in " . $logError . "/HeaderPageletLoadedSubscriber.php" . "\n";
-                    $logInfo = "Check if selected image exists in Media";
-
-                    $this->loggerInterface->error($logError);
-                    $this->loggerInterface->info($logInfo);
+            $desktopVisible = false;
+            $mobileVisible = false;
+            foreach ($header->getColumns() as $column) {
+                if ($column->isShowDesktop()) {
+                    $desktopVisible = true;
+                }
+                if ($column->isShowMobile()) {
+                    $mobileVisible = true;
                 }
             }
+            $header->addArrayExtension('ScopVisible', [
+                'desktopVisible' => $desktopVisible,
+                'mobileVisible' => $mobileVisible
+            ]);
+
+            // Sending the Plugin configuration in ScopCH variable extension in TWIG
+            $page->addExtension('ScopCH', $header);
         }
-
-        // Adding the image path array as a variable in plugin configuration
-        $this->systemConfigService->set('ScopCustomHeader.config.imgArray', $imgArray, $saleChannelId);
-
-        // Get configuration
-        $pluginConfig = $this->systemConfigService->get('ScopCustomHeader.config', $saleChannelId);
-
-        // Sending the Plugin configuration in ScopCH variable extension in TWIG
-        $page->addExtension('ScopCH', new ArrayEntity($pluginConfig));
     }
 
-
-    /**
-     * @param string $mediaId
-     * @param Context $context
-     * @return MediaEntity|null
-     */
-    private function findMediaById(string $mediaId, Context $context): ?MediaEntity
-    {
-        $criteria = new Criteria([$mediaId]);
-        $criteria->addAssociation('mediaFolder');
-        return $this->mediaRepository
-            ->search($criteria, $context)
-            ->get($mediaId);
-    }
 }
