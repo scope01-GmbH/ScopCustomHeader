@@ -1,3 +1,6 @@
+# v3.0.0
+- Erweiterte Header Konfiguration: Mehrere Header Konfigurationen, beliebige Anzahl an Spalten, verbesserte Sprachunterstützung
+
 # v2.1.0
 - Neue Option 'In der mobilen Version die Info-Leiste als Karussell darstellen.'
 

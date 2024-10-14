@@ -1,3 +1,6 @@
+# v3.0.0
+- Advanced Header Configuration: Multiple header configurations, any number of columns, improved language Support
+
 # v2.1.0
 - New option 'Display the info bar as a carousel in the mobile version.'
 

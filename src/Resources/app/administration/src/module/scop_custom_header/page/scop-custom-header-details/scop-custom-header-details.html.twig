@@ -1,0 +1,73 @@
+{% block scop_custom_header_details %}
+    <sw-page class="scop-custom-header-details">
+
+        {% block sw_product_detail_header %}
+            <template #smart-bar-header>
+                <h2>
+                    {{ placeholder(header, 'label', $tc('scopcustomheader.detail.newHeader')) }}
+                </h2>
+            </template>
+        {% endblock %}
+        <template #language-switch>
+            <sw-language-switch
+                    :save-changes-function="saveOnLanguageChange"
+                    :abort-change-function="abortOnLanguageChange"
+                    :disabled="!headerId"
+                    @on-change="onChangeLanguage"/>
+        </template>
+        <template #smart-bar-actions>
+            <sw-button :routerLink="{name: 'scop.custom.header.list'}">
+                {{ $t('scopcustomheader.detail.cancelButton') }}</sw-button>
+            <sw-button-process :isLoading="isLoading"
+                               :processSuccess="processSuccess" variant="primary"
+                               @update:processSuccess="saveFinish" @click="onClickSave">
+                {{ $t('scopcustomheader.detail.saveButton') }}</sw-button-process>
+        </template>
+        <template #content>
+            <sw-card-view>
+                <sw-language-info
+                        :entity-description="placeholder(header, 'label', $tc('scopcustomheader.detail.newHeader'))"
+                        :is-new-entity="!headerId"
+                />
+                <sw-tabs
+                        v-if="!isCreateMode"
+                        position-identifier="scop-custom-header-details"
+                >
+                    <sw-tabs-item
+                            :route="{ name: 'scop.custom.header.details.base', params: { id: $route.params.id } }"
+                            :title="$tc('scopcustomheader.detail.tabs.tabGeneral')"
+                    >
+                        {{ $tc('scopcustomheader.detail.tabs.tabGeneral') }}
+                    </sw-tabs-item>
+
+                    <sw-tabs-item
+                            :route="{ name: 'scop.custom.header.details.columns', params: { id: $route.params.id } }"
+                            :title="$tc('scopcustomheader.detail.tabs.tabColumns')"
+                            :hasError="highlightInvalidColumns"
+                    >
+                        {{ $tc('scopcustomheader.detail.tabs.tabColumns') }}
+                    </sw-tabs-item>
+
+                </sw-tabs>
+
+                <div
+                        v-if="isLoading"
+                >
+                    <sw-skeleton/>
+                    <sw-skeleton/>
+                    <sw-skeleton/>
+                </div>
+
+                <template v-else>
+                    <router-view v-slot="{ Component }">
+                        <component
+                                :is="Component"
+                                :header="header"
+                                :is-create-mode="isCreateMode"
+                        ></component>
+                    </router-view>
+                </template>
+            </sw-card-view>
+        </template>
+    </sw-page>
+{% endblock %}

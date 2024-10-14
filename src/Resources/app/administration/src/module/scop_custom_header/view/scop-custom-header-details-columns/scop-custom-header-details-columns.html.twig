@@ -1,0 +1,28 @@
+<div>
+
+    <ul class="scopcustomheader-details-columns__column-list">
+        <scop-custom-header-column-component
+                v-for="column in sortedColumns"
+                :key="column.id"
+                :header="header"
+                :column="column"
+                :error="highlightInvalidColumns && hasError(column)"
+                @column-delete="deleteColumn"
+        >
+        </scop-custom-header-column-component>
+    </ul>
+
+    <div class="scopcustomheader-details-columns__action_add">
+        <sw-button
+                v-tooltip="{
+                        message: $tc('scopcustomheader.detail.columns.buttonAddColumnDisabled'),
+                        disabled: isSystemLanguage,
+                        showOnDisabledElements: true
+                    }"
+                :disabled="!isSystemLanguage"
+                :is-loading="isLoading" variant="ghost" @click="onAddColumn">
+            {{ $tc('scopcustomheader.detail.columns.buttonAddColumn') }}
+        </sw-button>
+    </div>
+
+</div>
