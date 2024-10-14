@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Scop\ScopCustomHeader\Migration;
 
 use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
 use Shopware\Core\Framework\Log\Package;
 use Shopware\Core\Framework\Migration\MigrationStep;
 
@@ -25,6 +26,7 @@ class Migration1719908948 extends MigrationStep
     /**
      * @param Connection $connection
      * @return void
+     * @throws Exception
      */
     public function update(Connection $connection): void
     {
@@ -64,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `scop_custom_header` (
     CONSTRAINT `fk.scop_custom_header.salesChannelId` FOREIGN KEY (`salesChannelId`) REFERENCES `sales_channel` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 SQL;
-        $connection->executeUpdate($sql);
+        $connection->executeStatement($sql);
 
         $sql = <<<SQL
 CREATE TABLE IF NOT EXISTS `scop_custom_header_columns` (
@@ -81,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `scop_custom_header_columns` (
     CONSTRAINT `fk.scop_custom_header_columns.header_id` FOREIGN KEY (`header_id`) REFERENCES `scop_custom_header` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 SQL;
-        $connection->executeUpdate($sql);
+        $connection->executeStatement($sql);
 
         $sql = <<<SQL
 CREATE TABLE IF NOT EXISTS `scop_custom_header_columns_translation` (
@@ -101,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `scop_custom_header_columns_translation` (
     CONSTRAINT `fk.scop_custom_header_columns.icon_id` FOREIGN KEY (`icon_id`) REFERENCES `media` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 SQL;
-        $connection->executeUpdate($sql);
+        $connection->executeStatement($sql);
     }
 
 }
