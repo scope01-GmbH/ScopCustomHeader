@@ -51,15 +51,15 @@ class ScopCustomHeader extends Plugin
 
         $sql = "DROP TABLE IF EXISTS `scop_custom_header_columns_translation`;";
 
-        $connection->executeUpdate($sql);
+        $connection->executeStatement($sql);
 
         $sql = "DROP TABLE IF EXISTS `scop_custom_header_columns`;";
 
-        $connection->executeUpdate($sql);
+        $connection->executeStatement($sql);
 
         $sql = "DROP TABLE IF EXISTS `scop_custom_header`;";
 
-        $connection->executeUpdate($sql);
+        $connection->executeStatement($sql);
     }
 
     public function activate(ActivateContext $activateContext): void
@@ -168,7 +168,11 @@ class ScopCustomHeader extends Plugin
                 'paddingBottomMobile' => $salesChannelConfig['paddingBottomMobile'] ?? null,
                 'mobileBreakpointCarousel' => $salesChannelConfig['mobileBreakpointCarousel'] ?? null,
                 'mobileCarouselSpeed' => $salesChannelConfig['mobileCarouselSpeed'] ?? null,
-                'salesChannelId' => $salesChannelId
+                'salesChannelId' => $salesChannelId,
+
+                'backgroundColorMobile' => '',
+                'hoverColorMobile' => '',
+                'textColorMobile' => ''
             ]
         ], $context);
 

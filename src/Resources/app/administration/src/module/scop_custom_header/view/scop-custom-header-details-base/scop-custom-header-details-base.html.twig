@@ -13,8 +13,8 @@
                              v-model:value="header.enabled" validation="required" bordered></sw-switch-field>
 
         </sw-container>
-        <sw-textarea-field :label="$t('scopcustomheader.detail.description')"
-                           v-model:value="header.description"></sw-textarea-field>
+        <mt-textarea :label="$t('scopcustomheader.detail.description')"
+                           v-model="header.description"></mt-textarea>
 
         <sw-entity-single-select v-model:value="header.salesChannelId" entity="sales_channel"
                                  :resetOption="$t('scopcustomheader.detail.salesChannel.all')"
@@ -30,15 +30,15 @@
         </sw-number-field>
 
         <sw-container columns="1fr 1fr 1fr" gap="16px">
-            <sw-colorpicker :label="$t('scopcustomheader.detail.backgroundColor')" v-model:value="header.background"
+            <mt-colorpicker :label="$t('scopcustomheader.detail.backgroundColor')" v-model="header.background"
                             colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true"
-                            zIndex="100"></sw-colorpicker>
-            <sw-colorpicker :label="$t('scopcustomheader.detail.hoverColor')" v-model:value="header.hover"
+                            zIndex="100"></mt-colorpicker>
+            <mt-colorpicker :label="$t('scopcustomheader.detail.hoverColor')" v-model="header.hover"
                             colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true"
-                            zIndex="100"></sw-colorpicker>
-            <sw-colorpicker :label="$t('scopcustomheader.detail.textColor')" v-model:value="header.textColor"
+                            zIndex="100"></mt-colorpicker>
+            <mt-colorpicker :label="$t('scopcustomheader.detail.textColor')" v-model="header.textColor"
                             colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true"
-                            zIndex="100"></sw-colorpicker>
+                            zIndex="100"></mt-colorpicker>
         </sw-container>
 
         <sw-number-field :label="$t('scopcustomheader.detail.fontSize')" v-model:value="header.textFontSize"
@@ -99,16 +99,18 @@
         </sw-number-field>
 
         <sw-container columns="1fr 1fr 1fr" gap="16px">
-            <sw-colorpicker :label="$t('scopcustomheader.detail.backgroundColor')"
-                            v-model:value="header.backgroundColorMobile" colorOutput="auto"
+            <mt-colorpicker :label="$t('scopcustomheader.detail.backgroundColor')"
+                            v-model="header.backgroundColorMobile" colorOutput="auto"
                             :alpha="true" :disabled="false" :colorLabels="true"
-                            zIndex="100"></sw-colorpicker>
-            <sw-colorpicker :label="$t('scopcustomheader.detail.hoverColor')" v-model:value="header.hoverColorMobile"
+                            :z-index="100" />
+            <mt-colorpicker :label="$t('scopcustomheader.detail.hoverColor')"
+                            v-model="header.hoverColorMobile"
                             colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true"
-                            zIndex="100"></sw-colorpicker>
-            <sw-colorpicker :label="$t('scopcustomheader.detail.textColor')" v-model:value="header.textColorMobile"
+                            :z-index="100" />
+            <mt-colorpicker :label="$t('scopcustomheader.detail.textColor')"
+                            v-model="header.textColorMobile"
                             colorOutput="auto" :alpha="true" :disabled="false" :colorLabels="true"
-                            zIndex="100"></sw-colorpicker>
+                            :z-index="100" />
         </sw-container>
 
         <sw-number-field :label="$t('scopcustomheader.detail.fontSize')" v-model:value="header.textFontSizeMobile"
