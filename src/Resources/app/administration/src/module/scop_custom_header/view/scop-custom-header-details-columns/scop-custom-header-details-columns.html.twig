@@ -13,16 +13,16 @@
     </ul>
 
     <div class="scopcustomheader-details-columns__action_add">
-        <sw-button
+        <mt-button
                 v-tooltip="{
                         message: $tc('scopcustomheader.detail.columns.buttonAddColumnDisabled'),
                         disabled: isSystemLanguage,
                         showOnDisabledElements: true
                     }"
                 :disabled="!isSystemLanguage"
-                :is-loading="isLoading" variant="ghost" @click="onAddColumn">
+                :is-loading="isLoading" @click="onAddColumn">
             {{ $tc('scopcustomheader.detail.columns.buttonAddColumn') }}
-        </sw-button>
+        </mt-button>
     </div>
 
 </div>

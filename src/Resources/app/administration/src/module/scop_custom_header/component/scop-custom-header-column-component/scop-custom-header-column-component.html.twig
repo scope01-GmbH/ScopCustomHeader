@@ -84,20 +84,21 @@
         </p>
 
         <template #modal-footer>
-            <sw-button
+            <mt-button
+                    variant="secondary"
                     size="small"
                     @click="onCloseDeleteModal"
             >
                 {{ $tc('scopcustomheader.detail.columns.delete.buttonCancel') }}
-            </sw-button>
+            </mt-button>
 
-            <sw-button
+            <mt-button
                     size="small"
-                    variant="danger"
+                    variant="critical"
                     @click="onConfirmDelete"
             >
                 {{ $tc('scopcustomheader.detail.columns.delete.buttonDelete') }}
-            </sw-button>
+            </mt-button>
         </template>
     </sw-modal>
 
