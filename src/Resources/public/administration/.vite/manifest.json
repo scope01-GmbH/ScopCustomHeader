@@ -1,0 +1,11 @@
+{
+  "main.js": {
+    "file": "assets/scop-custom-header-BJUlzh8M.js",
+    "name": "scop-custom-header",
+    "src": "main.js",
+    "isEntry": true,
+    "css": [
+      "assets/scop-custom-header-lPD-Y_RL.css"
+    ]
+  }
+}

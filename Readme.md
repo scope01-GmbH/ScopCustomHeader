@@ -12,6 +12,7 @@
 | 2.0.0   | Changed to Shopware v6.5                                                                                        | **6.5 & 6.6**    |
 | 2.1.0   | New option: 'Display the info bar as a carousel in the mobile version.'                                         | 6.5 & 6.6        |
 | 3.0.0   | Advanced Header Configuration: Multiple header configurations, any number of columns, improved language Support | **6.6**          |
+| 4.0.0   | Changed to Shopware v6.7                                                                                        | **6.7**          |
 
 > [!Important]\
 > Version 2.0.0 is no longer compatible with Shopware 6.4 or below!\

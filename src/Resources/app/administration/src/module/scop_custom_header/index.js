@@ -69,12 +69,12 @@ Shopware.Module.register('scop-custom-header', {
             },
 
         },
-
-        settingsItem: [{
+        settingsItem: {
+            group: 'general',
             to: 'scop.custom.header.list',
-            group: 'shop',
-            icon: 'regular-window-terminal'
-        }],
+            icon: 'regular-window-terminal',
+            privilege: 'system.system_config',
+        },
         snippets: {
             'de-DE': deDE,
             'en-GB': enGB

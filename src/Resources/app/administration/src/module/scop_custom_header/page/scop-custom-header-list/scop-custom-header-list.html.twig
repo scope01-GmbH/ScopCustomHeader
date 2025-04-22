@@ -2,9 +2,9 @@
     <sw-page class="scop-custom-header-list">
         <template #smart-bar-actions>
             {% block scop_custom_header_list_smarbar %}
-                <sw-button variant="primary" :routerLink="{name: 'scop.custom.header.create'}">
+                <mt-button variant="primary" :routerLink="{name: 'scop.custom.header.create'}">
                     {{ $t('scopcustomheader.list.createButton') }}
-                </sw-button>
+                </mt-button>
             {% endblock %}
         </template>
         <template #content>

@@ -1,3 +1,6 @@
+# v4.0.0
+- Shopware 6.7 Kompatibilität
+
 # v3.0.0
 - Erweiterte Header Konfiguration: Mehrere Header Konfigurationen, beliebige Anzahl an Spalten, verbesserte Sprachunterstützung
 

@@ -1,3 +1,6 @@
+# v4.0.0
+- Shopware 6.7 compatibility
+- 
 # v3.0.0
 - Advanced Header Configuration: Multiple header configurations, any number of columns, improved language Support
 

@@ -42,7 +42,8 @@ Component.register('scop-custom-header-details-columns', {
         },
 
         isSystemLanguage() {
-            return State.get('context').api.systemLanguageId === State.get('context').api.languageId;
+            console.log(Shopware.Context.api)
+            return Shopware.Context.api.systemLanguageId === Shopware.Context.api.languageId;
         }
     },
 

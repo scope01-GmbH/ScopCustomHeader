@@ -16,8 +16,8 @@
                     @on-change="onChangeLanguage"/>
         </template>
         <template #smart-bar-actions>
-            <sw-button :routerLink="{name: 'scop.custom.header.list'}">
-                {{ $t('scopcustomheader.detail.cancelButton') }}</sw-button>
+            <mt-button variant="secondary" @click="$router.push({name: 'scop.custom.header.list'})">
+                {{ $t('scopcustomheader.detail.cancelButton') }}</mt-button>
             <sw-button-process :isLoading="isLoading"
                                :processSuccess="processSuccess" variant="primary"
                                @update:processSuccess="saveFinish" @click="onClickSave">

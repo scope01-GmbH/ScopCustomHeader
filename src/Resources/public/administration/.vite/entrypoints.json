@@ -1,0 +1,25 @@
+{
+  "base": "/bundles/scopcustomheader/administration/",
+  "entryPoints": {
+    "scop-custom-header": {
+      "css": [
+        "/bundles/scopcustomheader/administration/assets/scop-custom-header-lPD-Y_RL.css"
+      ],
+      "dynamic": [],
+      "js": [
+        "/bundles/scopcustomheader/administration/assets/scop-custom-header-BJUlzh8M.js"
+      ],
+      "legacy": false,
+      "preload": []
+    }
+  },
+  "legacy": false,
+  "metadatas": {},
+  "version": [
+    "7.1.0",
+    7,
+    1,
+    0
+  ],
+  "viteServer": null
+}
