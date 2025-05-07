@@ -2,7 +2,7 @@
     <sw-page class="scop-custom-header-list">
         <template #smart-bar-actions>
             {% block scop_custom_header_list_smarbar %}
-                <mt-button variant="primary" :routerLink="{name: 'scop.custom.header.create'}">
+                <mt-button variant="primary" @click="$router.push({name: 'scop.custom.header.create'})">
                     {{ $t('scopcustomheader.list.createButton') }}
                 </mt-button>
             {% endblock %}
