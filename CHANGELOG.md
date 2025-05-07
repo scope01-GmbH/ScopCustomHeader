@@ -1,3 +1,6 @@
+# v4.0.1
+- Fehlerbehebung: Erstellen Button in Adminoberfläche
+
 # v4.0.0
 - Shopware 6.7 Kompatibilität
 
