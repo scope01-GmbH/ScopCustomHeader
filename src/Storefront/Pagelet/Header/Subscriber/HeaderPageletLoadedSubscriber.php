@@ -16,6 +16,7 @@ use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\OrFilter;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
+use Shopware\Core\Framework\Struct\ArrayStruct;
 use Shopware\Storefront\Pagelet\Header\HeaderPageletLoadedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -72,32 +73,35 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
 
         $criteria->addSorting(new FieldSorting('priority', FieldSorting::DESCENDING));
 
-        $criteria->setLimit(1);
-
         /**
          * @var HeaderEntity $header
          */
-        $header = $this->headerRepository->search($criteria, $context)->first();
-        if ($header) {
+        $headers = $this->headerRepository->search($criteria, $context);
+        if ($headers->count() > 0) {
+            $twigHeaders = new ArrayStruct();
             $page = $event->getPagelet();
 
-            $desktopVisible = false;
-            $mobileVisible = false;
-            foreach ($header->getColumns() as $column) {
-                if ($column->isShowDesktop()) {
-                    $desktopVisible = true;
+            foreach ($headers as $header) {
+                $desktopVisible = false;
+                $mobileVisible = false;
+                foreach ($header->getColumns() as $column) {
+                    if ($column->isShowDesktop()) {
+                        $desktopVisible = true;
+                    }
+                    if ($column->isShowMobile()) {
+                        $mobileVisible = true;
+                    }
                 }
-                if ($column->isShowMobile()) {
-                    $mobileVisible = true;
-                }
+                $header->addArrayExtension('ScopVisible', [
+                    'desktopVisible' => $desktopVisible,
+                    'mobileVisible' => $mobileVisible
+                ]);
+
+                $twigHeaders->offsetSet($header->getId(), $header);
             }
-            $header->addArrayExtension('ScopVisible', [
-                'desktopVisible' => $desktopVisible,
-                'mobileVisible' => $mobileVisible
-            ]);
 
             // Sending the Plugin configuration in ScopCH variable extension in TWIG
-            $page->addExtension('ScopCH', $header);
+            $page->addExtension('ScopCH', $twigHeaders);
         }
     }
 

@@ -1,3 +1,6 @@
+# v3.1.0
+- Erweiterte Header Konfiguration: Mehrere Header können gleichzeitig im Frontend nach Priorität angezeigt werden
+
 # v3.0.0
 - Erweiterte Header Konfiguration: Mehrere Header Konfigurationen, beliebige Anzahl an Spalten, verbesserte Sprachunterstützung
 

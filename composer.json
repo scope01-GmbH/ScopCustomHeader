@@ -1,7 +1,7 @@
 {
     "name": "scop/custom_header",
     "description": "This plugin allows you to add a header panel with up to three content blocks. Each providing an image icon and a customizable link and text",
-    "version": "v3.0.0",
+    "version": "v3.1.0",
     "type": "shopware-platform-plugin",
     "license": "MIT",
     "authors": [
