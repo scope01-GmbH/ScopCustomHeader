@@ -1,7 +1,7 @@
 {% sw_extends '@Storefront/storefront/layout/header.html.twig' %}
 
 {% block header %}
-    {% set headers = page.header.extensions['ScopCH'] %}
+    {% set headers = header.extensions['ScopCH'] %}
 
     {% if headers|length > 0 %}
         {% foreach headers as id => config_params %}
