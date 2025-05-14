@@ -1,217 +1,220 @@
 {% sw_extends '@Storefront/storefront/layout/header.html.twig' %}
 
 {% block header %}
+    {% set headers = page.header.extensions['ScopCH'] %}
 
-    {% set config_params = header.extensions['ScopCH'] %}
+    {% if headers|length > 0 %}
+        {% foreach headers as id => config_params %}
+            {% if config_params.enabled %}
 
-    {% if config_params.enabled %}
+                {% if config_params.columns.elements | length > 0 %}
+                    {% block custom_header_wrapper %}
+                        <div class="custom-header-wrapper-{{ id }} custom-header-wrapper">
+                            {# Wrapping the content of the header in container #}
+                            {% set carouselEnabled = [false] %}
+                            {% set carouselSpeed = 5000 %}
 
-        {% if config_params.columns.elements | length > 0 %}
-            {% block custom_header_wrapper %}
-                <div class="custom-header-wrapper">
-                    {# Wrapping the content of the header in container #}
-                    {% set carouselEnabled = [false] %}
-                    {% set carouselSpeed = 5000 %}
+                            {% if config_params.mobileBreakpointCarousel == true %}
+                                {% set carouselEnabled = [false, true] %}
+                            {% endif %}
+                            {% if config_params.mobileCarouselSpeed == true %}
+                                {% set carouselSpeed = config_params.mobileCarouselSpeed * 1000 %}
+                            {% endif %}
+
+                            {% set firstCarouselItem = true %}
+                            {% for carousel in carouselEnabled %}
+
+                                <div {% if carousel %}id="custom-header-carousel"
+                                     {% endif %}class="container{% if carousel %} custom-header-carousel carousel slide"
+                                     data-bs-ride="carousel"
+                                     data-bs-interval="{{ carouselSpeed }}{% else %} custom-header-static{% endif %}">
+
+                                    {% block custom_header %}
+                                        <div class="custom-header{% if carousel %} carousel-inner{% endif %}">
+                                            {% for column in config_params.columns.elements %}
+                                                {% block scop_text %}
+                                                    {% if column.showMobile or (column.showDesktop and not carousel) %}
+                                                        <div class="element scop-text{% if column.showDesktop == false %} hide-desktop{% endif %}{% if column.showMobile == false %} hide-mobile{% endif %}{% if carousel %} carousel-item{% if firstCarouselItem %} active{% endif %}{% endif %}">
+                                                            <div class="element-inner">
+                                                                {% block scop_text_icon %}
+                                                                    {% if column.translated.iconId != null %}
+                                                                        {% for image in searchMedia([column.translated.iconId], context.context).elements %}
+                                                                            <span class="icon scop-header-icon">
+                                                                        <div class="img-wrap">
+                                                                            <img src="{{ image.url }}" alt="icon-1"
+                                                                                 class="sch-icon">
+                                                                        </div>
+                                                                    </span>
+                                                                        {% endfor %}
+                                                                    {% endif %}
+                                                                {% endblock %}
+
+                                                                {% block scop_text_link %}
+                                                                    <span>
+                                                            {% if column.translated.textLink %}
+                                                                <a class="scop-header-link " href="
+                                                                    {{ column.translated.textLink }}"
+                                                                    {% if column.openInNewTab %}
+                                                                        target="_blank"
+                                                                    {% endif %}
+                                                                >{{ column.translated.label }}</a>
+                                                            {% else %}
+                                                                <span class="scop-header-link">{{ column.translated.label }}</span>
+                                                            {% endif %}
+                                                        </span>
+
+                                                                {% endblock %}
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endblock %}
+
+                                                {% if carousel %}
+                                                    {% if firstCarouselItem and column.showMobile %}
+                                                        {% set firstCarouselItem = false %}
+                                                    {% endif %}
+                                                {% endif %}
+
+                                            {% endfor %}
+                                        </div>
+                                    {% endblock %}
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    {% endblock %}
+                {% endif %}
+
+                <style type="text/css">
+
+                    {% set visible = config_params.extensions.ScopVisible %}
+
+                    {% if config_params.background or config_params.height or not visible.desktopVisible  %}
+                    .custom-header-wrapper-{{ id }} {
+                    {% if config_params.background  %} background-color: {{ config_params.background }};{% endif %}
+                    {% if config_params.height %} min-height: {{ config_params.height ~ 'px' }};{% endif %}
+                    {% if not visible.desktopVisible %} display: none{% endif %}
+                    }
+                    {% endif %}
+
+                    {% if  config_params.textFontSize %}
+                    .custom-header-wrapper-{{ id }} .custom-header {
+                        font-size: {{ config_params.textFontSize ~ 'px'}};
+                    }
+                    {% endif %}
+
+                    /*Elements Box*/
+                    {% if config_params.paddingTop or config_params.paddingRight or config_params.paddingBottom or config_params.paddingLeft %}
+                    .custom-header-wrapper-{{ id }} .custom-header .element {
+                    {% if  config_params.paddingTop %} padding-top: {{ config_params.paddingTop ~ 'px' }};{% endif  %}
+                    {% if  config_params.paddingRight %} padding-right: {{ config_params.paddingRight ~ 'px' }};{% endif  %}
+                    {% if  config_params.paddingBottom %} padding-bottom: {{ config_params.paddingBottom ~ 'px' }};{% endif  %}
+                    {% if  config_params.paddingLeft %} padding-left: {{ config_params.paddingLeft ~ 'px' }};{% endif  %}
+                    }
+                    {% endif %}
+
+                    /* All Texts */
+                    {% if config_params.textColor or config_params.textFontSize %}
+                    .custom-header-wrapper-{{ id }} .custom-header .element .scop-header-link {
+                    {% if config_params.textColor %} color: {{ config_params.textColor }};{% endif %}
+                    {% if config_params.textFontSize  %} font-size: {{ config_params.textFontSize ~ 'px' }};{% endif %}
+                    }
+                    {% endif %}
+
+                    /* Text Hover */
+                    {% if config_params.hover  %}
+                    .custom-header-wrapper-{{ id }} .custom-header a.scop-header-link:hover {
+                        color: {{ config_params.hover }};
+                    }
+                    {% endif %}
+
+                    .custom-header-wrapper-{{ id }} .custom-header-static .custom-header .element.hide-desktop {
+                        display: none;
+                    }
+
+                    /* Mobile Carousel */
+                    .custom-header-wrapper-{{ id }} .custom-header-carousel {
+                        display: none;
+                    }
+
+                    /* Mobile version */
+                    @media screen and (max-width: 768px) {
+                    {% if config_params.backgroundColorMobile or config_params.heightMobile or not visible.desktopVisible or not visible.mobileVisible %}
+                        .custom-header-wrapper-{{ id }} {
+                        {% if config_params.backgroundColorMobile  %} background-color: {{ config_params.backgroundColorMobile }};{% endif %}
+                        {% if config_params.heightMobile %} min-height: {{ config_params.heightMobile ~ 'px' }};{% endif %}
+                        {% if not visible.mobileVisible %} display: none;
+                        {% elseif not visible.desktopVisible %} display: block;{% endif %}
+                        }
+                    {% endif %}
+
+                        /* Text Hover */
+                    {% if config_params.hoverColorMobile  %}
+                        .custom-header-wrapper-{{ id }} .custom-header a.scop-header-link:hover {
+                            color: {{ config_params.hoverColorMobile }};
+                        }
+                    {% endif %}
+
+                    {% if config_params.paddingTopMobile or config_params.paddingRightMobile or config_params.paddingBottomMobile or config_params.paddingLeftMobile %}
+                        .custom-header-wrapper-{{ id }} .custom-header .element {
+                        {% if config_params.paddingTopMobile is not empty %} padding-top: {{ config_params.paddingTopMobile ~ 'px' }};{% endif %}
+                        {% if config_params.paddingRightMobile %} padding-right: {{ config_params.paddingRightMobile ~ 'px' }};{% endif %}
+                        {% if config_params.paddingBottomMobile %} padding-bottom: {{ config_params.paddingBottomMobile ~ 'px' }};{% endif %}
+                        {% if config_params.paddingLeftMobile %} padding-left: {{ config_params.paddingLeftMobile ~ 'px' }};{% endif %}
+                        }
+                    {% endif %}
+
+                    {% if config_params.textFontSizeMobile %}
+                        .custom-header-wrapper-{{ id }} .custom-header .element .scop-header-link {
+                            font-size: {{ config_params.textFontSizeMobile ~ 'px' }};
+                        }
+                    {% endif %}
+
+                        .custom-header-wrapper-{{ id }} .custom-header-static .custom-header .element.hide-mobile {
+                            display: none;
+                        }
+
+                        .custom-header-wrapper-{{ id }} .custom-header-static .custom-header .element.hide-desktop:not(.hide-mobile) {
+                            display: flex;
+                        }
+
+                    {% if config_params.textFontSizeMobile or config_params.textColorMobile %}
+                        .custom-header-wrapper-{{ id }} .custom-header .element .scop-header-link {
+                        {% if config_params.textFontSizeMobile %} font-size: {{ config_params.textFontSizeMobile ~ 'px' }};{% endif %}
+                        {% if config_params.textColorMobile %} color: {{ config_params.textColorMobile }};{% endif %}
+                        }
+                    {% endif %}
+
+                        /* Mobile Carousel */
+                        .custom-header-wrapper-{{ id }} .custom-header-carousel .element {
+                            text-align: center;
+                        }
+
+                        .custom-header-wrapper-{{ id }} .custom-header-carousel .element div.element-inner {
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-content: center;
+                            justify-content: center;
+
+                        {% if config_params.heightMobile %} min-height: {{ config_params.heightMobile }}px;
+                        {% elseif config_params.height %} min-height: {{ config_params.height }}px;{% endif %}
+                        }
 
                     {% if config_params.mobileBreakpointCarousel == true %}
-                        {% set carouselEnabled = [false, true] %}
+                        .custom-header-wrapper-{{ id }} .custom-header-carousel {
+                            display: block;
+                        }
+
+                        .custom-header-wrapper-{{ id }} .custom-header-static {
+                            display: none;
+                        }
                     {% endif %}
-                    {% if config_params.mobileCarouselSpeed == true %}
-                        {% set carouselSpeed = config_params.mobileCarouselSpeed * 1000 %}
-                    {% endif %}
+                    }
+                </style>
 
-                    {% set firstCarouselItem = true %}
-                    {% for carousel in carouselEnabled %}
-
-                        <div {% if carousel %}id="custom-header-carousel"
-                             {% endif %}class="container{% if carousel %} custom-header-carousel carousel slide"
-                             data-bs-ride="carousel"
-                             data-bs-interval="{{ carouselSpeed }}{% else %} custom-header-static{% endif %}">
-
-                            {% block custom_header %}
-                                <div class="custom-header{% if carousel %} carousel-inner{% endif %}">
-                                    {% for column in config_params.columns.elements %}
-                                        {% block scop_text %}
-                                            {% if column.showMobile or (column.showDesktop and not carousel) %}
-                                                <div class="element scop-text{% if column.showDesktop == false %} hide-desktop{% endif %}{% if column.showMobile == false %} hide-mobile{% endif %}{% if carousel %} carousel-item{% if firstCarouselItem %} active{% endif %}{% endif %}">
-                                                    <div class="element-inner">
-                                                        {% block scop_text_icon %}
-                                                            {% if column.translated.iconId != null %}
-                                                                {% for image in searchMedia([column.translated.iconId], context.context).elements %}
-                                                                    <span class="icon scop-header-icon">
-                                                                <div class="img-wrap">
-                                                                    <img src="{{ image.url }}" alt="icon-1"
-                                                                         class="sch-icon">
-                                                                </div>
-                                                            </span>
-                                                                {% endfor %}
-                                                            {% endif %}
-                                                        {% endblock %}
-
-                                                        {% block scop_text_link %}
-                                                            <span>
-                                                    {% if column.translated.textLink %}
-                                                        <a class="scop-header-link " href="
-                                                            {{ column.translated.textLink }}"
-                                                            {% if column.openInNewTab %}
-                                                                target="_blank"
-                                                            {% endif %}
-                                                        >{{ column.translated.label }}</a>
-                                                    {% else %}
-                                                        <span class="scop-header-link">{{ column.translated.label }}</span>
-                                                    {% endif %}
-                                                </span>
-
-                                                        {% endblock %}
-                                                    </div>
-                                                </div>
-                                            {% endif %}
-                                        {% endblock %}
-
-                                        {% if carousel %}
-                                            {% if firstCarouselItem and column.showMobile %}
-                                                {% set firstCarouselItem = false %}
-                                            {% endif %}
-                                        {% endif %}
-
-                                    {% endfor %}
-                                </div>
-                            {% endblock %}
-                        </div>
-                    {% endfor %}
-
-                </div>
-            {% endblock %}
-        {% endif %}
-
-        <style type="text/css">
-
-            {% set visible = config_params.extensions.ScopVisible %}
-
-            {% if config_params.background or config_params.height or not visible.desktopVisible  %}
-            .custom-header-wrapper {
-            {% if config_params.background  %} background-color: {{ config_params.background }};{% endif %}
-            {% if config_params.height %} min-height: {{ config_params.height ~ 'px' }};{% endif %}
-            {% if not visible.desktopVisible %} display: none{% endif %}
-            }
             {% endif %}
-
-            {% if  config_params.textFontSize %}
-            .custom-header {
-                font-size: {{ config_params.textFontSize ~ 'px'}};
-            }
-            {% endif %}
-
-            /*Elements Box*/
-            {% if config_params.paddingTop or config_params.paddingRight or config_params.paddingBottom or config_params.paddingLeft %}
-            .custom-header-wrapper .custom-header .element {
-            {% if  config_params.paddingTop %} padding-top: {{ config_params.paddingTop ~ 'px' }};{% endif  %}
-            {% if  config_params.paddingRight %} padding-right: {{ config_params.paddingRight ~ 'px' }};{% endif  %}
-            {% if  config_params.paddingBottom %} padding-bottom: {{ config_params.paddingBottom ~ 'px' }};{% endif  %}
-            {% if  config_params.paddingLeft %} padding-left: {{ config_params.paddingLeft ~ 'px' }};{% endif  %}
-            }
-            {% endif %}
-
-            /* All Texts */
-            {% if config_params.textColor or config_params.textFontSize %}
-            .custom-header-wrapper .custom-header .element .scop-header-link {
-            {% if config_params.textColor %} color: {{ config_params.textColor }};{% endif %}
-            {% if config_params.textFontSize  %} font-size: {{ config_params.textFontSize ~ 'px' }};{% endif %}
-            }
-            {% endif %}
-
-            /* Text Hover */
-            {% if config_params.hover  %}
-            .custom-header-wrapper .custom-header a.scop-header-link:hover {
-                color: {{ config_params.hover }};
-            }
-            {% endif %}
-
-            .custom-header-static .custom-header .element.hide-desktop {
-                display: none;
-            }
-
-            /* Mobile Carousel */
-            .custom-header-carousel {
-                display: none;
-            }
-
-            /* Mobile version */
-            @media screen and (max-width: 768px) {
-            {% if config_params.backgroundColorMobile or config_params.heightMobile or not visible.desktopVisible or not visible.mobileVisible %}
-                .custom-header-wrapper {
-                {% if config_params.backgroundColorMobile  %} background-color: {{ config_params.backgroundColorMobile }};{% endif %}
-                {% if config_params.heightMobile %} min-height: {{ config_params.heightMobile ~ 'px' }};{% endif %}
-                {% if not visible.mobileVisible %} display: none;
-                {% elseif not visible.desktopVisible %} display: block;{% endif %}
-                }
-            {% endif %}
-
-                /* Text Hover */
-            {% if config_params.hoverColorMobile  %}
-                .custom-header-wrapper .custom-header a.scop-header-link:hover {
-                    color: {{ config_params.hoverColorMobile }};
-                }
-            {% endif %}
-
-            {% if config_params.paddingTopMobile or config_params.paddingRightMobile or config_params.paddingBottomMobile or config_params.paddingLeftMobile %}
-                .custom-header-wrapper .custom-header .element {
-                {% if config_params.paddingTopMobile is not empty %} padding-top: {{ config_params.paddingTopMobile ~ 'px' }};{% endif %}
-                {% if config_params.paddingRightMobile %} padding-right: {{ config_params.paddingRightMobile ~ 'px' }};{% endif %}
-                {% if config_params.paddingBottomMobile %} padding-bottom: {{ config_params.paddingBottomMobile ~ 'px' }};{% endif %}
-                {% if config_params.paddingLeftMobile %} padding-left: {{ config_params.paddingLeftMobile ~ 'px' }};{% endif %}
-                }
-            {% endif %}
-
-            {% if config_params.textFontSizeMobile %}
-                .custom-header-wrapper .custom-header .element .scop-header-link {
-                    font-size: {{ config_params.textFontSizeMobile ~ 'px' }};
-                }
-            {% endif %}
-
-                .custom-header-static .custom-header .element.hide-mobile {
-                    display: none;
-                }
-
-                .custom-header-static .custom-header .element.hide-desktop:not(.hide-mobile) {
-                    display: flex;
-                }
-
-            {% if config_params.textFontSizeMobile or config_params.textColorMobile %}
-                .custom-header-wrapper .custom-header .element .scop-header-link {
-                {% if config_params.textFontSizeMobile %} font-size: {{ config_params.textFontSizeMobile ~ 'px' }};{% endif %}
-                {% if config_params.textColorMobile %} color: {{ config_params.textColorMobile }};{% endif %}
-                }
-            {% endif %}
-
-                /* Mobile Carousel */
-                .custom-header-carousel .element {
-                    text-align: center;
-                }
-
-                .custom-header-carousel .element div.element-inner {
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-content: center;
-                    justify-content: center;
-
-                {% if config_params.heightMobile %} min-height: {{ config_params.heightMobile }}px;
-                {% elseif config_params.height %} min-height: {{ config_params.height }}px;{% endif %}
-                }
-
-            {% if config_params.mobileBreakpointCarousel == true %}
-                .custom-header-carousel {
-                    display: block;
-                }
-
-                .custom-header-static {
-                    display: none;
-                }
-            {% endif %}
-            }
-        </style>
-
+        {% endforeach %}
     {% endif %}
 
-   {{ parent() }}
+    {{ parent() }}
 {% endblock %}

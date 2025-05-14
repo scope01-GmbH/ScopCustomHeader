@@ -1,8 +1,14 @@
+# v4.1.0
+- Erweiterte Header Konfiguration: Mehrere Header können gleichzeitig im Frontend nach Priorität angezeigt werden
+
 # v4.0.1
 - Fehlerbehebung: Erstellen Button in Adminoberfläche
 
 # v4.0.0
 - Shopware 6.7 Kompatibilität
+
+# v3.1.0
+- Erweiterte Header Konfiguration: Mehrere Header können gleichzeitig im Frontend nach Priorität angezeigt werden
 
 # v3.0.0
 - Erweiterte Header Konfiguration: Mehrere Header Konfigurationen, beliebige Anzahl an Spalten, verbesserte Sprachunterstützung

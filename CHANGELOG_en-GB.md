@@ -1,8 +1,14 @@
+# v4.1.0
+- Advanced header configuration: Multiple headers can be displayed simultaneously in the frontend according to priority
+
 # v4.0.1
 - Bugfix: create-button in admin-panel 
 
 # v4.0.0
 - Shopware 6.7 compatibility
+
+# v3.1.0
+- Advanced header configuration: Multiple headers can be displayed simultaneously in the frontend according to priority
 
 # v3.0.0
 - Advanced Header Configuration: Multiple header configurations, any number of columns, improved language Support
