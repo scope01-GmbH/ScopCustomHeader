@@ -117,12 +117,10 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
             }
         }
 
-        // Adding the image path array as a variable in plugin configuration
-        $this->systemConfigService->set('ScopCustomHeader.config.imgArray', $imgArray, $saleChannelId);
-
         // Get configuration
         $pluginConfig = $this->systemConfigService->get('ScopCustomHeader.config', $saleChannelId);
-
+        // Adding the image path array as a variable in plugin configuration
+        $pluginConfig['imgArray'] = $imgArray;
         // Sending the Plugin configuration in ScopCH variable extension in TWIG
         $page->addExtension('ScopCH', new ArrayEntity($pluginConfig));
     }

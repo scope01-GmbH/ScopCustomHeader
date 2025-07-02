@@ -1,3 +1,6 @@
+# v2.1.1
+- Bugfix: Prevent system-config cache clearing on HeaderPageletLoadedEvent
+
 # v2.1.0
 - New option 'Display the info bar as a carousel in the mobile version.'
 

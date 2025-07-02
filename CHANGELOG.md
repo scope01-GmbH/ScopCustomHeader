@@ -1,3 +1,6 @@
+# v2.1.1
+- Fehlerbehebung: Verhindert Leeren des system-config-Caches beim HeaderPageletLoadedEvent
+
 # v2.1.0
 - Neue Option 'In der mobilen Version die Info-Leiste als Karussell darstellen.'
 

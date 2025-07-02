@@ -9,8 +9,9 @@
 | 1.4.0   | Added snippet key support to the text and the link of the USPs                         | Github         |
 | 1.5.0   | Moved icon selection to top of the configuration                          | Github         |
 | 1.6.0   | Bugfix: Empty <span> element exists, when no icon is selected.<br>Added a new css class.                          | Github         |
-| 2.0.0     | Changed to Shopware v6.5                               | Github         |
-| 2.1.0     | New option: 'Display the info bar as a carousel in the mobile version.'  | Github         |
+| 2.0.0   | Changed to Shopware v6.5                               | Github         |
+| 2.1.0   | New option: 'Display the info bar as a carousel in the mobile version.'  | Github         |
+| 2.1.1   | Bugfix: Prevent system-config cache clearing on HeaderPageletLoadedEvent  | Github         |
 
 > **Warning**\
 > Version 2.0.0 is no longer compatible with Shopware 6.4 or below!
