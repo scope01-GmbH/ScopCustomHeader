@@ -18,6 +18,7 @@ declare(strict_types=1);
 namespace Scop\ScopCustomHeader\Entity\Header;
 
 use Scop\ScopCustomHeader\Entity\HeaderColumns\HeaderColumnsCollection;
+use Shopware\Core\Content\Rule\RuleEntity;
 use Shopware\Core\Framework\DataAbstractionLayer\Entity;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Shopware\Core\System\SalesChannel\SalesChannelEntity;
@@ -142,6 +143,16 @@ class HeaderEntity extends Entity
      * @var SalesChannelEntity|null $salesChannel
      */
     protected ?SalesChannelEntity $salesChannel = null;
+
+    /**
+     * @var string|null $ruleId
+     */
+    protected ?string $ruleId = null;
+
+    /**
+     * @var RuleEntity|null $rule
+     */
+    protected ?RuleEntity $rule = null;
 
     /**
      * @return string
@@ -596,6 +607,38 @@ class HeaderEntity extends Entity
     public function setSalesChannel(?SalesChannelEntity $salesChannel): void
     {
         $this->salesChannel = $salesChannel;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getRuleId(): ?string
+    {
+        return $this->ruleId;
+    }
+
+    /**
+     * @param string|null $ruleId
+     */
+    public function setRuleId(?string $ruleId): void
+    {
+        $this->ruleId = $ruleId;
+    }
+
+    /**
+     * @return RuleEntity|null
+     */
+    public function getRule(): ?RuleEntity
+    {
+        return $this->rule;
+    }
+
+    /**
+     * @param RuleEntity|null $rule
+     */
+    public function setRule(?RuleEntity $rule): void
+    {
+        $this->rule = $rule;
     }
 
 }

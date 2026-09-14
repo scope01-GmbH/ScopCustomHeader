@@ -24,6 +24,7 @@ use Shopware\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField
 use Shopware\Core\Framework\DataAbstractionLayer\Field\OneToManyAssociationField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Shopware\Core\Framework\DataAbstractionLayer\FieldCollection;
+use Shopware\Core\Content\Rule\RuleDefinition;
 use Shopware\Core\System\SalesChannel\SalesChannelDefinition;
 
 class HeaderDefinition extends EntityDefinition
@@ -95,7 +96,10 @@ class HeaderDefinition extends EntityDefinition
             new StringField('text_color_mobile', 'textColorMobile'),
 
             (new FkField('salesChannelId', 'salesChannelId', SalesChannelDefinition::class))->addFlags(new ApiAware()),
-            new ManyToOneAssociationField('salesChannel', 'salesChannelId', SalesChannelDefinition::class, 'id', false)
+            new ManyToOneAssociationField('salesChannel', 'salesChannelId', SalesChannelDefinition::class, 'id', false),
+
+            (new FkField('rule_id', 'ruleId', RuleDefinition::class))->addFlags(new ApiAware()),
+            new ManyToOneAssociationField('rule', 'rule_id', RuleDefinition::class, 'id', false)
         ]);
     }
 }
