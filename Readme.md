@@ -16,6 +16,8 @@
 | 4.0.0   | Changed to Shopware v6.7                                                                                              | **6.7**          |
 | 4.0.1   | Bugfix: create-button in admin-panel                                                                                  | **6.7**          |
 | 4.1.0   | Advanced header configuration: Multiple headers can be displayed simultaneously in the frontend according to priority | **6.7**          |
+| 4.1.1   | Accessibility Improvement Act (BFSG) conformity established                                                           | **6.7**          |
+| 4.2.0   | New option: control a header's visibility via a rule (e.g. per customer group)                                       | **6.7**          |
 
 > [!Important]\
 > Version 2.0.0 is no longer compatible with Shopware 6.4 or below!\
@@ -50,7 +52,7 @@ In this list you can select a header to edit, remove a header or create a new he
 ![create_header](screenshots/header_list.png)
 
 ## Creating/Editing a header
-In the "General" section, you can enable or disable the custom header, set an internal name and optionally an internal description, and set the priority of the custom header. Only the header with the highest priority will be displayed.
+In the "General" section, you can enable or disable the custom header, set an internal name and optionally an internal description, and set the priority of the custom header. Only the header with the highest priority will be displayed. You can also assign a rule to restrict the header to contexts where that rule matches (e.g. a specific customer group); without a rule the header is always shown.
 ![general_settings](screenshots/general.jpg)
 
 In the "Desktop" section, you can customize the header's style for desktop devices.

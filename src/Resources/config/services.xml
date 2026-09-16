@@ -17,6 +17,14 @@
             <tag name="shopware.entity.definition" entity="scop_custom_header_columns_translation"/>
         </service>
 
+        <service id="Scop\ScopCustomHeader\Extension\RuleExtension">
+            <tag name="shopware.entity.extension"/>
+        </service>
+
+        <service id="Scop\ScopCustomHeader\Subscriber\ResolveRuleAreasSubscriber">
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
         <service id="Scop\ScopCustomHeader\Storefront\Pagelet\Header\Subscriber\HeaderPageletLoadedSubscriber">
             <argument type="service" id="scop_custom_header.repository"/>
             <tag name="kernel.event_subscriber"/>

@@ -10,9 +10,9 @@
 namespace Scop\ScopCustomHeader\Storefront\Pagelet\Header\Subscriber;
 
 use Scop\ScopCustomHeader\Entity\Header\HeaderEntity;
-use Shopware\Core\Framework\Api\Context\SalesChannelApiSource;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
+use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\OrFilter;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
@@ -57,19 +57,25 @@ class HeaderPageletLoadedSubscriber implements EventSubscriberInterface
      */
     public function HeaderPageletLoadedEvent(HeaderPageletLoadedEvent $event): void
     {
-        $context = $event->getContext();
+        $salesChannelContext = $event->getSalesChannelContext();
+        $context = $salesChannelContext->getContext();
 
         $criteria = new Criteria();
 
         $criteria->addAssociation('columns');
 
-        /** @var SalesChannelApiSource $source */
-        $source = $context->getSource();
-        $salesChannelId = $source->getSalesChannelId();
+        $salesChannelId = $salesChannelContext->getSalesChannelId();
 
         $criteria->addFilter(new EqualsFilter('enabled', true));
 
         $criteria->addFilter(new OrFilter([new EqualsFilter('salesChannelId', $salesChannelId), new EqualsFilter('salesChannelId', null)]));
+
+        $ruleFilters = [new EqualsFilter('ruleId', null)];
+        $ruleIds = $salesChannelContext->getRuleIds();
+        if (!empty($ruleIds)) {
+            $ruleFilters[] = new EqualsAnyFilter('ruleId', $ruleIds);
+        }
+        $criteria->addFilter(new OrFilter($ruleFilters));
 
         $criteria->addSorting(new FieldSorting('priority', FieldSorting::DESCENDING));
 

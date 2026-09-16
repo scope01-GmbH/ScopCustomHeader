@@ -1,3 +1,9 @@
+# v4.2.0
+- New option: control a header's visibility via a rule (e.g. per customer group)
+
+# v4.1.1
+- Accessibility Improvement Act (BFSG) conformity established
+
 # v4.1.0
 - Advanced header configuration: Multiple headers can be displayed simultaneously in the frontend according to priority
 

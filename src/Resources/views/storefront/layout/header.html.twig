@@ -40,29 +40,22 @@
                                                                     {% if column.translated.iconId != null %}
                                                                         {% for image in searchMedia([column.translated.iconId], context.context).elements %}
                                                                             <span class="icon scop-header-icon">
-                                                                        <div class="img-wrap">
-                                                                            <img src="{{ image.url }}" alt="icon-1"
-                                                                                 class="sch-icon">
-                                                                        </div>
-                                                                    </span>
+                                                                                <div class="img-wrap">
+                                                                                    <img src="{{ image.url }}" alt="{{ column.translated.label|striptags }}" class="sch-icon"/>
+                                                                                </div>
+                                                                            </span>
                                                                         {% endfor %}
                                                                     {% endif %}
                                                                 {% endblock %}
 
                                                                 {% block scop_text_link %}
                                                                     <span>
-                                                            {% if column.translated.textLink %}
-                                                                <a class="scop-header-link " href="
-                                                                    {{ column.translated.textLink }}"
-                                                                    {% if column.openInNewTab %}
-                                                                        target="_blank"
-                                                                    {% endif %}
-                                                                >{{ column.translated.label }}</a>
-                                                            {% else %}
-                                                                <span class="scop-header-link">{{ column.translated.label }}</span>
-                                                            {% endif %}
-                                                        </span>
-
+                                                                        {% if column.translated.textLink %}
+                                                                            <a class="scop-header-link" href="{{ column.translated.textLink }}" title="{{ column.translated.label|striptags }}"{% if column.openInNewTab %} target="_blank"{% endif %}>{{ column.translated.label }}</a>
+                                                                        {% else %}
+                                                                            <span class="scop-header-link">{{ column.translated.label }}</span>
+                                                                        {% endif %}
+                                                                    </span>
                                                                 {% endblock %}
                                                             </div>
                                                         </div>

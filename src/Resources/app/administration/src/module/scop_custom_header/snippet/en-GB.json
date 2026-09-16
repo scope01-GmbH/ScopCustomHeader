@@ -28,6 +28,11 @@
         "select": "Select SalesChannel",
         "all": "All"
       },
+      "rule": {
+        "select": "Select rule",
+        "all": "Always show",
+        "helpText": "When a rule is selected, the header is only shown if that rule matches the current context (e.g. a specific customer group). Without a rule the header is always shown."
+      },
       "priority": "Priority",
       "enabledLabel": "Enabled",
       "general": "General",

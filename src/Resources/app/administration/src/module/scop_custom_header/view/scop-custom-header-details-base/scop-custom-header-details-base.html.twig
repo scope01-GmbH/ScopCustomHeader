@@ -19,6 +19,11 @@
         <sw-entity-single-select v-model:value="header.salesChannelId" entity="sales_channel"
                                  :resetOption="$t('scopcustomheader.detail.salesChannel.all')"
                                  :label="$t('scopcustomheader.detail.salesChannel.select')"></sw-entity-single-select>
+
+        <sw-entity-single-select v-model:value="header.ruleId" entity="rule"
+                                 :resetOption="$t('scopcustomheader.detail.rule.all')"
+                                 :label="$t('scopcustomheader.detail.rule.select')"
+                                 :helpText="$t('scopcustomheader.detail.rule.helpText')"></sw-entity-single-select>
     </sw-card>
 
     <sw-card :title="$tc('scopcustomheader.detail.settingsDesktop')" v-if="header" :isLoading="isLoading">

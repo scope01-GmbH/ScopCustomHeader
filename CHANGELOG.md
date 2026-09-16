@@ -1,3 +1,9 @@
+# v4.2.0
+- Neue Option: Ausspielung eines Headers über eine Regel steuern (z. B. je Kundengruppe)
+
+# v4.1.1
+- Barrierefreiheitsstärkungsgesetz (BFSG) Konformität hergestellt
+
 # v4.1.0
 - Erweiterte Header Konfiguration: Mehrere Header können gleichzeitig im Frontend nach Priorität angezeigt werden
 
