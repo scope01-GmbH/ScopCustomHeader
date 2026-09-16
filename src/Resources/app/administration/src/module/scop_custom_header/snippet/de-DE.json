@@ -28,6 +28,11 @@
         "select": "Verkaufskanal auswählen",
         "all": "Alle"
       },
+      "rule": {
+        "select": "Regel auswählen",
+        "all": "Immer anzeigen",
+        "helpText": "Wird eine Regel gewählt, erscheint der Header nur, wenn diese Regel im aktuellen Kontext zutrifft (z. B. für eine bestimmte Kundengruppe). Ohne Regel wird der Header immer angezeigt."
+      },
       "priority": "Priorität",
       "enabledLabel": "Aktiv",
       "general": "Allgemein",

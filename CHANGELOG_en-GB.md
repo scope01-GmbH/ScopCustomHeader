@@ -1,3 +1,6 @@
+# v4.2.0
+- New option: control a header's visibility via a rule (e.g. per customer group)
+
 # v4.1.1
 - Accessibility Improvement Act (BFSG) conformity established
 

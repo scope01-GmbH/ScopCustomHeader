@@ -1,3 +1,6 @@
+# v4.2.0
+- Neue Option: Ausspielung eines Headers über eine Regel steuern (z. B. je Kundengruppe)
+
 # v4.1.1
 - Barrierefreiheitsstärkungsgesetz (BFSG) Konformität hergestellt
 
